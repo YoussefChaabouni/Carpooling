@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>406</y>
+      <w>287</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>Person
+--
+born_time : Integer
+identifiant : Integer
+name : String
+trajectory : Trajectory
+
+--
+getdistanceto(x_org,y_org,x_dst,y_dst)
+generate_lognormal_samples(mean,stdev)
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>693</x>
+      <y>217</y>
+      <w>161</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>SetOfPersons
+--
+id : Integer
+carpooler_dict : Dictionnary
+num_carpoolers : Integer
+car : Car 
+--
+get_carpooler(carpooler_id)
+add_pooler(carpooler_id)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>770</x>
+      <y>308</y>
+      <w>21</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>112</x>
+      <y>546</y>
+      <w>280</w>
+      <h>182</h>
+    </coordinates>
+    <panel_attributes>Vertex
+--
+identifiant:Integer
+x:Integer 
+y: Interger 
+arrival_time : Dictionnary
+depart_time : Dictionnary
+name:String 
+adjacent:Dictionnary
+distance:Float
+--
+__lt__(otherVertex):Bool
+__le__(otherVertex):Bool
+add_time_driver(driver_id,arrival_time,departure_time)
+get_arrival_time(driver_id)
+get_depart_time(driver_id)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>126</x>
+      <y>238</y>
+      <w>301</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>Graph
+--
+vert_dict:Dictionnary
+number_vertices:Integer
+--
+get_neighborMPsation(stations, aMeetingpoint)
+get_neighborsationMP(NearSationMeetingpoints, aStation)
+distance(node_id,node_id)
+add_weight(from, to)
+add_edge(from, to, cost)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>301</x>
+      <y>413</y>
+      <w>175</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>MeetingPointHandler
+--
+meetingpoint_dict : Dictionnary
+num_meetingpoints : Integer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>147</x>
+      <y>350</y>
+      <w>126</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>160.0;10.0;160.0;50.0;10.0;50.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>84</x>
+      <y>413</y>
+      <w>147</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Stations
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>273</x>
+      <y>455</y>
+      <w>119</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+</panel_attributes>
+    <additional_attributes>150.0;10.0;150.0;60.0;10.0;60.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>147</x>
+      <y>455</y>
+      <w>119</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0;150.0;60.0;150.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>553</x>
+      <y>308</y>
+      <w>91</w>
+      <h>203</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2= 0..n 
+&lt; trajet </panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;260.0;110.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1078</x>
+      <y>294</y>
+      <w>147</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Vehicule
+--
+id : String
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>987</x>
+      <y>413</y>
+      <w>252</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>Car
+--
+-capacity : Interger
+-driver : Driver
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1204</x>
+      <y>504</y>
+      <w>147</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>Train
+--
+-capacity : Integer
+riders : Dictionnary
+stations : Dictionnary
+time_start : Integer
+waiting_time : Integer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1323</x>
+      <y>637</y>
+      <w>98</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Capacité = Infiny</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1344</x>
+      <y>532</y>
+      <w>35</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;10.0;30.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1050</x>
+      <y>336</y>
+      <w>112</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;60.0;140.0;60.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1113</x>
+      <y>371</y>
+      <w>175</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>230.0;190.0;230.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>847</x>
+      <y>266</y>
+      <w>154</w>
+      <h>217</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+monte 
+dans &gt;
+</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0;140.0;280.0;200.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>910</x>
+      <y>532</y>
+      <w>308</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2= 1
+monte dans &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;420.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>434</y>
+      <w>1309</w>
+      <h>413</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..n
+&lt; s'arrete à </panel_attributes>
+    <additional_attributes>120.0;10.0;20.0;10.0;10.0;570.0;1830.0;570.0;1830.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>406</x>
+      <y>455</y>
+      <w>238</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=-
+&lt; se rend à </panel_attributes>
+    <additional_attributes>320.0;150.0;10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>287</x>
+      <y>350</y>
+      <w>126</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..1
+possède &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;140.0;50.0;140.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>826</x>
+      <y>693</y>
+      <w>210</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Driver
+--
+car : Car 
+riders_in_journey: Dictionnary
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>567</x>
+      <y>693</y>
+      <w>210</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Rider
+--
+origin: Vertex
+destination: Vertex
+depart_time_origin: Integer 
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>574</y>
+      <w>105</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;130.0;130.0;10.0;130.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>777</x>
+      <y>574</y>
+      <w>140</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0;180.0;130.0;180.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>483</x>
+      <y>231</y>
+      <w>154</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>Trajectory
+--
+walking_speed : Integer
+car_speed : Integer
+train_speed : Integer
+vertex_order : Dictionnary</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>287</y>
+      <w>77</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>868</x>
+      <y>161</y>
+      <w>161</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>{ rider_id : (Rider, vert_frm, vert_to ) }
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>847</x>
+      <y>189</y>
+      <w>84</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;90.0;100.0;90.0;100.0;10.0</additional_attributes>
+  </element>
+</diagram>

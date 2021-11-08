@@ -1,0 +1,19 @@
+Lors de la dernière reunion, on a découpé le problème en deux sous-problèmes:
+Calcul de l'ensemble des coûts (ici on va utiliser le shortest path sur une graphe spatio-temporelle)
+Matching: une fois les coûts calculculés, on va faire tourner l'algo de matching dessus
+9:34
+Tu es en train de travailler sur le point 1
+9:36
+Je suggère de dévélopper les deux partie de façon modulable, i.e., on doit pouvoir faire tourner les deux séparément si on veut. Par exemple, dans le futur on doit pouvoir faire tourner le matching en donnant un input un ensmble de coût bidons (qu'on n'a pas vraiment calculé)
+9:37
+Cela nous permet d'expérimenter avec les deux parties séparémment
+9:40
+Donc, je te conseille de faire qqchose comme ça:
+Tu écris un programme qui calcule les coût à travers les shortest paths et qui écrit un fichier de coût en output.
+Quand tu lance l'algo de matching, tu lance un programme séparé en lui donnant le fichier des coût comme input.
+Si tu veux faire des expériences complètes, tu peux écrire un programme ou un script bash qui lancent les deux programmes dessus en séquence
+9:40
+Es-tu d'accord?
+9:43
+Une autre chose à faire est chercher les algorithmes de "Dynamic Shortest Paths" et voir si ce que tu es en train est un Dynamic Shortest Path ou s'il s'agit d'autre chose (ce que je m'attends). Il faudra motiver dans le papier pourquoi on n'a pas pu utiliser des algos de shortest paths existents.
+Mais cette comparaison on la laisse pour après, pour le rendez-vous de demain le plus important est d'avoir un programme qui calcule les shortest paths qui marche
