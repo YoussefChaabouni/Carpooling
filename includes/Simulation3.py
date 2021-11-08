@@ -13,7 +13,7 @@ from vehicleClasses import Car, Train
 
 #### Simulation ####
 ### Initialisation ###
-from Simulation_variables import nb_meetingpoints, nb_stations, nb_origins_destination, nb_riders_min, nb_riders_max, nb_drivers_min, nb_drivers_max, step, nb_simulation, nb_trains, frequency_trains
+from Simulation_variables import nb_meetingpoints, nb_stations, nb_origins_destination, nb_riders_min, nb_riders_max, nb_drivers_min, nb_drivers_max, step, nb_simulation, nb_trains, frequency_trains,
 ### Seed ###
 #random.seed(1) ## Change seed to generate different environment
 def time_printer(t):

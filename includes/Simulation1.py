@@ -220,10 +220,10 @@ def proportion_served_calculator(nb_riders, setOfPersons, setOfDrivers, simulati
         #else:
             #print('no driver found for', rider.name)
     #print('the proportion of rider served: ', proportion_served/nb_riders)
-    return proportion_served / nb_riders
+    return proportion_served/ nb_riders
 
 #### effect of changing nb_drivers ####
-def simulation_batch_indenting_drivers(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination,nb_riders, nb_drivers_min,nb_drivers_max,step):
+def simulation_indenting_drivers(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination,nb_riders, nb_drivers_min,nb_drivers_max,step):
     ### environment for the simualtion ###
     simulation_graph, setOfTrains, setOfOrigins, setOfDestinations=environment_creater(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination)
 
@@ -262,7 +262,7 @@ def simulation_batch_indenting_drivers(nb_meetingpoints,nb_stations, nb_trains, 
 
 #### effect of changing the variables ####
 
-def simulation_batch_indenting_riders(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination,nb_drivers, nb_riders_min,nb_riders_max,step):
+def simulation_indenting_riders(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination,nb_drivers, nb_riders_min,nb_riders_max,step):
     ### environment for the simualtion ###
     simulation_graph, setOfTrains, setOfOrigins, setOfDestinations = environment_creater(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination)
 
@@ -272,14 +272,14 @@ def simulation_batch_indenting_riders(nb_meetingpoints,nb_stations, nb_trains, n
     setOfDrivers = setOfPersons[0]
     setOfCars=setOfPersons[2]
 
-    List_nb_riders=[i for i in range(nb_riders_min,nb_riders_max,step)]
+    List_nb_riders=[i for i in range(nb_drivers_min,nb_drivers_max,step)]
     List_proportion_served=[]# the interesting data from this simulation
 
     if nb_riders_max==nb_riders_min:
         setOfRiders=setOfPersons[1]
         results = proportion_served_calculator(nb_riders,setOfRiders, setOfDrivers, simulation_graph)
         print(results)
-        plt.plot(List_nb_riders, List_proportion_served)
+        plt.plot(List_nb_drivers, List_proportion_served)
         plt.xlabel('nb riders')
         plt.ylabel('severd riders')
         plt.show()
@@ -295,26 +295,24 @@ def simulation_batch_indenting_riders(nb_meetingpoints,nb_stations, nb_trains, n
             with open(saving_file, 'a') as f: #don't forget to change the name of the file if you change the parameters
                 print(List_proportion_served, file=f)
         else :
-            print(List_nb_riders)
-            print(List_proportion_served)
-            plt.plot(List_nb_riders, List_proportion_served)
-            plt.xlabel('nb riders')
+            plt.plot(List_nb_drivers, List_proportion_served)
+            plt.xlabel('nb drivers')
             plt.ylabel('severd riders')
             plt.show()
 
 
 ##Lancement de la simulation
-def launching_simulation_batch(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination,nb_drivers_min, nb_drivers_max, nb_riders_min,nb_riders_max,step):
+def launching_simulation(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination,nb_drivers_min, nb_drivers_max, nb_riders_min,nb_riders_max,step):
     if nb_riders_max==nb_riders_min:
         nb_riders = nb_riders_max
-        return simulation_batch_indenting_drivers(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination,nb_riders, nb_drivers_min,nb_drivers_max,step)
+        return simulation_indenting_drivers(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination,nb_riders, nb_drivers_min,nb_drivers_max,step)
     elif nb_drivers_max==nb_drivers_min:
         nb_drivers = nb_drivers_max
-        return simulation_batch_indenting_riders(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination, nb_drivers, nb_riders_min, nb_riders_max,step)
+        return simulation_indenting_riders(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination, nb_drivers, nb_riders_min, nb_riders_max,step)
     else :
         print('Instruction unclear')
         return
 
 
-launching_simulation_batch(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination,\
+launching_simulation(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination,\
                         nb_drivers_min, nb_drivers_max, nb_riders_min, nb_riders_max, step)
