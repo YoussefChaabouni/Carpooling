@@ -36,22 +36,20 @@ def driver_journey_generator(origin, destination, driver,graph):
 
     r=random.uniform(0,1)
 
-    DETOUR_PERCENTAGE_LENGHT = 1.15
-
     if r<0.5 :
         ## Try to add a detour close to the origin
-        if Graph.distance(meeting_point_closest_origin,station_closest_origin)+Graph.distance(station_closest_origin, meeting_point_closest_destination)<=DETOUR_PERCENTAGE_LENGHT*Graph.distance(meeting_point_closest_origin,meeting_point_closest_destination):
+        if Graph.distance(meeting_point_closest_origin,station_closest_origin)+Graph.distance(station_closest_origin, meeting_point_closest_destination)<=1.15*Graph.distance(meeting_point_closest_origin,meeting_point_closest_destination):
             ## Add a detour through station_closest_origin
             journey_driver.set_vertex_order({origin.id:origin, meeting_point_closest_origin.id: meeting_point_closest_origin,station_closest_origin.id: station_closest_origin, meeting_point_closest_destination.id: meeting_point_closest_destination, destination.id: destination})
-            if Graph.distance(meeting_point_closest_origin,station_closest_origin)+Graph.distance(station_closest_origin,station_closest_destination)+Graph.distance(station_closest_destination, meeting_point_closest_destination)<=DETOUR_PERCENTAGE_LENGHT*Graph.distance(meeting_point_closest_origin,meeting_point_closest_destination):
+            if Graph.distance(meeting_point_closest_origin,station_closest_origin)+Graph.distance(station_closest_origin,station_closest_destination)+Graph.distance(station_closest_destination, meeting_point_closest_destination)<=1.15*Graph.distance(meeting_point_closest_origin,meeting_point_closest_destination):
                 ##Also add a detour through the station close to the driver
                 journey_driver.set_vertex_order({origin.id:origin , meeting_point_closest_origin.id:meeting_point_closest_origin,station_closest_origin.id:station_closest_origin, station_closest_destination.id:station_closest_destination, meeting_point_closest_destination.id:meeting_point_closest_destination,destination.id: destination })
     else:
         ##Try to add a detour close to the destination
-        if Graph.distance(meeting_point_closest_origin,station_closest_destination)+Graph.distance(station_closest_destination, meeting_point_closest_destination)<=DETOUR_PERCENTAGE_LENGHT*Graph.distance(meeting_point_closest_origin,meeting_point_closest_destination):
+        if Graph.distance(meeting_point_closest_origin,station_closest_destination)+Graph.distance(station_closest_destination, meeting_point_closest_destination)<=1.15*Graph.distance(meeting_point_closest_origin,meeting_point_closest_destination):
             ##Add a detour through station_closest_destination
             journey_driver.set_vertex_order({origin.id:origin , meeting_point_closest_origin.id:meeting_point_closest_origin, station_closest_destination.id:station_closest_destination, meeting_point_closest_destination.id:meeting_point_closest_destination,destination.id: destination })
-            if Graph.distance(meeting_point_closest_origin,station_closest_origin)+Graph.distance(station_closest_origin,station_closest_destination)+Graph.distance(station_closest_destination, meeting_point_closest_destination)<=DETOUR_PERCENTAGE_LENGHT*Graph.distance(meeting_point_closest_origin,meeting_point_closest_destination):
+            if Graph.distance(meeting_point_closest_origin,station_closest_origin)+Graph.distance(station_closest_origin,station_closest_destination)+Graph.distance(station_closest_destination, meeting_point_closest_destination)<=1.15*Graph.distance(meeting_point_closest_origin,meeting_point_closest_destination):
                 ##Also add a detour through the station close to the driver destination.
                 journey_driver.set_vertex_order({origin.id:origin , meeting_point_closest_origin.id:meeting_point_closest_origin,station_closest_origin.id:station_closest_origin, station_closest_destination.id:station_closest_destination, meeting_point_closest_destination.id:meeting_point_closest_destination,destination.id: destination })
     #print(journey_driver.get_vertex_order())
