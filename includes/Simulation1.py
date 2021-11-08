@@ -34,7 +34,7 @@ def time_printer(t):
 
 ### to calculate one proportion nb_drivers_min needs to be equal to nb_drivers_min
 
-def environment_creater(nb_meetingpoints, nb_stations, nb_trains, nb_origins_destination):
+def environment_creator(nb_meetingpoints, nb_stations, nb_trains, nb_origins_destination):
     #### The graph ####
     simulation_graph=Graph()
     setOfOrigins={}
@@ -192,7 +192,7 @@ def persons_generator(nb_riders, nb_drivers, simulation_graph, setOfOrigins, set
         """
 
     return [setOfDrivers, setOfPersons, setOfCars, origins_riders, origins_drivers, destinations_riders, destinations_drivers]
-#print(proportion_served_calculator(nb_riders,setOfPersons, persons_generator(nb_riders, nb_drivers_max, simulation_graph,setOfOrigins, setOfDestinations)[0], simulation_graph))
+#print(simulate(nb_riders,setOfPersons, persons_generator(nb_riders, nb_drivers_max, simulation_graph,setOfOrigins, setOfDestinations)[0], simulation_graph))
 
 ### map visualisation ###
 def graph_plotter(simulation_graph, origins_riders, origins_drivers, destinations_riders, destinations_drivers):
@@ -205,7 +205,7 @@ def graph_plotter(simulation_graph, origins_riders, origins_drivers, destination
     PLOTMap(origins_riders, destinations_riders, origins_drivers, destinations_drivers, List_stations_plot, List_mps_plot).plot_map()
 
 ### proportion calculator ###
-def proportion_served_calculator(nb_riders, setOfPersons, setOfDrivers, simulation_graph):
+def simulate(nb_riders, setOfPersons, setOfDrivers, simulation_graph):
     proportion_served=0
     #print(len(setOfDrivers))
 
@@ -225,7 +225,7 @@ def proportion_served_calculator(nb_riders, setOfPersons, setOfDrivers, simulati
 #### effect of changing nb_drivers ####
 def simulation_batch_indenting_drivers(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination,nb_riders, nb_drivers_min,nb_drivers_max,step):
     ### environment for the simualtion ###
-    simulation_graph, setOfTrains, setOfOrigins, setOfDestinations=environment_creater(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination)
+    simulation_graph, setOfTrains, setOfOrigins, setOfDestinations=environment_creator(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination)
 
     #Generation of the different sets of persons
     setOfPersons=persons_generator(nb_riders, nb_drivers_min, simulation_graph,setOfOrigins, setOfDestinations)
@@ -238,7 +238,7 @@ def simulation_batch_indenting_drivers(nb_meetingpoints,nb_stations, nb_trains, 
 
     if nb_drivers_max==nb_drivers_min:
         set1=setOfPersons[0]
-        results = proportion_served_calculator(nb_riders,setOfRiders, set1, simulation_graph)
+        results = simulate(nb_riders,setOfRiders, set1, simulation_graph)
         print(results)
         plt.plot(List_nb_drivers, List_proportion_served)
         plt.xlabel('nb drivers')
@@ -250,7 +250,7 @@ def simulation_batch_indenting_drivers(nb_meetingpoints,nb_stations, nb_trains, 
         for nb_drivers in range(nb_drivers_min,nb_drivers_max, step):
             set1=persons_generator(nb_riders, nb_drivers, simulation_graph,setOfOrigins, setOfDestinations)[0]
             List_setOfDrivers.append(set1)
-            List_proportion_served+=[proportion_served_calculator(nb_riders,setOfRiders, set1, simulation_graph)]
+            List_proportion_served+=[simulate(nb_riders,setOfRiders, set1, simulation_graph)]
         if SAVE :
             with open(saving_file, 'a') as f: #don't forget to change the name of the file if you change the parameters
                 print(List_proportion_served, file=f)
@@ -264,7 +264,7 @@ def simulation_batch_indenting_drivers(nb_meetingpoints,nb_stations, nb_trains, 
 
 def simulation_batch_indenting_riders(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination,nb_drivers, nb_riders_min,nb_riders_max,step):
     ### environment for the simualtion ###
-    simulation_graph, setOfTrains, setOfOrigins, setOfDestinations = environment_creater(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination)
+    simulation_graph, setOfTrains, setOfOrigins, setOfDestinations = environment_creator(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination)
 
     #Generation of the different sets of persons
     setOfPersons=persons_generator(nb_riders_min, nb_drivers, simulation_graph,setOfOrigins, setOfDestinations)
@@ -277,7 +277,7 @@ def simulation_batch_indenting_riders(nb_meetingpoints,nb_stations, nb_trains, n
 
     if nb_riders_max==nb_riders_min:
         setOfRiders=setOfPersons[1]
-        results = proportion_served_calculator(nb_riders,setOfRiders, setOfDrivers, simulation_graph)
+        results = simulate(nb_riders,setOfRiders, setOfDrivers, simulation_graph)
         print(results)
         plt.plot(List_nb_riders, List_proportion_served)
         plt.xlabel('nb riders')
@@ -289,7 +289,7 @@ def simulation_batch_indenting_riders(nb_meetingpoints,nb_stations, nb_trains, n
         for nb_riders in range(nb_riders_min,nb_riders_max, step):
             setOfRiders=persons_generator(nb_riders, nb_drivers, simulation_graph,setOfOrigins, setOfDestinations)[1]
             List_setOfRiders.append(setOfRiders)
-            List_proportion_served+=[proportion_served_calculator(nb_riders,setOfRiders, setOfDrivers, simulation_graph)]
+            List_proportion_served+=[simulate(nb_riders,setOfRiders, setOfDrivers, simulation_graph)]
 
         if SAVE :
             with open(saving_file, 'a') as f: #don't forget to change the name of the file if you change the parameters
