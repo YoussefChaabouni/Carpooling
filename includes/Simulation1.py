@@ -5,9 +5,9 @@ import random
 from random import randint
 from graphClasses import Trajectory, Graph, Vertex, MeetingPointsHandler
 from personClasses import SetOfPersons, Rider, Driver
-from plotMap import PLOTMap
+#from plotMap import PLOTMap
 import math
-import pandas as pd
+#import pandas as pd
 from Algorithms import driver_selection_in_only_carpooling, arrival_time_of_rider, driver_journey_generator
 from datetime import time, timedelta, datetime
 import matplotlib.pyplot as plt
@@ -20,6 +20,8 @@ from Simulation_variables import nb_meetingpoints, nb_stations, nb_origins_desti
 from Simulation_variables import saving_file, SAVE
 ### Seed ###
 #random.seed(1)     ## Change seed to generate different environment
+
+print("test")
 
 def time_printer(t):
     t=t/60
@@ -225,11 +227,13 @@ def simulate(nb_riders, setOfPersons, setOfDrivers, simulation_graph):
 #### effect of changing nb_drivers ####
 def simulation_indenting_drivers(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination,nb_riders, nb_drivers_min,nb_drivers_max,step):
     ### environment for the simualtion ###
+    print("creation de l'environnement indenting drivers")
     simulation_graph, setOfTrains, setOfOrigins, setOfDestinations=environment_creator(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination)
 
     #Generation of the different sets of persons
+    print("generation des personnes dans indenting drivers")
     setOfPersons=persons_generator(nb_riders, nb_drivers_min, simulation_graph,setOfOrigins, setOfDestinations)
-
+    print("fin de generation des personnes dans indenting drivers")
     setOfRiders = setOfPersons[1]
     setOfCars=setOfPersons[2]
 
@@ -238,6 +242,9 @@ def simulation_indenting_drivers(nb_meetingpoints,nb_stations, nb_trains, nb_ori
 
     if nb_drivers_max==nb_drivers_min:
         set1=setOfPersons[0]
+        setOfRiders=setOfPersons[1]
+        print(setOfRiders)
+        print(setOfRiders.carpooler_dict)
         results = simulate(nb_riders,setOfRiders, set1, simulation_graph)
         print(results)
         plt.plot(List_nb_drivers, List_proportion_served)
@@ -264,19 +271,30 @@ def simulation_indenting_drivers(nb_meetingpoints,nb_stations, nb_trains, nb_ori
 
 def simulation_indenting_riders(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination,nb_drivers, nb_riders_min,nb_riders_max,step):
     ### environment for the simualtion ###
+    print("creation de l'environnement indenting riders")
     simulation_graph, setOfTrains, setOfOrigins, setOfDestinations = environment_creator(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination)
 
     #Generation of the different sets of persons
+    print("generation des personnes dans indenting riders")
     setOfPersons=persons_generator(nb_riders_min, nb_drivers, simulation_graph,setOfOrigins, setOfDestinations)
+    print("fin de generation des personnes dans indenting riders")
 
     setOfDrivers = setOfPersons[0]
     setOfCars=setOfPersons[2]
 
     List_nb_riders=[i for i in range(nb_drivers_min,nb_drivers_max,step)]
     List_proportion_served=[]# the interesting data from this simulation
-
+    print(List_proportion_served)
+    print(nb_riders_max)
+    print(nb_riders_min)
+    print(nb_riders_max==nb_riders_min)
     if nb_riders_max==nb_riders_min:
         setOfRiders=setOfPersons[1]
+        print("lol")
+        print(setOfRiders)
+        print("lol2")
+        print(setOfRiders[0])
+        print("lol3")
         results = simulate(nb_riders,setOfRiders, setOfDrivers, simulation_graph)
         print(results)
         plt.plot(List_nb_drivers, List_proportion_served)
@@ -312,7 +330,6 @@ def launching_simulation(nb_meetingpoints,nb_stations, nb_trains, nb_origins_des
     else :
         print('Instruction unclear')
         return
-
 
 launching_simulation(nb_meetingpoints,nb_stations, nb_trains, nb_origins_destination,\
                         nb_drivers_min, nb_drivers_max, nb_riders_min, nb_riders_max, step)

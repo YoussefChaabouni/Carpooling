@@ -1,4 +1,6 @@
 #! /bin/python3
+# SIMULATION WITH ONLY CARPOOLING
+
 
 ## It's important to change the files in Simulation1 or 2 before launching several simulation if the paremeters have changed
 import random
@@ -136,15 +138,16 @@ def proportion_served_calculator(nb_riders, setOfPersons, setOfDrivers, simulati
     for i in range(nb_riders):
         rider=setOfPersons.get_carpooler(f'rider{i}')[0]
         ### Selecting drivers for riders ###
-        if  driver_selection_in_only_carpooling(setOfDrivers, rider, 150, simulation_graph)[1]<math.inf:
+        drS = driver_selection_in_only_carpooling(setOfDrivers, rider, 150, simulation_graph)
+        if drS[1]<math.inf:
             proportion_served+=1
-            driver= driver_selection_in_only_carpooling(setOfDrivers, rider, 150, simulation_graph)[0]
+            driver= drS(setOfDrivers, rider, 150, simulation_graph)[0]
             #print(rider.name, driver.name)
             #print('the driver journey: ', driver.get_trajectory().get_vertex_order().values(), '// the rider journey:  origin = (',rider.origin.x, ',', rider.origin.y, ')', ' and destination = (',rider.destination.x, ',', rider.destination.y, ')' )
         #else:
             #print('no driver found for', rider.name)
     #print('the proportion of rider served: ', proportion_served/nb_riders)
-    return proportion_served/ nb_riders
+    return proportion_served / nb_riders
 
 
 

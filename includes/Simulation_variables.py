@@ -6,7 +6,7 @@ This simulation does not include trains for the moment.
 
 nb_meetingpoints = 100
 nb_stations = 10
-nb_origins_destination=1000
+nb_origins_destination=100
 nb_riders_min = 100
 nb_riders_max = 100
 nb_drivers_min = 100
@@ -28,7 +28,7 @@ This simulation does not include trains for the moment.
 Moreover this simulation always generate between 10 and 100 drivers.
 '''
 
-nb_meetingpoints = 10
+"""nb_meetingpoints = 10
 nb_stations = 10
 nb_riders = 10
 nb_drivers = 10
@@ -77,3 +77,4 @@ frequency_trains=5 #minutes
 
 saving_file = 'Results/result_graph_test4.txt'
 SAVE = True #this variable should be True if you want to save the data and false if you want to print just this simulation
+"""
