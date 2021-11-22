@@ -1,5 +1,8 @@
 import sys
+from typing import List
 import numpy as np
+
+from Carpooling.new_code.PersonClasses import User
 #import meansClasses.py
 
 class Node:
@@ -104,6 +107,54 @@ class Graph:
     def get_distance(self,Node1,Node2):
         return( np.sqrt(Node1.get_y_coord()-Node2.get_y_coord()))
         
+       
+class Trajectory(Graph):
+
+    def __init__(self,user,means_list,arr_time_list,dep_time_list,node_list):
+        self.means_list = means_list
+        self.user = user
+        self.arr_time_list = arr_time_list
+        self.dep_time_list = dep_time_list      
+        self.node_list = Trajectory.sort_nodes(node_list)
+
+    def __init__(self,user):
+        self.user = user
+        self.means_list = []
+        self.arr_time_list = []
+        self.node_list = []
+        self.dep_time_list = []
+    
+    #_________________ GETTERS AND SETTERS ___________________
+
+
+    #_________________ HELPER FUNCTIONS ________________________
+    # These are to be executed upon calling the function
+    
+    # we need a function to sort the nodes of a certain trajectory from origin to destination
+    def sort_nodes(node_list: List,user: User):
+        node_depart = user.get_pos_depart
+        node_arrivee = user.get_pos_arrivee
+        new_node_list = [node_depart]
+        
+        node_list.remove(node_depart)
+        
+        prev_node = node_depart
+        tmp_node = node_list[0]
+        # for loop to add the correct node each time
+        while node_list != []:
+            
+            for node in node_list:
+                
+                if(Trajectory.get_distance(tmp_node,prev_node)>Trajectory.get_distance(node,prev_node)):
+                    tmp_node = node 
+
+            # add new node to sorted list and update previous node and node_list
+            new_node_list.append(tmp_node)
+            prev_node = tmp_node
+            node_list.remove(tmp_node)
+
+
+        return new_node_list
 
 
 

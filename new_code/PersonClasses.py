@@ -1,16 +1,18 @@
 
 import sys
-
+from Carpooling.new_code.meansClasses import Car
+from Carpooling.new_code.graphClasses import Trajectory
 ## USER CLASS
 
 class User:
 
     # Class constructor
-    def __init__(self,pos_depart,pos_arrivee,ID,born_time):
+    def __init__(self,pos_depart,pos_arrivee,ID,born_time,trajectory : Trajectory):
         self.born_time = born_time
         self.id = ID
         self.pos_depart = pos_depart
         self.pos_arrivee = pos_arrivee
+        self.trajectory = trajectory
     
 
     ########## GETTERS AND SETTERS #########################
@@ -25,6 +27,12 @@ class User:
     
     def get_pos_arrivee(self):
         return self.pos_arrivee
+    
+    def get_born_time(self):
+        return self.born_time
+    
+    def get_trajectory(self):
+        return self.trajectory
 
 class Rider(User):
 
@@ -49,4 +57,39 @@ class Rider(User):
             self.walking_time += walking_duration 
         else :
             sys.exit("walking durations should always be positive")
+
+class Driver(User,Car):
     
+    #_______________ init with a riders_list_____________________________
+    def __init__(self, pos_depart, pos_arrivee, ID_user, born_time,
+    ID_car,Speed,max_capacity,current_capacity,riders_list):
+        User.__init__(pos_depart, pos_arrivee, ID_user, born_time)
+        Car.__init__(ID_car,Speed,max_capacity,current_capacity)    
+        self.riders_list = riders_list
+        self.journey = [] # algorithm 1 will fill the journey
+    
+    # _____________________ init without a riders_list ________________________
+    def __init__(self, pos_depart, pos_arrivee, ID_user, born_time,
+    ID_car,Speed,max_capacity,current_capacity):
+        User.__init__(pos_depart, pos_arrivee, ID_user, born_time)
+        Car.__init__(ID_car,Speed,max_capacity,current_capacity)    
+        self.riders_list = [] 
+        self.journey = [] # algorithm 1 will fill the journey
+
+    # ______________________Getters and setters ________________________________
+    def get_riders_list(self):
+        return self.riders_list
+
+    def get_journey(self):
+        return self.journey
+
+    def set_journey(self,new_journey):
+        self.journey = new_journey
+
+    # function to add a rider
+    def add_rider(self,rider: Rider):
+        self.riders_list.add(rider)
+    
+    
+
+

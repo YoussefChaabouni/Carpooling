@@ -1,5 +1,6 @@
 
 import sys
+from typing import List
 
 
 
@@ -48,12 +49,10 @@ class Car(Mean_of_transportation):
         else:
             sys.out("Maximum capacity of a car should always be a positive integer")
         
-    def set_current_capacity(self,new_current_capacity):
-        # we check that this is positive
-        if(new_current_capacity >= 0):
-            self.current_capacity = new_current_capacity
-        else:
-            sys.out("Current capacity of a car can't be negative!!")
+    def set_current_capacity(self,new_current_capacity: List):
+
+         self.current_capacity = new_current_capacity
+        
     
 class Train(Mean_of_transportation):
          #_________________CLASS CONSTRUCTOR__________________________
