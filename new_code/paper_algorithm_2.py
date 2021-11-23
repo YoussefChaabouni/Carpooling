@@ -10,6 +10,8 @@ def algorithm_2(z,z_prime,t,driver,m,m_prime):
 	"""
 
 	# VERIFICATION DE LA CAPACITE DE LA VOITURE EN m
+	if driver.available_places(m) <= 0:
+		return None
 
 	t_prime = t + walk(z,m)
 
