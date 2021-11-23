@@ -1,4 +1,5 @@
 import numpy as np
+import sys
 
 # POUR LA CLASSE NODE
 # ------------------------------- #
@@ -9,7 +10,7 @@ def get_xy_coordinate(self):
 
 # POUR LA CLASSE GRAPH
 # ------------------------------- #
-def get_closest_MP_or_Station(self,nodes): # on prend en entrée une liste de nodes
+"""def get_closest_Node(self,nodes): # on prend en entrée une liste de nodes
 
     V = np.zeros((len(nodes),2))
 
@@ -24,5 +25,23 @@ def get_closest_MP_or_Station(self,nodes): # on prend en entrée une liste de no
 
     argmin_distance = np.argmin((org_x-dst_x)**2 + (org_y-dst_y)**2 + I,axis=0)
 
-    return argmin_distance
+    return argmin_distance"""
+
+def get_closest_MP_or_Station(self,origin,nodes,type_of_nodes):
+
+    if type_of_nodes == "MPs":
+        nodes = list(filter(lambda x : x.isMeetingPoint(),nodes))
+    elif type_of_nodes == "Stations":
+        nodes = list(filter(lambda x : x.isStations(),nodes))
+    else:
+        sys.exit("Bad node type in 'get_closest_MP_or_Station()' method, type : "+type_of_nodes)
+
+    V = np.zeros((len(nodes),2))
+
+    for i,n in enumerate(nodes):
+        V[i] = nodes.get_xy_coordinate()
+
+    argmin_node = np.argmin(np.linalg.norm(V - origin.get_xy_coordinate()))
+
+    return nodes[argmin_node]
 # ------------------------------- #
