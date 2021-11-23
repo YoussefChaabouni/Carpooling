@@ -7,7 +7,7 @@ from new_code.meansClasses import Foot
 from new_code.paper_algorithm_2 import algorithm_2,walk
 
 
-def algorithm_4(drivers: List[Driver],rider : Rider):
+def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 	org_r = rider.get_pos_depart
 	wd= 0
@@ -25,10 +25,18 @@ def algorithm_4(drivers: List[Driver],rider : Rider):
 		m_dst_r = rider.m_dst
 		s_org_r = rider.s_org
 		'''
+		## rider origin and destination
+		r_org = graph.get_node(rider.get_pos_depart)
+		r_dst = graph.get_node(rider.get_pos_arrivee)
 
-		m_d_org = Graph.get_closest_MP(d.get_pos_depart)
-		m_r_org = Graph.get_closest_MP(rider.get_pos_depart)
-		s_r_org = Graph.get_closest_Station(rider.get_pos_depart) 
+		## driver origin and destination
+		d_org = graph.get_node(d.get_pos_depart)
+		d_dst = graph.get_node(d.get_pos_arrivee)
+
+		 
+		m_d_org = graph.get_closest_MP(d_org) # closest MP to d's origin
+		m_r_org = graph.get_closest_MP(rider.get_pos_depart) # closest MP to r's origin
+		s_r_org = graph.get_closest_Station(rider.get_pos_depart) # closest station to r's origin
 
 		if m_d_org == m_r_org and s_r_org in d.get_trajectory.node_list :
 
