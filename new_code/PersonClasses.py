@@ -1,17 +1,17 @@
 
 import sys
-from Carpooling.new_code.meansClasses import Car
-from Carpooling.new_code.graphClasses import Trajectory
+from new_code.meansClasses import Car
+from new_code.graphClasses import Trajectory
 ## USER CLASS
 
 class User:
 
     # Class constructor
-    def __init__(self,pos_depart,pos_arrivee,ID,born_time,trajectory : Trajectory):
+    def __init__(self,pos_depart : int,pos_arrivee : int,ID : int,born_time,trajectory : Trajectory):
         self.born_time = born_time
         self.id = ID
-        self.pos_depart = pos_depart
-        self.pos_arrivee = pos_arrivee
+        self.pos_depart = pos_depart # ID de node d'origine
+        self.pos_arrivee = pos_arrivee # ID de node d'arrivée
         self.trajectory = trajectory
     
 
@@ -39,7 +39,7 @@ class Rider(User):
     def __init__(self, pos_depart, pos_arrivee, ID, born_time):
         super().__init__(pos_depart, pos_arrivee, ID, born_time)
         self.waiting_time = 0
-        self.walking_time = 0
+        self.walking_distance = 0
     
     ###### UPDATE WALKING AND WAITING TIMES ##########
     def update_waiting_time(self, waiting_duration):
