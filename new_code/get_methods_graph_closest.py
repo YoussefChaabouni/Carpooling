@@ -10,6 +10,7 @@ def get_xy_coordinate(self):
 # POUR LA CLASSE GRAPH
 # ------------------------------- #
 def get_closest_MP_or_Station(self,nodes): # on prend en entrée une liste de nodes
+
     V = np.zeros((len(nodes),2))
 
     for i,n in enumerate(nodes):
