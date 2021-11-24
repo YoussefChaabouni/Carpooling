@@ -3,6 +3,7 @@ from typing import List
 import numpy as np
 
 from new_code.PersonClasses import User
+from new_code.meansClasses import Mean_of_transportation
 #import meansClasses.py
 
 class Node:
@@ -139,7 +140,7 @@ class Graph:
 
 class Trajectory(Graph):
 
-    def __init__(self,user,means_list,arr_time_list,dep_time_list,node_list):
+    def __init__(self,means_list,arr_time_list,dep_time_list,node_list):
         self.means_list = means_list
         self.arr_time_list = arr_time_list
         self.dep_time_list = dep_time_list      
@@ -154,6 +155,12 @@ class Trajectory(Graph):
     #_________________ GETTERS AND SETTERS ___________________
     def get_node_id_list(self):
         return self.node_id_list
+
+    def update_trajectory(self,new_mean : Mean_of_transportation,new_arr_time,new_dep_time,new_node_id : int):
+        self.means_list.append(new_mean)
+        self.arr_time_list.append(new_arr_time)
+        self.dep_time_list.append(new_dep_time)
+        self.node_id_list.append(new_node_id)
 
    
 
