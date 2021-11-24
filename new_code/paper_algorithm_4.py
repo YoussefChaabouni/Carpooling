@@ -58,6 +58,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 				wd 	= wd + w_chap_d
 				wt		= wt + w_chap_t
 
+				
 				## mise à jour de la trajectoire du rider
 				## new_mean : Mean_of_transportation,new_arr_time,new_dep_time,new_node_id : int
 				## on ajoute les temps d'arrivée et de départ de chaque node parcourue
@@ -75,6 +76,10 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 				rider.get_trajectory.update_trajectory(Foot(),arrival_time_mp,departure_time_mp,m_d_org.get_id) # ajouter m_d_org node à trajectory
 				rider.get_trajectory.update_trajectory(d,arrival_time_station,departure_time_station,s_r_org.get_id) # ajouter s_r_org à trajectory
 				
+				# mise à jour des informations du rider
+				
+                rider.update_waiting_time(wt)
+                rider.update_walking_distance(wd)
 
 
 
@@ -122,6 +127,11 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 					rider.get_trajectory.update_trajectory(Foot(),arrival_time_mp,departure_time_mp,m_d_org.get_id) # ajouter m_d_org node à trajectory de r
 					rider.get_trajectory.update_trajectory(d,arrival_time_m_prime,departure_time_m_prime,m_prime.get_id) # ajouter m_prime à trajectory de r
 					rider.get_trajectory.update_trajectory(Foot(),arrival_time_station,departure_time_station,s_r_org.get_id) # ajouter s_r_org à trajectory de r
+
+					# mise à jour des informations du rider
+				
+					rider.update_waiting_time(wt)
+                	rider.update_walking_distance(wd)
 				
 
 
@@ -148,6 +158,11 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 
 			rider.get_trajectory.update_trajectory(Foot(),arrival_time_station,departure_time_station,s_r_org.get_id) # ajouter s_r_org à trajectory de r
+
+			# mise à jour des informations du rider
+				
+			
+			rider.update_walking_distance(wd)
 				
 
 
@@ -213,6 +228,11 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 				rider.get_trajectory.update_trajectory(d,arrival_time_m_r_dest,departure_time_m_r_dest,m_d_dest.get_id) # ajouter m_r_dest à trajectory
 				rider.get_trajectory.update_trajectory(Foot(),arrival_time_dst,departure_time_dst,r_dst.get_id) # ajouter r_dst à trajectory de r
+
+				# mise à jour des informations du rider
+				
+                rider.update_waiting_time(wt)
+                rider.update_walking_distance(wd)
 							
 ##--------------- RIDER HAS TO WALK TO A MEETING POINT IN LAST MILE-----------------------------------------
 	if t_last == np.Infinity:
@@ -260,6 +280,11 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 					rider.get_trajectory.update_trajectory(d,arrival_time_m_r_dest,departure_time_m_r_dest,m_r_dest.get_id) # ajouter m_r_dst à trajectory de r
 					rider.get_trajectory.update_trajectory(Foot(),arrival_time_r_dst,departure_time_r_dst,r_dst.get_id)  # ajouter m_dst à trajectory de r
 
+					# mise à jour des informations du rider
+				
+                	rider.update_waiting_time(wt)
+                	rider.update_walking_distance(wd)
+
 	if t_last > np.Infinity:
 		# le seul choix du rider est donc de marcher jusqu'à la station la plus proche
 
@@ -282,6 +307,8 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 			departure_time_r_dst = arrival_time_r_dst	# départ de la destination
 
 			rider.get_trajectory.update_trajectory(Foot(),arrival_time_r_dst,departure_time_r_dst,r_dst.get_id) # ajouter r_dst à trajectory
+			# mise à jour des informations du rider
+			rider.update_walking_distance(wd)
 				
 	if t_last > np.Infinity:
 		# le rider ne peut pas atteindre la station s_dst_r

@@ -46,17 +46,17 @@ class Rider(User):
 
         ## we could verify that the waiting duration is a positive integer
         if(waiting_duration >= 0):
-            self.waiting_time += waiting_duration 
+            self.waiting_time = waiting_duration 
         else :
             sys.exit("waiting durations should always be positive")
 
-    def update_walking_time(self, walking_duration):
+    def update_walking_distance(self, walking_distance):
 
         ## we could verify that the walking duration is a positive integer
-        if(walking_duration >= 0):
-            self.walking_time += walking_duration 
+        if(walking_distance >= 0):
+            self.walking_distance = walking_distance 
         else :
-            sys.exit("walking durations should always be positive")
+            sys.exit("walking distance should always be positive")
 
 class Driver(User,Car):
     
