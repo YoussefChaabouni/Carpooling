@@ -2,19 +2,12 @@ import sys
 from typing import List
 import numpy as np
 
-from new_code.PersonClasses import User
-from new_code.meansClasses import Mean_of_transportation
+from meansClasses import Mean_of_transportation
 
 class Node:
     #_______________ CLASS CONSTRUCTOR _______________
-    def __init__(self,ID : int,x_coord,y_coord):
+    def __init__(self,ID, x_coord, y_coord):
         self.id = ID
-        self.x_coordinate = x_coord
-        self.y_coordinate = y_coord
-    
-    # We can allow instances without a neighbour list
-    def __init__(self,x_coord,y_coord):
-       
         self.x_coordinate = x_coord
         self.y_coordinate = y_coord
 
@@ -53,8 +46,13 @@ class MeetingPoint(Node):
 class Station(MeetingPoint):
 
     #___________________________________________ CLASS CONSTRUCTOR______________________________________________
-    def __init__(self,ID, x_coord, y_coord):
+    def __init__(self,ID,x_coord, y_coord):
         super().__init__(ID,x_coord, y_coord)
+
+        #gauche = np.linspace(1,1000,ecart_de_temps)
+        #droite = [3, 5, 7, ..., 1001] #
+
+
 
 
 class Graph:

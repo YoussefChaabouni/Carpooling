@@ -1,8 +1,8 @@
 
 
 
-from new_code.graphClasses import Graph, Node
-from new_code.meansClasses import Foot, Car, Train
+from graphClasses import Graph, Node
+from meansClasses import Foot, Car, Train
 
 
 def walk(d:Node,m:Node):

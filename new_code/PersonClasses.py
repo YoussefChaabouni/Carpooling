@@ -1,13 +1,13 @@
 
 import sys
-from new_code.meansClasses import Car
-from new_code.graphClasses import Trajectory
+from meansClasses import Car
+from graphClasses import Trajectory
 ## USER CLASS
 
 class User:
 
     # Class constructor
-    def __init__(self,pos_depart : int,pos_arrivee : int,ID : int,born_time,trajectory : Trajectory):
+    def __init__(self,pos_depart:int, pos_arrivee:int, ID:int, born_time, trajectory:Trajectory):
         self.born_time = born_time
         self.id = ID
         self.pos_depart = pos_depart # ID de node d'origine
@@ -60,20 +60,12 @@ class Rider(User):
 
 class Driver(User,Car):
     
-    #_______________ init with a riders_list_____________________________
+    #_______________ init ________________
     def __init__(self, pos_depart, pos_arrivee, ID_user, born_time,
-    ID_car,Speed,max_capacity,current_capacity,riders_list):
+    ID_car,Speed,max_capacity,current_capacity,riders_list=[]):
         User.__init__(pos_depart, pos_arrivee, ID_user, born_time)
         Car.__init__(ID_car,Speed,max_capacity,current_capacity)    
         self.riders_list = riders_list
-        self.journey = [] # algorithm 1 will fill the journey
-    
-    # _____________________ init without a riders_list ________________________
-    def __init__(self, pos_depart, pos_arrivee, ID_user, born_time,
-    ID_car,Speed,max_capacity,current_capacity):
-        User.__init__(pos_depart, pos_arrivee, ID_user, born_time)
-        Car.__init__(ID_car,Speed,max_capacity,current_capacity)    
-        self.riders_list = [] 
         self.journey = [] # algorithm 1 will fill the journey
 
     # ______________________Getters and setters ________________________________

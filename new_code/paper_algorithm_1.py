@@ -1,8 +1,8 @@
 import numpy as np
 
-from new_code.PersonClasses import Driver
-from new_code.graphClasses import Graph
-from new_code.helperFunctions import Drive
+from PersonClasses import Driver
+from graphClasses import Graph
+from helperFunctions import Drive
 
 '''
 def distance(a,b):
