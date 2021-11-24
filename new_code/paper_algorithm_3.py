@@ -57,7 +57,7 @@ def algorithm_3(drivers : List[Driver],rider : Rider,graph : Graph):
                 - prendre une voiture jusqu'à m_r_dest
                 - marcher jusqu'à r_dest
                 '''
-                arrival_time_m_r_org = walk(r_org,m_r_org) # arrivée à m_r_org
+                arrival_time_m_r_org = rider.get_born_time + walk(r_org,m_r_org) # arrivée à m_r_org
                 departure_time_m_r_org = arrival_time_m_r_org + wt #départ de m_r_org
                 arrival_time_m_r_dest = departure_time_m_r_org + Drive(m_r_org,m_r_dest) # arrivée à m_r_dest
                 departure_time_m_r_dest = arrival_time_m_r_dest # départ de m_r_dest
