@@ -35,7 +35,7 @@ class Node:
     
     # returns array of [ x , y ]
     def get_xy_coordinate(self):
-        return [self.get_x_coordinate,self.get_y_coordinate]
+        return np.array([self.get_x_coordinate,self.get_y_coordinate])
     
 
       
