@@ -7,7 +7,7 @@ outputs : walking_time
 from new_code.PersonClasses import Driver, Rider
 from new_code.graphClasses import Graph, MeetingPoint, Node
 from new_code.meansClasses import Foot
-import math
+import numpy as np
 
 def walk(d:Node,m:Node):
 
@@ -23,9 +23,9 @@ def algorithm_2(rider: Rider,d: Driver,m_board: MeetingPoint,m_out: MeetingPoint
 	t = rider.get_born_time
 
 	# initialise to infinity
-	t_arrivee = math.inf
-	t_waiting = math.inf
-	walk_distance = math.inf
+	t_arrivee = np.inf
+	t_waiting = np.inf
+	walk_distance = np.inf
 
 	# check if there is a seat available
 	idx_board = d.get_journey.index(m_board)
