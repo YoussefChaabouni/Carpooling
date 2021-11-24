@@ -36,7 +36,12 @@ class Node:
     def get_xy_coordinate(self):
         return np.array([self.x_coordinate,self.y_coordinate])
     
-
+    #_____________________________ verify if node is meeting point or station_________________
+    def isStation(self):
+        return type(self).__name__ == "Station"
+    
+    def isMeetingPoint(self):
+        return type(self).___name___ == "MeetingPoint"
       
 
 
@@ -45,41 +50,19 @@ class MeetingPoint(Node):
     def __init__(self,ID, x_coord, y_coord):
         super().__init__(ID,x_coord, y_coord)
 
-        #_____________________________ verify if node is meeting point or station_________________
-    def isStation(self):
-        return type(self).__name__ == "Station"
-    
-    def isMeetingPoint(self):
-        return type(self).___name___ == "MeetingPoint"
-
 class Station(MeetingPoint):
 
     #___________________________________________ CLASS CONSTRUCTOR______________________________________________
     def __init__(self,ID, x_coord, y_coord):
         super().__init__(ID,x_coord, y_coord)
-       
-        #_____________________________ verify if node is meeting point or station_________________
-    def isStation(self):
-        return type(self).__name__ == "Station"
-    
-    def isMeetingPoint(self):
-        return type(self).___name___ == "MeetingPoint"
 
 
 class Graph:
     
     #____________________________CONSTRUCTOR CLASSES _______________________________________
-    def __init__(self,node_list):
-        self.node_list = node_list
-        self.circuity = 1.2
-    
-    def __init__(self,node_list,circuity):
+    def __init__(self,node_list=[],circuity=1.2):
         self.node_list = node_list
         self.circuity = circuity
-
-    def __init__(self):
-        self.node_list = []
-        self.circuity = 1.2
 
     #_____________________________ GETTERS AND SETTERS ___________________________________
     def get_node_list(self):
