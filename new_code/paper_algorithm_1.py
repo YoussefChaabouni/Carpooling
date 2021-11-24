@@ -19,6 +19,9 @@ def algorithm_1(d : Driver,graph : Graph):
 	Outputs :
 		J_d : trajectory
 	"""
+
+	MAX_DETOUR_PERCENTAGE = 1.15
+	
 	t = d.get_born_time
 	# prendre les nodes d'arrivée et de départ
 	org_d = graph.get_node(d.pos_depart)
@@ -45,7 +48,7 @@ def algorithm_1(d : Driver,graph : Graph):
 
 	if r:
 		# Try to add a detour close to the origin
-		if  graph.get_distance(m_org_d,s_org_d) + graph.get_distance(s_org_d,m_dst_d) <= 1.15 * graph.get_distance(m_org_d,m_dst_d):
+		if  graph.get_distance(m_org_d,s_org_d) + graph.get_distance(s_org_d,m_dst_d) <= MAX_DETOUR_PERCENTAGE * graph.get_distance(m_org_d,m_dst_d):
 			# Add a detour through station s_org_d
 			J_d = [org_d, m_org_d, s_org_d, m_dst_d, dst_d]
 			
@@ -56,7 +59,7 @@ def algorithm_1(d : Driver,graph : Graph):
 			d.get_trajectory.update_trajectory(d,arrival_time_s_org_d,departure_time_s_org_d,s_org_d.get_id)	
 
 
-			if graph.get_distance(m_org_d,s_org_d) + graph.get_distance(s_org_d,s_dst_d) + graph.get_distance(s_org_d,m_dst_d) <= 1.15 * graph.get_distance(m_org_d,m_dst_d):
+			if graph.get_distance(m_org_d,s_org_d) + graph.get_distance(s_org_d,s_dst_d) + graph.get_distance(s_org_d,m_dst_d) <= MAX_DETOUR_PERCENTAGE * graph.get_distance(m_org_d,m_dst_d):
 				# Also add a detour through the station close to the driver destination
 				J_d = [org_d, m_org_d, s_org_d, s_dst_d, m_dst_d, dst_d]
 
@@ -67,7 +70,7 @@ def algorithm_1(d : Driver,graph : Graph):
 	
 	else:
 		# Try to add a detour close to the destination
-		if  graph.get_distance(m_org_d,s_dst_d) + graph.get_distance(s_dst_d,m_dst_d) <= 1.15 * graph.get_distance(m_org_d,m_dst_d):
+		if  graph.get_distance(m_org_d,s_dst_d) + graph.get_distance(s_dst_d,m_dst_d) <= MAX_DETOUR_PERCENTAGE * graph.get_distance(m_org_d,m_dst_d):
 			# Add a detour through station s_dst_d
 			J_d = [org_d, m_org_d, s_dst_d, m_dst_d, dst_d]
 
@@ -77,7 +80,7 @@ def algorithm_1(d : Driver,graph : Graph):
 			d.get_trajectory.update_trajectory(d,arrival_time_s_dst_d,departure_time_s_dst_d,s_dst_d.get_id)
 
 
-			if graph.get_distance(m_org_d,s_org_d) + graph.get_distance(s_org_d,s_dst_d) + graph.get_distance(s_org_d,m_dst_d) <= 1.15 * graph.get_distance(m_org_d,m_dst_d):
+			if graph.get_distance(m_org_d,s_org_d) + graph.get_distance(s_org_d,s_dst_d) + graph.get_distance(s_org_d,m_dst_d) <= MAX_DETOUR_PERCENTAGE * graph.get_distance(m_org_d,m_dst_d):
 				# Also add a detour through the station close to the driver origin
 				J_d = [org_d, m_org_d, s_org_d, s_dst_d, m_dst_d, dst_d]
 

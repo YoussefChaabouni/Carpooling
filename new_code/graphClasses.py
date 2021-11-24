@@ -4,7 +4,6 @@ import numpy as np
 
 from new_code.PersonClasses import User
 from new_code.meansClasses import Mean_of_transportation
-#import meansClasses.py
 
 class Node:
     #_______________ CLASS CONSTRUCTOR _______________
@@ -35,7 +34,7 @@ class Node:
     
     # returns array of [ x , y ]
     def get_xy_coordinate(self):
-        return np.array([self.get_x_coordinate,self.get_y_coordinate])
+        return np.array([self.x_coordinate,self.y_coordinate])
     
 
       
@@ -84,7 +83,7 @@ class Graph:
 
     #_____________________________ GETTERS AND SETTERS ___________________________________
     def get_node_list(self):
-        return self.node_list
+        return self.node_list.copy()
     
     
     #_________________________________ GRAPH METHODS____________________________________
@@ -113,13 +112,13 @@ class Graph:
     # returns Euclidian distance weighted with circuity constant
     def get_distance(self,Node1,Node2):
         
-        return(self.circuity*np.sqrt((Node1.get_y_coord()-Node2.get_y_coord())**2 + (Node1.get_x_coord()-Node2.get_x_coord()**2)))
+        return(self.circuity*np.linalg.norm(Node1.get_xy_coordinate() - Node2.get_xy_coordinate()))
 
     
     def get_closest_MP_or_Station(self,origin,type_of_nodes):
         
         #enlever l'origine de la liste de nodes
-        nodes = self.get_node_list.remove(origin)
+        nodes = self.get_node_list().remove(origin)
 
         if type_of_nodes == "MPs":
             nodes = list(filter(lambda x : x.isMeetingPoint(),nodes))
