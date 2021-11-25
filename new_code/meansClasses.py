@@ -50,9 +50,9 @@ class Car(Mean_of_transportation):
             sys.out("Maximum capacity of a car should always be a positive integer")
         
     def set_current_capacity(self,new_current_capacity: List):
-
          self.current_capacity = new_current_capacity
-        
+    
+ 
     
 class Train(Mean_of_transportation):
          #_________________CLASS CONSTRUCTOR__________________________

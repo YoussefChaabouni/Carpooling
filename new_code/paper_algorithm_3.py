@@ -44,7 +44,8 @@ def algorithm_3(drivers : List[Driver],rider : Rider,graph : Graph):
                 wd = w_chap_d
                 wt = w_chap_t
 
-
+                # add rider to d riders_list
+                d.riders_list.append(rider.get_id())
 
                 # update rider information
                 rider.update_waiting_time(wt)

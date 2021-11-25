@@ -58,6 +58,8 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 				wd 	= wd + w_chap_d
 				wt		= wt + w_chap_t
 
+				# add rider to d riders_list
+				d.riders_list.append(rider.get_id())
 				
 				## mise à jour de la trajectoire du rider
 				## new_mean : Mean_of_transportation,new_arr_time,new_dep_time,new_node_id : int
@@ -106,6 +108,9 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 					t_first = t_chap
 					wd 	= w_chap_d
 					wt 	= w_chap_t
+
+					# add rider to d riders_list
+					d.riders_list.append(rider.get_id())
 
 					## mise à jour de la trajectoire du rider
 					## new_mean : Mean_of_transportation,new_arr_time,new_dep_time,new_node_id : int
@@ -212,6 +217,11 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 				wd += w_chap_d
 				wt += w_chap_t
 
+
+				# add rider to d riders_list
+				d.riders_list.append(rider.get_id())
+
+
 				## mise à jour de la trajectoire du rider
 				## new_mean : Mean_of_transportation,new_arr_time,new_dep_time,new_node_id : int
 				## on ajoute les temps d'arrivée et de départ de chaque node parcourue
@@ -257,7 +267,10 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 					wd 		= wd + w_chap_d
 					wt 		= wt + w_chap_t
 
-					
+					# add rider to d riders_list
+					d.riders_list.append(rider.get_id())
+
+
 					## mise à jour de la trajectoire du rider
 					## new_mean : Mean_of_transportation,new_arr_time,new_dep_time,new_node_id : int
 					## on ajoute les temps d'arrivée et de départ de chaque node parcourue

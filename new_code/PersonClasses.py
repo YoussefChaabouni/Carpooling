@@ -66,21 +66,16 @@ class Driver(User,Car):
         User.__init__(pos_depart, pos_arrivee, ID_user, born_time)
         Car.__init__(ID_car,Speed,max_capacity,current_capacity)    
         self.riders_list = riders_list
-        self.journey = [] # algorithm 1 will fill the journey
+        
 
     # ______________________Getters and setters ________________________________
     def get_riders_list(self):
         return self.riders_list
+    
+    
 
-    def get_journey(self):
-        return self.journey
 
-    def set_journey(self,new_journey):
-        self.journey = new_journey
 
-    # function to add a rider
-    def add_rider(self,rider: Rider):
-        self.riders_list.add(rider)
     
     
 
