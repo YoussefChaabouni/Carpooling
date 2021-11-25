@@ -25,11 +25,15 @@ for i in range(NUMBER_OF_STATIONS):
 G = Graph(NODES)
 
 # INITIALISATION DU DRIVER
-d = Driver(pos_depart=np.random.random()*TAILLE_DE_MAP, 
-		   pos_arrivee=np.random.random()*TAILLE_DE_MAP,
-		   ID_user = "D0",
-		   born_time = 0,
-    	   ID_car="C0",
-    	   Speed="40",
-    	   max_capacity=4,
-    	   current_capacity=0)
+d = Driver(pos_depart="MP0",
+	pos_arrivee="MP5",
+	ID_user = "D0",
+	born_time = 0,
+	ID_car="C0",
+	Speed=40,
+	max_capacity=4,
+	current_capacity=0,
+	riders_list=[],
+	trajectory=Trajectory())
+
+print(algorithm_1(d,G))

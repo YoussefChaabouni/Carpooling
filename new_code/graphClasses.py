@@ -13,7 +13,7 @@ class Node:
 
     #__________________________ REPRESENTATION ________________________
     def __repr__(self):
-        return repr((self.x_coordinate, self.y_coordinate))
+        return repr(self.id+" : ("+str(round(self.x_coordinate,2))+","+str(round(self.y_coordinate,2))+")")
 
     #____________________________ GETTERS AND SETTERS ___________________________________
     def get_id(self):
@@ -34,7 +34,7 @@ class Node:
         return type(self).__name__ == "Station"
     
     def isMeetingPoint(self):
-        return type(self).___name___ == "MeetingPoint"
+        return type(self).__name__ == "MeetingPoint"
       
 
 
@@ -78,7 +78,7 @@ class Graph:
     # get NODE from node_id
     def get_node(self,node_id):
         for node in self.node_list:
-            if node.get_id == node_id:
+            if node.get_id() == node_id:
                 return(node)
 
     # takes node
@@ -97,9 +97,10 @@ class Graph:
 
     
     def get_closest_MP_or_Station(self,origin,type_of_nodes):
-        
+
         #enlever l'origine de la liste de nodes
-        nodes = self.get_node_list().remove(origin)
+        nodes = self.get_node_list()
+        nodes.remove(origin)
 
         if type_of_nodes == "MPs":
             nodes = list(filter(lambda x : x.isMeetingPoint(),nodes))
@@ -111,26 +112,20 @@ class Graph:
         V = np.zeros((len(nodes),2))
 
         for i,n in enumerate(nodes):
-            V[i] = nodes.get_xy_coordinate()
+            V[i] = n.get_xy_coordinate()
 
-        argmin_node = np.argmin(np.linalg.norm(V - origin.get_xy_coordinate()))
+        argmin_node = np.argmin(np.linalg.norm(V - origin.get_xy_coordinate(),axis=1))
 
         return nodes[argmin_node]    
 
 
 class Trajectory(Graph):
 
-    def __init__(self,means_list,arr_time_list,dep_time_list,node_list):
-        self.means_list = means_list
+    def __init__(self,means_list=[],arr_time_list=[],dep_time_list=[],node_list=[]):
+        self.means_list    = means_list
         self.arr_time_list = arr_time_list
         self.dep_time_list = dep_time_list      
-        self.node_id_list = node_list #list of node IDs 
-
-    def __init__(self,user):
-        self.means_list = []
-        self.arr_time_list = []
-        self.node_id_list = []
-        self.dep_time_list = []
+        self.node_id_list  = node_list #list of node IDs 
     
     #_________________ GETTERS AND SETTERS ___________________
     def get_node_id_list(self):

@@ -7,7 +7,7 @@ from graphClasses import Trajectory
 class User:
 
     # Class constructor
-    def __init__(self,pos_depart:int, pos_arrivee:int, ID:int, born_time, trajectory:Trajectory):
+    def __init__(self,pos_depart, pos_arrivee, ID, born_time, trajectory):
         self.born_time = born_time
         self.id = ID
         self.pos_depart = pos_depart # ID de node d'origine
@@ -61,10 +61,9 @@ class Rider(User):
 class Driver(User,Car):
     
     #_______________ init ________________
-    def __init__(self, pos_depart, pos_arrivee, ID_user, born_time,
-    ID_car,Speed,max_capacity,current_capacity,riders_list=[]):
-        User.__init__(pos_depart, pos_arrivee, ID_user, born_time)
-        Car.__init__(ID_car,Speed,max_capacity,current_capacity)    
+    def __init__(self,pos_depart,pos_arrivee,ID_user,born_time,ID_car,Speed,max_capacity,current_capacity,riders_list,trajectory):
+        User.__init__(self,pos_depart, pos_arrivee, ID_user, born_time,trajectory)
+        Car.__init__(self,ID_car,Speed,max_capacity,current_capacity)    
         self.riders_list = riders_list
         self.journey = [] # algorithm 1 will fill the journey
 
