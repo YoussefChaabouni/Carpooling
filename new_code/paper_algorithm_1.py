@@ -35,7 +35,7 @@ def algorithm_1(d : Driver, graph : Graph):
 	delai = 1 # on suppose un délai d'une minute
 	arrival_time_m_org_d = t + Drive(org_d,m_org_d,graph,d.speed) ## arrivée à m_org_d
 	departure_time_m_org_d = arrival_time_m_org_d + delai # départ de m_org_d	
-	d.get_trajectory().update_trajectory(d,arrival_time_m_org_d,departure_time_m_org_d,m_org_d.get_id)
+	d.get_trajectory().update_trajectory(d,arrival_time_m_org_d,departure_time_m_org_d,m_org_d.get_id())
 	
 	r = np.random.randint(2)
 
@@ -49,7 +49,7 @@ def algorithm_1(d : Driver, graph : Graph):
 			# ajouter s_org_d à trajectory
 			arrival_time_s_org_d = departure_time_m_org_d + Drive(m_org_d,s_org_d,graph,d.speed) ## arrivée à s_org_d
 			departure_time_s_org_d = arrival_time_m_org_d + delai # départ de s_org_d	
-			d.get_trajectory().update_trajectory(d,arrival_time_s_org_d,departure_time_s_org_d,s_org_d.get_id)	
+			d.get_trajectory().update_trajectory(d,arrival_time_s_org_d,departure_time_s_org_d,s_org_d.get_id())	
 
 
 			if graph.get_distance(m_org_d,s_org_d) + graph.get_distance(s_org_d,s_dst_d) + graph.get_distance(s_org_d,m_dst_d) <= MAX_DETOUR_PERCENTAGE * graph.get_distance(m_org_d,m_dst_d):
@@ -59,7 +59,7 @@ def algorithm_1(d : Driver, graph : Graph):
 				# ajouter s_dst_d à trajectory
 				arrival_time_s_dst_d = departure_time_s_org_d + Drive(s_org_d,s_dst_d,graph,d.speed) ## arrivée à s_dst_d
 				departure_time_s_dst_d = arrival_time_m_org_d + delai # départ de s_dst_d	
-				d.get_trajectory().update_trajectory(d,arrival_time_s_dst_d,departure_time_s_dst_d,s_dst_d.get_id)
+				d.get_trajectory().update_trajectory(d,arrival_time_s_dst_d,departure_time_s_dst_d,s_dst_d.get_id())
 	
 	else:
 		# Try to add a detour close to the destination
@@ -70,7 +70,7 @@ def algorithm_1(d : Driver, graph : Graph):
 			# ajouter s_dst_d à trajectory
 			arrival_time_s_dst_d = departure_time_m_org_d + Drive(m_org_d,s_dst_d,graph,d.speed) ## arrivée à s_dst_d
 			departure_time_s_dst_d = arrival_time_m_org_d + delai # départ de s_dst_d	
-			d.get_trajectory().update_trajectory(d,arrival_time_s_dst_d,departure_time_s_dst_d,s_dst_d.get_id)
+			d.get_trajectory().update_trajectory(d,arrival_time_s_dst_d,departure_time_s_dst_d,s_dst_d.get_id())
 
 
 			if graph.get_distance(m_org_d,s_org_d) + graph.get_distance(s_org_d,s_dst_d) + graph.get_distance(s_org_d,m_dst_d) <= MAX_DETOUR_PERCENTAGE * graph.get_distance(m_org_d,m_dst_d):
@@ -80,7 +80,7 @@ def algorithm_1(d : Driver, graph : Graph):
 				# ajouter m_dst_d à trajectory
 				arrival_time_m_dst_d = departure_time_s_dst_d + Drive(s_dst_d,m_dst_d,graph,d.speed) ## arrivée à m_dst_d
 				departure_time_m_dst_d = arrival_time_m_dst_d + delai # départ de m_dst_d	
-				d.get_trajectory().update_trajectory(d,arrival_time_m_dst_d,departure_time_m_dst_d,m_dst_d.get_id)
+				d.get_trajectory().update_trajectory(d,arrival_time_m_dst_d,departure_time_m_dst_d,m_dst_d.get_id())
 
 	return J_d
 
