@@ -1,8 +1,9 @@
 import numpy as np
 
 from paper_algorithm_1 import algorithm_1
+from paper_algorithm_2 import algorithm_2
 from graphClasses import MeetingPoint, Station, Graph, Trajectory
-from PersonClasses import Driver
+from PersonClasses import Driver, Rider
 from helperFunctions import Drive
 
 NUMBER_OF_MPS = 10
@@ -12,12 +13,12 @@ TAILLE_DE_MAP = 1000 # en mètres
 # CREATION DES NODES
 NODES = []
 x,y = np.random.random((2,NUMBER_OF_MPS)) * TAILLE_DE_MAP
-print(x,y)
+#print(x,y)
 for i in range(NUMBER_OF_MPS):
 	NODES.append(MeetingPoint(ID="MP"+str(i),x_coord=x[i], y_coord=y[i]))
 
 x,y = np.random.random((2,NUMBER_OF_STATIONS)) * TAILLE_DE_MAP
-print(x,y)
+#print(x,y)
 for i in range(NUMBER_OF_STATIONS):
 	NODES.append(Station(ID="S"+str(i),x_coord=x[i], y_coord=y[i]))
 
@@ -36,4 +37,11 @@ d = Driver(pos_depart="MP0",
 	riders_list=[],
 	trajectory=Trajectory())
 
-print(algorithm_1(d,G))
+rider = Rider(pos_depart = "MP0",
+	pos_arrivee="MP5",
+	ID="R0",
+	born_time=2)
+journey = algorithm_1(d,G)
+d.set_journey(journey)
+print(d.get_journey())
+print(algorithm_2(rider,d,m_board=NODES[0], m_out=NODES[5], graph=G))

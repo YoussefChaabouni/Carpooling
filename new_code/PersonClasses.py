@@ -37,7 +37,7 @@ class User:
 class Rider(User):
 
     def __init__(self, pos_depart, pos_arrivee, ID, born_time):
-        super().__init__(pos_depart, pos_arrivee, ID, born_time)
+        super().__init__(self,pos_depart, pos_arrivee, ID, born_time)
         self.waiting_time = 0
         self.walking_distance = 0
     
@@ -63,7 +63,7 @@ class Driver(User,Car):
     #_______________ init ________________
     def __init__(self,pos_depart,pos_arrivee,ID_user,born_time,ID_car,Speed,max_capacity,current_capacity,riders_list,trajectory):
         User.__init__(self,pos_depart, pos_arrivee, ID_user, born_time,trajectory)
-        Car.__init__(self,ID_car,Speed,max_capacity,current_capacity)    
+        Car.__init__(self,ID_car,Speed,max_capacity,current_capacity)
         self.riders_list = riders_list
         self.journey = [] # algorithm 1 will fill the journey
 
