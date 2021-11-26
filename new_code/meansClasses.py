@@ -30,7 +30,7 @@ class Mean_of_transportation:
 class Car(Mean_of_transportation):
 
     #_________________CLASS CONSTRUCTOR__________________________
-    def __init__(self, ID, Speed,max_capacity,current_capacity):
+    def __init__(self, ID, Speed=40,max_capacity=4,current_capacity=4):
         super().__init__(ID, Speed)
         self.max_capacity = max_capacity
         self.current_capacity = current_capacity
@@ -56,7 +56,7 @@ class Car(Mean_of_transportation):
     
 class Train(Mean_of_transportation):
          #_________________CLASS CONSTRUCTOR__________________________
-    def __init__(self, ID, Speed,max_capacity,current_capacity):
+    def __init__(self, ID, Speed=80,max_capacity=1000,current_capacity=1000):
         super().__init__(ID, Speed)
         self.max_capacity = max_capacity
         self.current_capacity = current_capacity
@@ -86,6 +86,6 @@ class Train(Mean_of_transportation):
 class Foot(Mean_of_transportation):
 
     ##___________________ CLASS CONSTRUCTOR ________________________
-    def __init__(self, ID, Speed):
+    def __init__(self, ID, Speed=5):
         super().__init__(ID, Speed)
 
