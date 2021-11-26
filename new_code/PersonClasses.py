@@ -36,10 +36,10 @@ class User:
 
 class Rider(User):
 
-    def __init__(self, pos_depart, pos_arrivee, ID, born_time):
-        super().__init__(self,pos_depart, pos_arrivee, ID, born_time)
-        self.waiting_time = 0
-        self.walking_distance = 0
+    def __init__(self, pos_depart, pos_arrivee, ID, born_time,trajectory,waiting_time = 0,walking_distance = 0):
+        User.__init__(self,pos_depart, pos_arrivee, ID, born_time,trajectory)
+        self.waiting_time = waiting_time
+        self.walking_distance = walking_distance
     
     ###### UPDATE WALKING AND WAITING TIMES ##########
     def update_waiting_time(self, waiting_duration):

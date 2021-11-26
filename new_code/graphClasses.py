@@ -58,7 +58,7 @@ class Station(MeetingPoint):
 class Graph:
     
     #____________________________CONSTRUCTOR CLASSES _______________________________________
-    def __init__(self,node_list=[],circuity=1.2):
+    def __init__(self,node_list,circuity=1.2):
         self.node_list = node_list
         self.circuity = circuity
 
