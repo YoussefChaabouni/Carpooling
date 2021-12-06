@@ -1,3 +1,11 @@
+"""
+Ce fichier permet de générer automatiquement un scénario de simulation
+Il comprend donc la création de 4 fichiers :
+	- les paramètres des Meeting Points (Meeting_Points.csv)
+	- les paramètres des Stations (Stations.csv)
+	- les paramètres des Drivers (Drivers.csv)
+	- les paramètres des Riders (Riders.csv)
+"""
 import pandas as pd
 import numpy as np
 
