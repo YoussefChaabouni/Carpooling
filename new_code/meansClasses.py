@@ -30,7 +30,7 @@ class Mean_of_transportation:
 class Car(Mean_of_transportation):
 
     #_________________CLASS CONSTRUCTOR__________________________
-    def __init__(self, ID, Speed=40,max_capacity=4,current_capacity=4):
+    def __init__(self, ID, Speed=40,max_capacity=4,current_capacity=[]):
         super().__init__(ID, Speed)
         self.max_capacity = max_capacity
         self.current_capacity = current_capacity

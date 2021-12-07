@@ -23,12 +23,15 @@ def algorithm_2(z,z_prime,t, d:Driver, m_board:MeetingPoint, m_out:MeetingPoint,
 	print(z=="MP0")
 	print(graph.get_node(z))
 
+	print("idx_board = ",idx_board)
+	print("idx_out = ",idx_out)
 	# check the capacity in all stops between m_board and m_out
-	for i in range(idx_board,idx_out):
-		if d.get_current_capacity()[i] <= 0:
-			print( "pas assez de place dans la voiture")
+	if idx_board < len(d.get_current_capacity()) and idx_out < len(d.get_current_capacity()):
+		for i in range(idx_board,idx_out+1):
+			if d.get_current_capacity()[i] == 0:
+				print( "pas assez de place dans la voiture")
 	
-	t_prime = t + walk(graph.get_node(z),graph.get_node(m_board),graph,5)
+	t_prime = t + walk(graph.get_node(z),graph.get_node(m_board),graph,5/60)
 	walk_distance = graph.get_distance(graph.get_node(z),graph.get_node(m_board))
 	
 	

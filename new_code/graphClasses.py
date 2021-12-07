@@ -43,15 +43,23 @@ class MeetingPoint(Node):
     def __init__(self,ID, x_coord, y_coord):
         super().__init__(ID,x_coord, y_coord)
 
+
+
 class Station(MeetingPoint):
 
     #___________________________________________ CLASS CONSTRUCTOR______________________________________________
-    def __init__(self,ID,x_coord, y_coord):
+    def __init__(self,ID,x_coord, y_coord,liste_gauche=[],liste_droite=[]):
         super().__init__(ID,x_coord, y_coord)
-
+        self.liste_gauche = liste_gauche
+        self.liste_droite = liste_droite
         #gauche = np.linspace(1,1000,ecart_de_temps)
         #droite = [3, 5, 7, ..., 1001] #
+    
+    def get_liste_gauche(self):
+        return self.liste_gauche
 
+    def get_liste_droite(self):
+        return self.liste_droite
 
 
 
@@ -100,6 +108,8 @@ class Graph:
 
         #enlever l'origine de la liste de nodes
         nodes = self.get_node_list()
+        #print("Le MP à enlever est = ",origin.get_id())
+        #print("la liste de nodes est = ",nodes)
         nodes.remove(origin)
 
         if type_of_nodes == "MPs":

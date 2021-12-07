@@ -45,6 +45,7 @@ def algorithm_1(d : Driver, graph : Graph):
 	# vérifier si la destination n'est pas le mp_org le plus proche
 	if m_org_d == dst_d :
 		J_d = [org_d,dst_d]
+		
 	else:
 		if r == 1:
 			# Try to add a detour close to the origin
