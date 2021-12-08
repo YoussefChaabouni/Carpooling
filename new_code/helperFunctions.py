@@ -45,13 +45,13 @@ def get_timetable(graph : Graph,vitesse_train : int,list_ids_stations,number_of_
     list_of_distances = np.array([0] + [graph.get_distance(graph.get_node(list_ids_stations[i]),graph.get_node(list_ids_stations[i+1])) for i in range(len(list_ids_stations)-1)])
     list_times = list_of_distances / vitesse_train
 
-    print("list of distances = ",list_of_distances)
-    print("list id stations = ",list_ids_stations)
+    #print("list of distances = ",list_of_distances)
+    #print("list id stations = ",list_ids_stations)
 
     list_times_cumulated = [np.sum(list_times[:i+1]) for i in range(list_times.shape[0])]
     train_times = np.array(list_times_cumulated*number_of_trains_per_sim).reshape(-1,list_times.shape[0])
     train_times_gauche = train_times + np.array([i*5 for i in range(number_of_trains_per_sim)]).reshape(number_of_trains_per_sim,-1)
     train_times_droite = train_times_gauche[:,-1:] - train_times
 
-    print("list times c = ",list_times_cumulated)
+    #print("list times c = ",list_times_cumulated)
     return train_times_gauche , train_times_droite

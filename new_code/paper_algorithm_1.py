@@ -19,7 +19,7 @@ def algorithm_1(d : Driver, graph : Graph):
 	t = d.get_born_time()
 	# prendre les nodes d'arrivée et de départ
 	org_d = graph.get_node(d.pos_depart)
-	print(" class of d_org in alg1 = ",type(org_d))
+	#print(" class of d_org in alg1 = ",type(org_d))
 	dst_d = graph.get_node(d.pos_arrivee)
 
 	# prendre les meeting points les plus proches

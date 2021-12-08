@@ -13,7 +13,7 @@ from helperFunctions import Drive
 
 NUMBER_OF_MPS = 10
 NUMBER_OF_STATIONS = 5
-TAILLE_DE_MAP = 5 # en km
+TAILLE_DE_MAP = 3 # en km
 
 # CREATION DES NODES
 NODES = []
@@ -58,7 +58,7 @@ for i in range(len(list_id_stations)):
 #print("liste gauche de S0 = ",G.get_node(list_id_stations[0]).liste_gauche)
 
 print("graph of this many nodes = ",len(G.node_list))
-
+'''
 # INITIALISATION DU DRIVER
 d = Driver(pos_depart="MP0",
 	pos_arrivee="MP5",
@@ -87,86 +87,64 @@ d1 = Driver(pos_depart="MP1",
 d1.trajectory = Trajectory(means_list=[d1],arr_time_list=[d1.born_time],dep_time_list=[d1.born_time],node_list=[d1.pos_depart])
 
 '''
-rider = Rider(pos_depart = "MP0",
-	pos_arrivee="MP5",
-	ID="R0",
-	born_time=2,
-	trajectory=Trajectory(),
-	waiting_time =0,
-	walking_distance = 0
-	)
-'''
-r = Rider(pos_depart = "MP0",pos_arrivee = "MP5",ID = "R0",born_time=0,trajectory=Trajectory())
-r.trajectory = Trajectory(means_list=[Foot(Speed=5,ID="init "+r.get_id())],arr_time_list=[r.born_time],dep_time_list=[r.born_time],node_list=[r.pos_depart])
+# try out many drivers
+drivers = []
+for i in range(50):
 
-journey = algorithm_1(d,G)
-d.set_journey(journey)
+    # generate random origin, destination and born time
+    random_born_time = np.random.randint(0,20)
+    n_org = np.random.randint(0,NUMBER_OF_MPS-1)
+    n_dest = n_org
+    while n_dest == n_org :
+        n_dest = np.random.randint(0,NUMBER_OF_MPS-1)
 
-journey = algorithm_1(d1,G)
-d1.set_journey(journey)
+    # initialise drivers
+    d = Driver(pos_depart="MP"+str(n_org),
+	pos_arrivee="MP"+str(n_dest),
+	ID_user = "D"+str(i),
+	born_time = random_born_time,
+	ID_car="C"+str(i),
+	Speed=40/60,
+	max_capacity=4,
+	current_capacity=[],
+	riders_list=[],
+	trajectory=Trajectory())
 
-liste3 = d.get_journey()
-new_list = []
+    d.trajectory = Trajectory(means_list=[d],arr_time_list=[d.born_time],dep_time_list=[d.born_time],node_list=[d.pos_depart])
 
-for i in liste3 :
-	if i not in new_list:
+    drivers.append(d)
 
-		new_list.append(i)
-#print("_______________________________TIME TABLES_________________________________")
-#print("gauche = ",timetable_gauche)
-#print("droite = ",timetable_droite)
+
+riders_list = []
+for j in range(3):
+
+	random_born_time = np.random.randint(0,20)
+	n_org = np.random.randint(0,NUMBER_OF_MPS-1)
+	n_dest = n_org
+	while n_dest == n_org :
+		n_dest = np.random.randint(0,NUMBER_OF_MPS-1)
+
+	r = Rider(pos_depart = "MP"+str(n_org),pos_arrivee = "MP"+str(n_dest),ID = "R"+str(j),born_time=random_born_time,trajectory=Trajectory())
+	r.trajectory = Trajectory(means_list=[Foot(Speed=5/60,ID="init "+r.get_id())],arr_time_list=[r.born_time],dep_time_list=[r.born_time],node_list=[r.pos_depart])
+	riders_list.append(r)
 
 
 
 #print(new_list)
 print("___________________ALGORITHM 1_________________________________")
-print("trajectory of d = ",d.get_trajectory().node_id_list)
-print("trajectory of d1 = ",d1.get_trajectory().node_id_list)
 
-#print(d.get_journey())
+for d in drivers :
+    journey = algorithm_1(d,G)
+    d.set_journey(journey)
+    print("trajectory of ",d.get_id()," = ",d.get_trajectory().node_id_list)
 
+for r in riders_list:
+	print("______________________CURRENT SYSTEM_________________________________")
+	print("___________________FOR RIDER : ",r.get_id(),"_________________________")
+	print(current_system(r,drivers,G))
 
-#print("departure times of d = ",d.get_trajectory().dep_time_list)
-'''
-print("____________________2_________________")
-
-
-z = r.pos_depart
-z_prime=r.pos_arrivee
-t=r.born_time
-
-
-print(algorithm_2(z ,z_prime,t, d = d, m_board = d.get_pos_depart(), m_out = "MP5", graph=G))
-print("graph post algo 2 = ",G.node_list)
-
-print("_____________________3________________")
-# algo 3
-
-print(algorithm_3(drivers = [d],rider = r,graph = G))
-
-print('rider trajectory = ',r.get_trajectory().node_id_list)
-print("arrival times of rider = ",r.get_trajectory().arr_time_list)
-print("waiting time of rider = ",r.waiting_time)
-print("walking distance of rider = ",r.walking_distance)
-print("graph post algo 3 = ",G.node_list)
-
-print("____________4________________________")
-
-drivers = [d,d1]
-t_prime = algorithm_4(drivers,r,G)
-print("t_prime = ",t_prime)
-print('rider trajectory = ',r.get_trajectory().node_id_list)
-print("arrival times of rider = ",r.get_trajectory().arr_time_list)
-print("waiting time of rider = ",r.waiting_time)
-print("walking distance of rider = ",r.walking_distance)
-print("graph post algo 4 = ",G.node_list)
-'''
-print("______________________CURRENT SYSTEM_________________________________")
-drivers = [d,d1]
-print(current_system(r,drivers,G))
-
-print("____________RIDER INFORMATION POST CURRENT SYSTEM______________________")
-print('rider trajectory = ',r.get_trajectory().node_id_list)
-print("arrival times of rider = ",r.get_trajectory().arr_time_list)
-print("waiting time of rider = ",r.waiting_time)
-print("walking distance of rider = ",r.walking_distance)
+	print("____________RIDER INFORMATION POST CURRENT SYSTEM______________________")
+	print('rider trajectory = ',r.get_trajectory().node_id_list)
+	print("arrival times of rider = ",r.get_trajectory().arr_time_list)
+	print("waiting time of rider = ",r.waiting_time)
+	print("walking distance of rider = ",r.walking_distance)
