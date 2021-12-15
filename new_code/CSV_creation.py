@@ -12,12 +12,12 @@ import numpy as np
 
 # CONSTANTES
 #-------------------------------------------#
-NUMBER_OF_MPS      = 10
-NUMBER_OF_STATIONS = 3
-NUMBER_OF_DRIVERS  = 10
-NUMBER_OF_RIDERS   = 10
-TAILLE_DE_MAP      = 1000  # en mètres
-DUREE_DE_SIM       = 10800 # en secondes (3 heures)
+NUMBER_OF_MPS      = 50
+NUMBER_OF_STATIONS = 10
+NUMBER_OF_DRIVERS  = 500
+NUMBER_OF_RIDERS   = 1000
+TAILLE_DE_MAP      = 10  # en km
+DUREE_DE_SIM       = 180 # en minutes (3 heures)
 #-------------------------------------------#
 
 
@@ -45,7 +45,7 @@ DF_D = pd.DataFrame(IDs, columns = ["IDs"])
 
 DF_D[["pos_depart","pos_arrivee"]] = ""
 DF_D[["pos_depart","pos_arrivee"]] = DF_D[["pos_depart","pos_arrivee"]].apply(lambda x : x+DF_graph_MPS.sample(n=2)["IDs"].values,axis=1)
-DF_D["born_time"] = np.random.randint(DUREE_DE_SIM, size=NUMBER_OF_DRIVERS)
+DF_D["born_time"] = np.random.randint(60, size=NUMBER_OF_DRIVERS)
 
 
 # CREATION DES RIDERS
@@ -56,7 +56,7 @@ DF_R = pd.DataFrame(IDs, columns = ["IDs"])
 
 DF_R[["pos_depart","pos_arrivee"]] = ""
 DF_R[["pos_depart","pos_arrivee"]] = DF_R[["pos_depart","pos_arrivee"]].apply(lambda x : x+DF_graph_MPS.sample(n=2)["IDs"].values,axis=1)
-DF_R["born_time"] = np.random.randint(DUREE_DE_SIM, size=NUMBER_OF_RIDERS)
+DF_R["born_time"] = np.random.randint(20, size=NUMBER_OF_RIDERS)
 
 DF_graph_MPS.to_csv('CSVs/Meeting_Points.csv')
 DF_graph_S.to_csv('CSVs/Stations.csv')

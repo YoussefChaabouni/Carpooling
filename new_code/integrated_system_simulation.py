@@ -13,6 +13,7 @@ from paper_algorithm_2 import algorithm_2
 from graphClasses import MeetingPoint, Station, Graph, Trajectory
 from PersonClasses import Driver, Rider
 from helperFunctions import Drive
+from Integrated_system import integrated_system
 import time
 
 
@@ -100,34 +101,42 @@ transit = 0
 no_solution = 0
 integrated = 0
 
-print("______________________CURRENT SYSTEM_________________________________")
 for r in RIDERS:
-	
-	print("___________________FOR RIDER : ",r.get_id(),"_________________________")
-	solution = current_system(r,DRIVERS,G)[1]
+    print("______________________CURRENT SYSTEM_________________________________")
+    print("___________________FOR RIDER : ",r.get_id(),"_________________________")
+    solution = integrated_system(r,DRIVERS,G)[1]
 
-	print("____________RIDER INFORMATION POST CURRENT SYSTEM______________________")
-	print('rider trajectory = ',r.get_trajectory().node_id_list)
-	print("arrival times of rider = ",r.get_trajectory().arr_time_list)
-	print("waiting time of rider = ",r.waiting_time)
-	print("walking distance of rider = ",r.walking_distance)
+    print("____________RIDER INFORMATION POST CURRENT SYSTEM______________________")
+    print('rider trajectory = ',r.get_trajectory().node_id_list)
+    print("arrival times of rider = ",r.get_trajectory().arr_time_list)
+    print("waiting time of rider = ",r.waiting_time)
+    print("walking distance of rider = ",r.walking_distance)
 
-	if solution == "carpooling":
-		carpooling +=1
-	if solution == "transit":
-		transit += 1
-	if solution == "foot":
-		foot += 1
-	if solution == "no solution":
-		no_solution +=1
-	if solution == "integrated":
-		integrated += 1
+    if solution == "carpooling":
+        carpooling +=1
+    if solution == "transit":
+        transit += 1
+    if solution == "foot":
+        foot += 1
+    if solution == "no solution":
+        no_solution +=1
+    if solution == "integrated":
+        integrated +=1
 
 carpooling = carpooling / NUMBER_OF_RIDERS
 foot = foot / NUMBER_OF_RIDERS
 transit = transit / NUMBER_OF_RIDERS
 no_solution = no_solution / NUMBER_OF_RIDERS
+integrated = integrated / NUMBER_OF_RIDERS
 
+end = time.time()
+
+print("TIME OF SIMULATION = ",end - start)
+print("carpooling ratio = ",carpooling*100,"%")
+print("foot ratio = ",foot*100,"%")
+print("transit ratio = ",transit*100,"%")
+print("integrated ratio = ",integrated*100,"%")
+print("no solution ratio = ",no_solution*100,"%")
 end = time.time()
 
 from matplotlib import pyplot as plt
@@ -151,12 +160,12 @@ plt.show()
 #fig, ax = plt.subplots(figsize=(8, 4), subplot_kw=dict(aspect="equal"))
 
 labels = ['CARPOOLING', 'FOOT',
-        'TRANSIT', 'NO SOLUTION']
+        'TRANSIT','INTEGRATED', 'NO SOLUTION']
 
-data = [carpooling*100, foot*100, transit*100,no_solution*100]
+data = [carpooling*100, foot*100, transit*100,integrated*100,no_solution*100]
 
 
-explode = (0, 0, 0, 0) 
+explode = (0, 0, 0, 0, 0) 
 
 fig1, ax1 = plt.subplots(figsize=(10, 7))
 ax1.pie(data, explode=explode, labels=labels, autopct='%1.1f%%',

@@ -2,6 +2,7 @@ import numpy as np
 from meansClasses import Foot
 from helperFunctions import get_timetable
 from current_system import current_system
+from Integrated_system import integrated_system
 from paper_algorithm_4 import algorithm_4
 from paper_algorithm_3 import algorithm_3
 
@@ -91,7 +92,7 @@ d1.trajectory = Trajectory(means_list=[d1],arr_time_list=[d1.born_time],dep_time
 '''
 # try out many drivers
 drivers = []
-for i in range(500):
+for i in range(50):
 
     # generate random origin, destination and born time
     random_born_time = np.random.randint(0,60)
@@ -118,7 +119,7 @@ for i in range(500):
 
 
 riders_list = []
-NUMBER_OF_RIDERS = 1000
+NUMBER_OF_RIDERS = 10
 for j in range(NUMBER_OF_RIDERS):
 
 	random_born_time = np.random.randint(0,20)
@@ -145,32 +146,36 @@ carpooling = 0
 foot = 0
 transit = 0
 no_solution = 0
+integrated = 0
 
 
 for r in riders_list:
-	print("______________________CURRENT SYSTEM_________________________________")
-	print("___________________FOR RIDER : ",r.get_id(),"_________________________")
-	solution = current_system(r,drivers,G)[1]
+    print("______________________CURRENT SYSTEM_________________________________")
+    print("___________________FOR RIDER : ",r.get_id(),"_________________________")
+    solution = integrated_system(r,drivers,G)[1]
 
-	print("____________RIDER INFORMATION POST CURRENT SYSTEM______________________")
-	print('rider trajectory = ',r.get_trajectory().node_id_list)
-	print("arrival times of rider = ",r.get_trajectory().arr_time_list)
-	print("waiting time of rider = ",r.waiting_time)
-	print("walking distance of rider = ",r.walking_distance)
+    print("____________RIDER INFORMATION POST CURRENT SYSTEM______________________")
+    print('rider trajectory = ',r.get_trajectory().node_id_list)
+    print("arrival times of rider = ",r.get_trajectory().arr_time_list)
+    print("waiting time of rider = ",r.waiting_time)
+    print("walking distance of rider = ",r.walking_distance)
 
-	if solution == "carpooling":
-		carpooling +=1
-	if solution == "transit":
-		transit += 1
-	if solution == "foot":
-		foot += 1
-	if solution == "no solution":
-		no_solution +=1
+    if solution == "carpooling":
+        carpooling +=1
+    if solution == "transit":
+        transit += 1
+    if solution == "foot":
+        foot += 1
+    if solution == "no solution":
+        no_solution +=1
+    if solution == "integrated":
+        integrated +=1
 
 carpooling = carpooling / NUMBER_OF_RIDERS
 foot = foot / NUMBER_OF_RIDERS
 transit = transit / NUMBER_OF_RIDERS
 no_solution = no_solution / NUMBER_OF_RIDERS
+integrated = integrated / NUMBER_OF_RIDERS
 
 end = time.time()
 
@@ -178,6 +183,7 @@ print("TIME OF SIMULATION = ",end - start)
 print("carpooling ratio = ",carpooling*100,"%")
 print("foot ratio = ",foot*100,"%")
 print("transit ratio = ",transit*100,"%")
+print("integrated ratio = ",integrated*100,"%")
 print("no solution ratio = ",no_solution*100,"%")
 
 from matplotlib import pyplot as plt
@@ -186,9 +192,9 @@ import numpy as np
  
 # Creating dataset
 labels = ['CARPOOLING', 'FOOT',
-        'TRANSIT', 'NO SOLUTION']
+        'TRANSIT','INTEGRATED', 'NO SOLUTION']
  
-data = [carpooling*100, foot*100, transit*100,no_solution*100]
+data = [carpooling*100, foot*100, transit*100,integrated*100,no_solution*100]
  
 # Creating plot
 fig = plt.figure(figsize =(10, 7))
