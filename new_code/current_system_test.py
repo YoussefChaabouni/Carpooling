@@ -2,6 +2,8 @@ import numpy as np
 from meansClasses import Foot
 from helperFunctions import get_timetable
 from current_system import current_system
+from statistics import vehicle_maximum_occupancy
+from statistics import average_walking_and_waiting_time
 from paper_algorithm_4 import algorithm_4
 from paper_algorithm_3 import algorithm_3
 
@@ -118,7 +120,7 @@ for i in range(500):
 
 
 riders_list = []
-NUMBER_OF_RIDERS = 1000
+NUMBER_OF_RIDERS = 100
 for j in range(NUMBER_OF_RIDERS):
 
 	random_born_time = np.random.randint(0,20)
@@ -172,9 +174,7 @@ foot = foot / NUMBER_OF_RIDERS
 transit = transit / NUMBER_OF_RIDERS
 no_solution = no_solution / NUMBER_OF_RIDERS
 
-end = time.time()
 
-print("TIME OF SIMULATION = ",end - start)
 print("carpooling ratio = ",carpooling*100,"%")
 print("foot ratio = ",foot*100,"%")
 print("transit ratio = ",transit*100,"%")
@@ -196,3 +196,14 @@ plt.pie(data, labels = labels)
  
 # show plot
 plt.show()
+
+max_list = vehicle_maximum_occupancy(drivers,system = "Current")
+print(max_list)
+
+average_walking , average_waiting = average_walking_and_waiting_time(riders_list,system="Current")
+print(average_walking)
+print(average_waiting)
+end = time.time()
+
+print("TIME OF SIMULATION = ",end - start)
+

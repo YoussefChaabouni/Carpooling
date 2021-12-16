@@ -45,6 +45,7 @@ def algorithm_1(d : Driver, graph : Graph):
 	# vérifier si la destination n'est pas le mp_org le plus proche
 	if m_org_d == dst_d :
 		J_d = [org_d,dst_d]
+		d.set_current_capacity([4]*len(J_d))
 		
 	else:
 		if r == 1:
@@ -106,6 +107,6 @@ def algorithm_1(d : Driver, graph : Graph):
 		departure_time = arrival_time 
 		d.get_trajectory().update_trajectory(d,arrival_time,departure_time,dst_d.get_id())
 
-		d.set_current_capacity([4]*len(J_d))
+	d.set_current_capacity([4]*len(J_d))
 	return J_d
 

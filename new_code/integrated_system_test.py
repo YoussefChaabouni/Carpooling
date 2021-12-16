@@ -3,6 +3,7 @@ from meansClasses import Foot
 from helperFunctions import get_timetable
 from current_system import current_system
 from Integrated_system import integrated_system
+from statistics import vehicle_maximum_occupancy, average_walking_and_waiting_time
 from paper_algorithm_4 import algorithm_4
 from paper_algorithm_3 import algorithm_3
 
@@ -92,7 +93,7 @@ d1.trajectory = Trajectory(means_list=[d1],arr_time_list=[d1.born_time],dep_time
 '''
 # try out many drivers
 drivers = []
-for i in range(50):
+for i in range(500):
 
     # generate random origin, destination and born time
     random_born_time = np.random.randint(0,60)
@@ -119,7 +120,7 @@ for i in range(50):
 
 
 riders_list = []
-NUMBER_OF_RIDERS = 10
+NUMBER_OF_RIDERS = 300
 for j in range(NUMBER_OF_RIDERS):
 
 	random_born_time = np.random.randint(0,20)
@@ -202,3 +203,11 @@ plt.pie(data, labels = labels)
  
 # show plot
 plt.show()
+
+
+max_list = vehicle_maximum_occupancy(drivers,system = "Integrated")
+print(max_list)
+
+average_walking , average_waiting = average_walking_and_waiting_time(riders_list,system="Current")
+print(average_walking)
+print(average_waiting)

@@ -37,7 +37,7 @@ def integrated_system(rider : Rider,drivers : List[Driver],graph: Graph):
     solution = "no solution"
     
     solution_encoding = ["foot","carpooling","transit","integrated"]
-    print("CURRENT SYSTEM RESULTS :")
+    print("INTEGRATED SYSTEM RESULTS :")
     print("_______ESTIMATIONS_________________")
     t_foot_prime = walk(graph.get_node(rider.pos_depart),graph.get_node(rider.pos_arrivee),graph,5/60)
     t_carpool = check_algorithm_3(drivers = drivers ,rider =rider ,graph = graph )

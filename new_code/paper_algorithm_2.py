@@ -15,6 +15,7 @@ def algorithm_2(z,z_prime,t, d:Driver, m_board:MeetingPoint, m_out:MeetingPoint,
 	t_arrivee = np.inf
 	t_waiting = np.inf
 	walk_distance = np.inf
+	t_prime = np.Infinity
 
 	# check if there is a seat available
 	idx_board = d.get_trajectory().node_id_list.index(m_board)
@@ -28,8 +29,10 @@ def algorithm_2(z,z_prime,t, d:Driver, m_board:MeetingPoint, m_out:MeetingPoint,
 	# check the capacity in all stops between m_board and m_out
 	if idx_board < len(d.get_current_capacity()) and idx_out < len(d.get_current_capacity()):
 		for i in range(idx_board,idx_out+1):
-			if d.get_current_capacity()[i] == 0:
+			if d.get_current_capacity()[i] <= 0:
 				print( "there's no place in driver's ",d.get_id()," car")
+				
+				return t_prime,t_waiting,walk_distance
 	
 	t_prime = t + walk(graph.get_node(z),graph.get_node(m_board),graph,5/60)
 	walk_distance = graph.get_distance(graph.get_node(z),graph.get_node(m_board))

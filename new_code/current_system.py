@@ -122,6 +122,8 @@ def current_system(rider : Rider,drivers : List[Driver],graph: Graph):
             rider.get_trajectory().update_trajectory(Foot(ID="walk to destination "+r_dst.get_id(),Speed=5/60),arrival_time_destination,arrival_time_destination,r_dst.get_id())
      
         if solution == "carpooling":
+            algorithm_3(drivers,rider,graph)
+            '''
             print("the rider chooses carpooling")
             # the updates are already in algorithm 3 
             #algorithm_3(drivers,rider,graph)
@@ -129,12 +131,12 @@ def current_system(rider : Rider,drivers : List[Driver],graph: Graph):
 
             m_r_org = graph.get_closest_MP_or_Station(r_org,"MPs").get_id()
             m_r_dest = graph.get_closest_MP_or_Station(r_dst,"MPs").get_id()
-            '''
+            
             Le rider va :
             - marcher jusqu'au meeting point m_r_org
             - prendre une voiture jusqu'à m_r_dest
             - marcher jusqu'à r_dest
-            '''
+            
             arrival_time_m_r_org = rider.born_time + walk(r_org,graph.get_node(m_r_org),graph,5/60) # arrivée à m_r_org
             departure_time_m_r_org = arrival_time_m_r_org + rider.waiting_time #départ de m_r_org
             arrival_time_m_r_dest = departure_time_m_r_org + Drive(graph.get_node(m_r_org),graph.get_node(m_r_dest),graph,40/60) # arrivée à m_r_dest
@@ -148,7 +150,7 @@ def current_system(rider : Rider,drivers : List[Driver],graph: Graph):
             rider.get_trajectory().update_trajectory(Foot(ID = r_dst.get_id(),Speed=5),arrival_time_r_dest,departure_time_r_dest,r_dst.get_id())
 
             # update driver's capacity
-            '''
+            
             if best_driver != None:
                 
                 idx_board = best_driver.get_trajectory().node_id_list.index(best_m_d_org)

@@ -5,6 +5,7 @@ from helperFunctions import get_timetable
 from current_system import current_system
 from CSV_creation import DUREE_DE_SIM
 from CSV_creation import NUMBER_OF_RIDERS
+from statistics import vehicle_maximum_occupancy
 from paper_algorithm_4 import algorithm_4
 from paper_algorithm_3 import algorithm_3
 
@@ -102,11 +103,11 @@ no_solution = 0
 integrated = 0
 
 for r in RIDERS:
-    print("______________________CURRENT SYSTEM_________________________________")
+    print("______________________INTEGRATED SYSTEM_________________________________")
     print("___________________FOR RIDER : ",r.get_id(),"_________________________")
     solution = integrated_system(r,DRIVERS,G)[1]
 
-    print("____________RIDER INFORMATION POST CURRENT SYSTEM______________________")
+    print("____________RIDER INFORMATION POST INTEGRATED SYSTEM______________________")
     print('rider trajectory = ',r.get_trajectory().node_id_list)
     print("arrival times of rider = ",r.get_trajectory().arr_time_list)
     print("waiting time of rider = ",r.waiting_time)
@@ -174,3 +175,6 @@ ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 plt.legend()
 
 plt.show()
+
+max_list = vehicle_maximum_occupancy(DRIVERS,system = "Integrated")
+print(max_list)

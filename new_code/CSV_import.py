@@ -5,6 +5,7 @@ from helperFunctions import get_timetable
 from current_system import current_system
 from CSV_creation import DUREE_DE_SIM
 from CSV_creation import NUMBER_OF_RIDERS
+from statistics import vehicle_maximum_occupancy
 from paper_algorithm_4 import algorithm_4
 from paper_algorithm_3 import algorithm_3
 
@@ -66,7 +67,7 @@ for index,i in enumerate(DF_D.values):
 				ID_car="C"+str(index),     # TODO : modifier si cela crée des bugs
 				Speed=40/60,
 				max_capacity=4,
-				current_capacity=0,
+				current_capacity=[],
 				riders_list=[],
 				trajectory=Trajectory())
 	d.trajectory = Trajectory(means_list=[d],arr_time_list=[i[3]],dep_time_list=[i[3]],node_list=[i[1]])
@@ -165,3 +166,7 @@ ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 plt.legend()
 
 plt.show()
+
+
+max_list = vehicle_maximum_occupancy(DRIVERS,system = "Current")
+print(max_list)
