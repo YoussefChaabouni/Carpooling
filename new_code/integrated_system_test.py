@@ -208,6 +208,6 @@ plt.show()
 max_list = vehicle_maximum_occupancy(drivers,system = "Integrated")
 print(max_list)
 
-average_walking , average_waiting = average_walking_and_waiting_time(riders_list,system="Current")
+average_walking , average_waiting = average_walking_and_waiting_time(riders_list,system="Integrated")
 print(average_walking)
 print(average_waiting)

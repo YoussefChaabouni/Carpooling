@@ -60,7 +60,7 @@ def average_walking_and_waiting_time(RIDERS : List[Rider],system : str):
     
     ax = fig.add_axes([0,0,1,1])
    
-    ax.set_yticks(np.arange(0,30,10))
+    ax.set_yticks(np.arange(0,30,1))
     ax.bar(X + 0.00, data[0], color = 'b', width = 0.1)
     ax.bar(X + 0.25, data[1], color = 'r', width = 0.1)
     ax.legend(labels=["average walking distance","average waiting time"])
