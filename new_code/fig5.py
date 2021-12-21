@@ -96,14 +96,19 @@ for j in range(NUMBER_OF_RIDERS):
 
 
 def travel_time_integrated_current(riders : List[Rider],drivers : List[Driver],G: Graph) :
-    integrated_travel_time=[]
-    current_travel_time=[]
-    for r in riders :
-        integrated_travel_time.append(integrated_system(r,drivers,G)[0] - r.born_time)
-        current_travel_time.append(current_system(r,drivers,G)[0] - r.born_time)
-    plt.plot(integrated_travel_time,current_travel_time)
-    plt.xlabel('Current system travel time (min)')
-    plt.ylabel('Integrated system travel time (min)')
-    plt.show()
+	integrated_travel_time=[]
+	current_travel_time=[]
+	riders_CS = riders.copy()
+	drivers_CS = drivers.copy()
+	riders_integrated = riders.copy()
+	drivers_integrated = drivers.copy()
+	for r in riders_integrated :
+		integrated_travel_time.append(integrated_system(r,drivers_integrated,G)[0] - r.born_time)
+	for r in riders_CS:
+		current_travel_time.append(current_system(r,drivers_CS,G)[0] - r.born_time)
+	plt.plot(integrated_travel_time,current_travel_time)
+	plt.xlabel('Current system travel time (min)')
+	plt.ylabel('Integrated system travel time (min)')
+	plt.show()
 
 travel_time_integrated_current(riders,drivers,G)

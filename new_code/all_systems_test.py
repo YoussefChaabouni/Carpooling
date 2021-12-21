@@ -19,75 +19,127 @@ from Integrated_system import integrated_system
 import time
 from figure_4 import figure_4
 
-
-
 start = time.time()
-# IMPORTATION DES CSVs
-DF_graph_MPS = pd.read_csv('CSVs/Meeting_Points.csv',index_col="Unnamed: 0")
-DF_graph_S   = pd.read_csv('CSVs/Stations.csv',index_col="Unnamed: 0")
-DF_D         = pd.read_csv('CSVs/Drivers.csv',index_col="Unnamed: 0")
-DF_R         = pd.read_csv('CSVs/Riders.csv',index_col="Unnamed: 0")
+NUMBER_OF_MPS = 50
+NUMBER_OF_STATIONS = 10
+TAILLE_DE_MAP = 10 # en km
 
-#constantes
-TRAIN_FREQUENCY = 5
-number_of_trains_per_sim = int(DUREE_DE_SIM/TRAIN_FREQUENCY)
-
-
-
+# CREATION DES NODES
 NODES = []
-DRIVERS = []
-RIDERS = []
+x,y = np.random.random((2,NUMBER_OF_MPS)) * TAILLE_DE_MAP
+#print(x,y)
+for i in range(NUMBER_OF_MPS):
+	NODES.append(MeetingPoint(ID="MP"+str(i),x_coord=x[i], y_coord=y[i]))
 
-# CREATION MEETING POINTS
-for i in DF_graph_MPS.values:
-	NODES.append(MeetingPoint(ID=i[0],x_coord=i[1], y_coord=i[2]))
+x,y = np.random.random((2,NUMBER_OF_STATIONS)) * TAILLE_DE_MAP
+#print(x,y)
 
-# CREATION DES STATIONS
+#liste_droite = [0,1,11]
+#liste_gauche = [11 - x for x in liste_droite]
+
+# if s_org < s_dest : 
+# 	s_org.get_liste_droite()
+# else:
+# 	graph.get_node(s_org).get_liste_gauche()   
+duration_of_simulation = 180
+train_frequency = 5
+number_of_trains_per_sim = int(duration_of_simulation/train_frequency)
+
+#list_ids_stations = ["S0","S1","S2","S3"] -> [0,1,1.5,0.5] -> [0,2,3,1] -> [0,2,5,6]
+
+
 list_id_stations = []
-for i in DF_graph_S.values:
-	list_id_stations.append(i[0])
-	NODES.append(Station(ID=i[0],x_coord=i[1], y_coord=i[2]))
 
-# CREATION DU GRAPH
+for i in range(NUMBER_OF_STATIONS):
+	list_id_stations.append("S"+str(i))
+	NODES.append(Station(ID="S"+str(i),x_coord=x[i], y_coord=y[i]))
+
+# INITIALISATION DU GRAPH
 G = Graph(node_list = NODES)
 
-# TRAIN TIMETABLE
-timetable_gauche , timetable_droite = get_timetable(G,80/60,list_id_stations,number_of_trains_per_sim)
+timetable_gauche , timetable_droite = get_timetable(G,80,list_id_stations,number_of_trains_per_sim)
+
 # add timetables to stations
 for i in range(len(list_id_stations)):
 	G.get_node(list_id_stations[i]).liste_gauche = timetable_gauche[:,i].tolist()
 	G.get_node(list_id_stations[i]).liste_droite = timetable_droite[:,i].tolist()
 
+#print("liste gauche de S0 = ",G.get_node(list_id_stations[0]).liste_gauche)
+
 print("graph of this many nodes = ",len(G.node_list))
+'''
+# INITIALISATION DU DRIVER
+d = Driver(pos_depart="MP0",
+	pos_arrivee="MP5",
+	ID_user = "D0",
+	born_time = 10,
+	ID_car="C0",
+	Speed=40/60,
+	max_capacity=4,
+	current_capacity=[],
+	riders_list=[],
+	trajectory=Trajectory())
 
-# CREATION DES DRIVERS
-for index,i in enumerate(DF_D.values):
-	d = Driver(pos_depart=i[1],
-				pos_arrivee=i[2],
-				ID_user = i[0],
-				born_time = i[3],
-				ID_car="C"+str(index),     # TODO : modifier si cela crée des bugs
-				Speed=40/60,
-				max_capacity=4,
-				current_capacity=0,
-				riders_list=[],
-				trajectory=Trajectory())
-	d.trajectory = Trajectory(means_list=[d],arr_time_list=[i[3]],dep_time_list=[i[3]],node_list=[i[1]])
-	DRIVERS.append(d)
+d.trajectory = Trajectory(means_list=[d],arr_time_list=[d.born_time],dep_time_list=[d.born_time],node_list=[d.pos_depart])
 
-# CREATION DES RIDERS
-for i in DF_R.values:
-	r = Rider(pos_depart = i[1],
-				pos_arrivee = i[2],
-				ID = i[0],
-				born_time=i[3],
-				trajectory=Trajectory())
-	r.trajectory = Trajectory(means_list=[Foot(Speed=5,ID="init "+r.get_id())],arr_time_list=[i[3]],dep_time_list=[i[3]],node_list=[i[1]])
-	RIDERS.append(r)
+d1 = Driver(pos_depart="MP1",
+	pos_arrivee="MP5",
+	ID_user = "D1",
+	born_time = 20,
+	ID_car="C1",
+	Speed=40/60,
+	max_capacity=4,
+	current_capacity=[],
+	riders_list=[], 
+	trajectory=Trajectory())
 
-print(G)
-print(RIDERS)
-print(DRIVERS)
+d1.trajectory = Trajectory(means_list=[d1],arr_time_list=[d1.born_time],dep_time_list=[d1.born_time],node_list=[d1.pos_depart])
+
+'''
+# try out many drivers
+drivers = []
+for i in range(500):
+
+    # generate random origin, destination and born time
+    random_born_time = np.random.randint(0,60)
+    n_org = np.random.randint(0,NUMBER_OF_MPS-1)
+    n_dest = n_org
+    while n_dest == n_org :
+        n_dest = np.random.randint(0,NUMBER_OF_MPS-1)
+
+    # initialise drivers
+    d = Driver(pos_depart="MP"+str(n_org),
+	pos_arrivee="MP"+str(n_dest),
+	ID_user = "D"+str(i),
+	born_time = random_born_time,
+	ID_car="C"+str(i),
+	Speed=40/60,
+	max_capacity=4,
+	current_capacity=[],
+	riders_list=[],
+	trajectory=Trajectory())
+
+    d.trajectory = Trajectory(means_list=[d],arr_time_list=[d.born_time],dep_time_list=[d.born_time],node_list=[d.pos_depart])
+
+    drivers.append(d)
+
+
+riders_list = []
+NUMBER_OF_RIDERS = 200
+for j in range(NUMBER_OF_RIDERS):
+
+	random_born_time = np.random.randint(0,20)
+	n_org = np.random.randint(0,NUMBER_OF_MPS-1)
+	n_dest = n_org
+	while n_dest == n_org :
+		n_dest = np.random.randint(0,NUMBER_OF_MPS-1)
+
+	r = Rider(pos_depart = "MP"+str(n_org),pos_arrivee = "MP"+str(n_dest),ID = "R"+str(j),born_time=random_born_time,trajectory=Trajectory())
+	r.trajectory = Trajectory(means_list=[Foot(Speed=5/60,ID="init "+r.get_id())],arr_time_list=[r.born_time],dep_time_list=[r.born_time],node_list=[r.pos_depart])
+	riders_list.append(r)
+
+DRIVERS = drivers
+RIDERS = riders_list
 
 # APPLICATION DE L'ALGORITHME 1
 print("___________________ALGORITHM 1_________________________________")
