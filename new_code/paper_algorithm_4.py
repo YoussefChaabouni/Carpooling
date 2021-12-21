@@ -129,7 +129,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 			m_prime = graph.get_closest_MP_or_Station(graph.get_node(s_r_org),"MPs").get_id() # closest MP to r's closest station to origin
 			m_d_org = graph.get_closest_MP_or_Station(d_org,"MPs").get_id() # closest MP to d's origin
 
-			if m_d_dst == m_prime:
+			if m_d_dst == m_prime and m_prime in d.get_trajectory().node_id_list:
 
 				t_chap,w_chap_t,w_chap_d = algorithm_2(z = r_org.get_id(),z_prime = s_r_org,t = t_prime,d=d,m_board = m_d_org,m_out = m_prime,graph=graph) # APPLIQUER L'ALGORITHME 2
 

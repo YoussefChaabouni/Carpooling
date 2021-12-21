@@ -93,8 +93,8 @@ def check_algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 			m_d_dst = Graph.get_closest_MP(d.get_pos_arrivee) #closest meeting point to driver's destination
 			m_prime = Graph.get_closest_MP(s_r_org) ## closest meeting point to the station which is closest to rider origin
 			'''
-			print("destination = ",d_dst.get_id())
-			print("station origine rider = ",s_r_org)
+			#print("destination = ",d_dst.get_id())
+			#print("station origine rider = ",s_r_org)
 			d_org = graph.get_node(d.pos_depart)
 			d_dst = graph.get_node(d.pos_arrivee)
 			m_d_dst = graph.get_closest_MP_or_Station(d_dst,"MPs").get_id() # closest MP to d's destination
@@ -106,7 +106,7 @@ def check_algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 				t_chap,w_chap_t,w_chap_d = algorithm_2(z = r_org.get_id(),z_prime = s_r_org,t = t_prime,d=d,m_board = m_d_org,m_out = m_prime,graph=graph) # APPLIQUER L'ALGORITHME 2
 
 				if w_chap_d <= 2.5  and  w_chap_t <= 45  and  t_chap < t_first: # les longueurs en Mètres et le temps en Secondes
-					print("le rider monte dans la voiture avec le driver pour le first mile",d.get_id())
+					#print("le rider monte dans la voiture avec le driver pour le first mile",d.get_id())
 					best_driver = d
 
 					t_first = t_chap
@@ -137,7 +137,7 @@ def check_algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		w_chap_d = graph.get_distance(r_org,graph.get_node(s_r_org))
 
 		if w_chap_d < 2.5 :
-			print("le rider marche jusqu'à la station de départ")
+			#print("le rider marche jusqu'à la station de départ")
 			t_first = t_prime + walk(r_org,graph.get_node(s_r_org),graph,5/60)
 			wd 		= w_chap_d
 
@@ -155,8 +155,8 @@ def check_algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 			
 
 
-	print("the walking distance from first mile = ",wd)
-	print("the waiting time from first mile = ",wt)
+	#print("the walking distance from first mile = ",wd)
+	#print("the waiting time from first mile = ",wt)
 
 	if t_first == np.Infinity:
         # le rider ne peut pas atteindre la station s_get_trajectory()
@@ -229,7 +229,7 @@ def check_algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 					t_chap,w_chap_t,w_chap_d = algorithm_2(z = s_r_dest,z_prime = m_r_dest,t = t_prime,d=d,m_board = m_seconde,m_out = m_d_dest,graph = graph) # APPLIQUER L'ALGORITHME 2
 
 					if wd + w_chap_d <= 2.5  and  wt + w_chap_t <= 45  and  t_chap < t_last: # les longueurs en Mètres et le temps en Secondes
-						print("le rider monte dans la voiture avec le driver pour le last mile",d.get_id())
+						#print("le rider monte dans la voiture avec le driver pour le last mile",d.get_id())
 						best_driver = d
 
 						t_last = t_chap
@@ -245,7 +245,7 @@ def check_algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		w_chap_d = graph.get_distance(graph.get_node(s_r_dest),r_dst)
 
 		if w_chap_d < 2.5 :
-			print("le rider va marcher pour le last mile")
+			#print("le rider va marcher pour le last mile")
 
 			t_last = t_prime + walk(graph.get_node(s_r_dest),r_dst,graph,5/60)
 			wd 		+= w_chap_d
@@ -265,8 +265,8 @@ def check_algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 		t_prime = np.Infinity
 
-	print("the walking distance from first mile = ",wd)
-	print("the waiting time from first mile = ",wt)
+	#print("the walking distance from first mile = ",wd)
+	#print("the waiting time from first mile = ",wt)
 
 	return t_prime
 

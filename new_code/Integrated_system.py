@@ -37,8 +37,8 @@ def integrated_system(rider : Rider,drivers : List[Driver],graph: Graph):
     solution = "no solution"
     
     solution_encoding = ["foot","carpooling","transit","integrated"]
-    print("INTEGRATED SYSTEM RESULTS :")
-    print("_______ESTIMATIONS_________________")
+    #print("INTEGRATED SYSTEM RESULTS :")
+    #print("_______ESTIMATIONS_________________")
     t_foot_prime = walk(graph.get_node(rider.pos_depart),graph.get_node(rider.pos_arrivee),graph,5/60)
     t_carpool = check_algorithm_3(drivers = drivers ,rider =rider ,graph = graph )
     t_transit = transit_only_algorithm(rider,graph)
@@ -51,7 +51,7 @@ def integrated_system(rider : Rider,drivers : List[Driver],graph: Graph):
     else:
         t_foot = t_foot_prime
 
-    
+    '''
     print("FOOT : ")
     print("    estimated foot time = ",t_foot_prime)
     print("    estimated walking distance = ",graph.get_distance(graph.get_node(rider.pos_depart),graph.get_node(rider.pos_arrivee)))
@@ -62,14 +62,14 @@ def integrated_system(rider : Rider,drivers : List[Driver],graph: Graph):
     print(" time to go on FOOT = ",t_foot)
     print(" time to TRANSIT = ",t_transit)
     print(" time to integrated = ",t_integrated)
-
+    '''
 
     solution_times_list = [t_foot,t_carpool,t_transit,t_integrated]
 
 
     # see if all the results are infinite and return the solution with best time
     if t_foot == np.Infinity and t_carpool == np.Infinity and t_transit == np.Infinity and t_integrated==np.Infinity:
-        print("the rider has no solution available to him")
+        #print("the rider has no solution available to him")
 
         # we update the waiting time to infinity
         rider.update_waiting_time(np.Infinity)
