@@ -192,8 +192,8 @@ print("_________________NO CARPOOLING SYSTEM_________________")
 for r in ALL_RIDERS[0]:
 	print("___________________FOR RIDER : ",r.get_id(),"_________________________")
 	time, solution = no_carpooling_system(r,ALL_DRIVERS[0],ALL_GRAPHS[0])
-	ALL_TIMES[2].append(time)
-	ALL_SOLUTIONS[2].append(solution)
+	ALL_TIMES[0].append(time)
+	ALL_SOLUTIONS[0].append(solution)
 
 for i in range(len(ALL_RIDERS[0])):
 

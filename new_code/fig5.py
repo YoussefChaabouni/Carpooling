@@ -80,7 +80,7 @@ for i in range(500):
     drivers.append(d)
 
 riders = []
-NUMBER_OF_RIDERS = 300
+NUMBER_OF_RIDERS = 30
 for j in range(NUMBER_OF_RIDERS):
 
 	random_born_time = np.random.randint(0,20)

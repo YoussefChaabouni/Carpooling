@@ -43,7 +43,7 @@ def check_algorithm_3(drivers : List[Driver],rider : Rider,graph : Graph):
         print("m_r_dest = ",m_r_dest)
         print("m_r_org = ",m_r_org)
         '''
-        if m_d_org == m_r_org and m_d_dest == m_r_dest and m_d_org != d_dest.get_id() and  (m_d_dest,m_d_org in d.get_trajectory().node_id_list):
+        if m_d_org == m_r_org and m_d_dest == m_r_dest and m_d_org != d_dest.get_id() and  m_d_dest in d.get_trajectory().node_id_list and m_d_org in d.get_trajectory().node_id_list:
             print("algorithm 2 is considering driver = ",d.get_id())
             print("drivers trajectory = ",d.get_trajectory().node_id_list)
             t_chap,w_chap_t,w_chap_d = algorithm_2(r_org.get_id(),r_dest.get_id(),rider.born_time,d,m_d_org,m_d_dest,graph)
