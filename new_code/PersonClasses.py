@@ -66,6 +66,10 @@ class Driver(User,Car):
         Car.__init__(self,ID_car,Speed,max_capacity,current_capacity)
         self.riders_list = riders_list
         self.journey = [] # algorithm 1 will fill the journey
+        self.first_detour = False
+        self.last_detour = False
+        self.first_riders = 0
+        self.last_riders = 0
 
     # ______________________Getters and setters ________________________________
     def get_riders_list(self):

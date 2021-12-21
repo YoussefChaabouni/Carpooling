@@ -4,6 +4,7 @@ from helperFunctions import get_timetable
 from current_system import current_system
 from Integrated_system import integrated_system
 from statistics import vehicle_maximum_occupancy, average_walking_and_waiting_time
+from detour_plot import detour_plot
 from paper_algorithm_4 import algorithm_4
 from paper_algorithm_3 import algorithm_3
 
@@ -120,7 +121,7 @@ for i in range(500):
 
 
 riders_list = []
-NUMBER_OF_RIDERS = 300
+NUMBER_OF_RIDERS = 800
 for j in range(NUMBER_OF_RIDERS):
 
 	random_born_time = np.random.randint(0,20)
@@ -151,7 +152,7 @@ integrated = 0
 
 
 for r in riders_list:
-    print("______________________CURRENT SYSTEM_________________________________")
+    print("______________________INTEGRATED SYSTEM_________________________________")
     print("___________________FOR RIDER : ",r.get_id(),"_________________________")
     solution = integrated_system(r,drivers,G)[1]
 
@@ -211,3 +212,5 @@ print(max_list)
 average_walking , average_waiting = average_walking_and_waiting_time(riders_list,system="Integrated")
 print(average_walking)
 print(average_waiting)
+
+detour_plot(drivers)

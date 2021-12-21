@@ -101,6 +101,10 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		print("driver ID = ",best_driver.get_id())
 		print("current capacity of driver = ",best_driver.get_current_capacity())
 
+		##__________UPDATE DRIVER INFORMATION___________________
+		best_driver.first_detour = True
+		best_driver.first_riders += 1
+
 	best_driver = None
 
 
@@ -177,6 +181,11 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 			best_driver.get_current_capacity()[i] +=(-1)
 		print("driver ID = ",best_driver.get_id())
 		print("current capacity of driver = ",best_driver.get_current_capacity())
+
+
+		##__________UPDATE DRIVER INFORMATION___________________
+		best_driver.first_detour = True
+		best_driver.first_riders += 1
 
 	best_driver = None		
 
@@ -299,6 +308,10 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		print("driver ID = ",best_driver.get_id())
 		print("current capacity of driver = ",best_driver.get_current_capacity())
 
+		##__________UPDATE DRIVER INFORMATION___________________
+		best_driver.last_detour = True
+		best_driver.last_riders += 1
+
 	best_driver = None
 
 
@@ -369,6 +382,10 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 			best_driver.get_current_capacity()[i] +=(-1)
 		print("driver ID = ",best_driver.get_id())
 		print("current capacity of driver = ",best_driver.get_current_capacity())
+
+		##__________UPDATE DRIVER INFORMATION___________________
+		best_driver.last_detour = True
+		best_driver.last_riders += 1
 
 	best_driver = None
 
