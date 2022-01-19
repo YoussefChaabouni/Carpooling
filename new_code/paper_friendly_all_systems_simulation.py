@@ -6,8 +6,10 @@ from current_system import current_system
 from CSV_creation import DUREE_DE_SIM
 from CSV_creation import NUMBER_OF_RIDERS
 from statistics import vehicle_maximum_occupancy
-from statistics import average_walking_and_waiting_time
+from statistics import average_walking_and_waiting_time , camembert_function
 from detour_plot import detour_plot
+from mapGeneration import data_generation
+from figure5_but_better import frequency2, travel_time_integrated_current2
 from no_carpooling_system import no_carpooling_system
 from paper_algorithm_4 import algorithm_4
 from paper_algorithm_3 import algorithm_3
@@ -22,7 +24,8 @@ import time
 from figure_4 import figure_4
 
 start = time.time()
-NUMBER_OF_MPS = 100
+
+NUMBER_OF_MPS = 50
 NUMBER_OF_STATIONS = 10
 TAILLE_DE_MAP = 10 # en km
 
@@ -69,38 +72,10 @@ for i in range(len(list_id_stations)):
 #print("liste gauche de S0 = ",G.get_node(list_id_stations[0]).liste_gauche)
 
 print("graph of this many nodes = ",len(G.node_list))
-'''
-# INITIALISATION DU DRIVER
-d = Driver(pos_depart="MP0",
-	pos_arrivee="MP5",
-	ID_user = "D0",
-	born_time = 10,
-	ID_car="C0",
-	Speed=40/60,
-	max_capacity=4,
-	current_capacity=[],
-	riders_list=[],
-	trajectory=Trajectory())
 
-d.trajectory = Trajectory(means_list=[d],arr_time_list=[d.born_time],dep_time_list=[d.born_time],node_list=[d.pos_depart])
-
-d1 = Driver(pos_depart="MP1",
-	pos_arrivee="MP5",
-	ID_user = "D1",
-	born_time = 20,
-	ID_car="C1",
-	Speed=40/60,
-	max_capacity=4,
-	current_capacity=[],
-	riders_list=[], 
-	trajectory=Trajectory())
-
-d1.trajectory = Trajectory(means_list=[d1],arr_time_list=[d1.born_time],dep_time_list=[d1.born_time],node_list=[d1.pos_depart])
-
-'''
 # try out many drivers
 drivers = []
-for i in range(500):
+for i in range(50):
 
     # generate random origin, destination and born time
     random_born_time = np.random.randint(0,60)
@@ -127,7 +102,7 @@ for i in range(500):
 
 
 riders_list = []
-NUMBER_OF_RIDERS = 1000
+NUMBER_OF_RIDERS = 300
 for j in range(NUMBER_OF_RIDERS):
 
 	random_born_time = np.random.randint(0,20)
@@ -139,6 +114,10 @@ for j in range(NUMBER_OF_RIDERS):
 	r = Rider(pos_depart = "MP"+str(n_org),pos_arrivee = "MP"+str(n_dest),ID = "R"+str(j),born_time=random_born_time,trajectory=Trajectory())
 	r.trajectory = Trajectory(means_list=[Foot(Speed=5/60,ID="init "+r.get_id())],arr_time_list=[r.born_time],dep_time_list=[r.born_time],node_list=[r.pos_depart])
 	riders_list.append(r)
+
+# GENERATE THE DATA WITH RESPECT TO THE PAPER
+#riders_list, drivers, G = data_generation()
+#NUMBER_OF_RIDERS = len(riders_list)
 
 DRIVERS = drivers
 RIDERS = riders_list
@@ -175,6 +154,7 @@ C_d_inf = []
 I_d_inf = []
 
 
+
 print("______________________CURRENT SYSTEM_________________________________")
 for r in ALL_RIDERS[1]:
 	
@@ -182,6 +162,8 @@ for r in ALL_RIDERS[1]:
 	time, solution = current_system(r,ALL_DRIVERS[1],ALL_GRAPHS[1])
 	ALL_TIMES[1].append(time)
 	ALL_SOLUTIONS[1].append(solution)
+
+
 
 print("______________________INTEGRATED SYSTEM_________________________________")
 for r in ALL_RIDERS[2]:
@@ -229,16 +211,27 @@ for i in range(len(ALL_RIDERS[0])):
 	else:
 		I_d_inf.append(distance_I)
 
+# CAMEMBERTS!!!!!
+camembert_function(ALL_SOLUTIONS)
 
+# THE "pattes de mouches"
 figure_4(T_t,T_d, C_t,C_d, I_t,I_d, T_d_inf,C_d_inf,I_d_inf)
 
-#maximum vehicle occupancy
-vehicle_maximum_occupancy(ALL_DRIVERS[1],system = "Current")
-vehicle_maximum_occupancy(ALL_DRIVERS[2],system = "Integrated")
+# CUMULATIVE DISTRIBUTION
+frequency2(ALL_TIMES)
 
+# TRAVEL TIMES
+travel_time_integrated_current2(ALL_TIMES)
+
+
+#maximum vehicle occupancy
+max_curr = vehicle_maximum_occupancy(ALL_DRIVERS[1],system = "Current")
+max_int = vehicle_maximum_occupancy(ALL_DRIVERS[2],system = "Integrated")
+print("current = ",max_curr)
+print("max_int = ",max_int)
 # average walking and waiting times
 average_walking_and_waiting_time(ALL_RIDERS[1],system="Current")
 average_walking_and_waiting_time(ALL_RIDERS[2],system="Integrated")
 
 #detours
-detour_plot(DRIVERS[2])
+detour_plot(ALL_DRIVERS[2])

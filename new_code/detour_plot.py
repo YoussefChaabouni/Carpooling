@@ -35,12 +35,12 @@ def detour_plot(DRIVERS : List[Driver]):
     detours = [x*percent for x in detours]
     details = {
     'detour type' : ['First mile', 'Last mile', 'Both', 'None'],
-    'detour ratio' : detours,
+    'detour ratio %' : detours,
     }
     detours_df = pd.DataFrame(details)
 
     sns.set_theme(style="whitegrid")
    
-    ax = sns.barplot(x="detour type", y="detour ratio", data=detours_df)
+    ax = sns.barplot(x="detour type", y="detour ratio %", data=detours_df)
 
     return detours

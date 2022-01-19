@@ -7,6 +7,8 @@ from PersonClasses import Driver, Rider
 import matplotlib.pyplot as plt
 import numpy as np
 
+#from new_code.CSV_creation import NUMBER_OF_RIDERS
+
 
 # Vehicle max capacity
 def vehicle_maximum_occupancy(DRIVERS : List[Driver],system : str):
@@ -78,3 +80,135 @@ def get_maximum(current_capacity):
         if current_capacity[i] < min :
             min = current_capacity[i]
     return 4 - min
+
+def camembert_function(all_solutions):
+
+##___________________INTEGRATED_________________________
+    carpooling = 0
+    foot = 0
+    transit = 0
+    no_solution = 0
+    integrated = 0
+
+    for solution in all_solutions[2]:
+        if solution == "carpooling":
+            carpooling +=1
+        if solution == "transit":
+            transit += 1
+        if solution == "foot":
+            foot += 1
+        if solution == "no solution":
+            no_solution +=1
+        if solution == "integrated":
+            integrated +=1
+    
+    NUMBER_OF_RIDERS = len(all_solutions[2])
+
+    carpooling = carpooling / NUMBER_OF_RIDERS
+    foot = foot / NUMBER_OF_RIDERS
+    transit = transit / NUMBER_OF_RIDERS
+    no_solution = no_solution / NUMBER_OF_RIDERS
+    integrated = integrated / NUMBER_OF_RIDERS
+
+    ## plot 
+    labels = ['CARPOOLING', 'FOOT',
+        'TRANSIT','INTEGRATED', 'NO SOLUTION']
+
+    data = [carpooling*100, foot*100, transit*100,integrated*100,no_solution*100]
+
+
+    explode = (0, 0, 0, 0, 0) 
+
+    fig1, ax1 = plt.subplots(figsize=(10, 7))
+    ax1.pie(data, explode=explode, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=0)
+    ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+    plt.legend()
+    plt.title("Integrated system")
+
+    plt.show()
+
+##___________________Current_________________________
+    carpooling = 0
+    foot = 0
+    transit = 0
+    no_solution = 0
+    integrated = 0
+
+    for solution in all_solutions[1]:
+        if solution == "carpooling":
+            carpooling +=1
+        if solution == "transit":
+            transit += 1
+        if solution == "foot":
+            foot += 1
+        if solution == "no solution":
+            no_solution +=1
+
+    
+
+
+    carpooling = carpooling / NUMBER_OF_RIDERS
+    foot = foot / NUMBER_OF_RIDERS
+    transit = transit / NUMBER_OF_RIDERS
+    no_solution = no_solution / NUMBER_OF_RIDERS
+
+
+    ## plot 
+    labels = ['CARPOOLING', 'FOOT',
+        'TRANSIT', 'NO SOLUTION']
+
+    data = [carpooling*100, foot*100, transit*100,no_solution*100]
+
+
+    explode = (0, 0, 0, 0) 
+
+    fig1, ax1 = plt.subplots(figsize=(10, 7))
+    ax1.pie(data, explode=explode, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=0)
+    ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+    plt.legend()
+
+    plt.title("Current system")
+
+    plt.show()
+
+##___________________NO CARPOOLING_________________________
+
+    foot = 0
+    transit = 0
+    no_solution = 0
+
+
+    for solution in all_solutions[0]:
+
+        if solution == "transit":
+            transit += 1
+        if solution == "foot":
+            foot += 1
+        if solution == "no solution":
+            no_solution +=1
+
+    foot = foot / NUMBER_OF_RIDERS
+    transit = transit / NUMBER_OF_RIDERS
+    no_solution = no_solution / NUMBER_OF_RIDERS
+
+
+    ## plot 
+    labels = [ 'FOOT',
+        'TRANSIT', 'NO SOLUTION']
+
+    data = [ foot*100, transit*100,no_solution*100]
+
+
+    explode = ( 0, 0, 0) 
+
+    fig1, ax1 = plt.subplots(figsize=(10, 7))
+    ax1.pie(data, explode=explode, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=0)
+    ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+    plt.legend()
+
+    plt.title("No Carpooling System")
+
+    plt.show()

@@ -10,11 +10,11 @@ from graphClasses import Station
 def walk(d:Node,m:Node,G:Graph,speed:float):
 
 	distance = G.get_distance(d,m)
-	return distance/speed
+	return np.random.normal(loc = distance/speed,scale = np.sqrt(1.5))
     
 def Drive(a:Node,b:Node,G:Graph,speed:float):
     distance = G.get_distance(a,b)
-    return distance/speed
+    return np.random.normal(loc = distance/speed,scale = np.sqrt(5))
 
 def board_train(a:Station,b:Station,temps_darrivee):
     if a.get_id() < b.get_id():
@@ -43,7 +43,7 @@ def next_train_time(s_r_org : Station,s_r_dest : Station,arrival_time_station : 
 
 def get_timetable(graph : Graph,vitesse_train : int,list_ids_stations,number_of_trains_per_sim):
     list_of_distances = np.array([0] + [graph.get_distance(graph.get_node(list_ids_stations[i]),graph.get_node(list_ids_stations[i+1])) for i in range(len(list_ids_stations)-1)])
-    list_times = list_of_distances / vitesse_train
+    list_times = np.array([np.random.lognormal(list_of_distances[i] / vitesse_train,1) for i in range(len(list_of_distances))])
 
     #print("list of distances = ",list_of_distances)
     #print("list id stations = ",list_ids_stations)

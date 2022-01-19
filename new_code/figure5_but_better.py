@@ -98,6 +98,52 @@ for j in range(NUMBER_OF_RIDERS):
 	riders.append(r)
 
 
+DRIVERS = drivers
+RIDERS = riders
+
+# APPLICATION DE L'ALGORITHME 1
+print("___________________ALGORITHM 1_________________________________")
+for d in DRIVERS:
+	journey = algorithm_1(d,G)
+	print(journey)
+	d.set_journey(journey)
+
+
+
+
+# TOUTES LES LISTES DES DIFFERENTES SIMULATIONS
+ALL_DRIVERS   = [DRIVERS.copy(),DRIVERS.copy(),DRIVERS.copy()]
+ALL_RIDERS    = [RIDERS.copy(),RIDERS.copy(),RIDERS.copy()]
+ALL_GRAPHS    = [G,G,G]
+ALL_SOLUTIONS = [[],[],[]]
+ALL_TIMES     = [[],[],[]]
+
+
+
+
+print("______________________CURRENT SYSTEM_________________________________")
+for r in ALL_RIDERS[1]:
+	
+	print("___________________FOR RIDER : ",r.get_id(),"_________________________")
+	time, solution = current_system(r,ALL_DRIVERS[1],ALL_GRAPHS[1])
+	ALL_TIMES[1].append(time)
+	ALL_SOLUTIONS[1].append(solution)
+
+print("______________________INTEGRATED SYSTEM_________________________________")
+for r in ALL_RIDERS[2]:
+	print("___________________FOR RIDER : ",r.get_id(),"_________________________")
+	time, solution = integrated_system(r,ALL_DRIVERS[2],ALL_GRAPHS[2])
+	ALL_TIMES[2].append(time)
+	ALL_SOLUTIONS[2].append(solution)
+
+print("_________________NO CARPOOLING SYSTEM_________________")
+for r in ALL_RIDERS[0]:
+	print("___________________FOR RIDER : ",r.get_id(),"_________________________")
+	time, solution = no_carpooling_system(r,ALL_DRIVERS[0],ALL_GRAPHS[0])
+	ALL_TIMES[0].append(time)
+	ALL_SOLUTIONS[0].append(solution)
+
+
 
 def travel_time_integrated_current(riders : List[Rider],drivers : List[Driver],G: Graph) :
 	integrated_travel_time=[]
@@ -143,6 +189,122 @@ def travel_time_integrated_current(riders : List[Rider],drivers : List[Driver],G
 	
 	plt.show()
 	'''
+
+def travel_time_integrated_current2(all_times) :
+	integrated_travel_time=[]
+	current_travel_time=[]
+	for i in range(len(all_times[0])) :
+		t_time = all_times[2][i]
+		
+			
+		
+		integrated_travel_time.append(t_time)
+		
+		
+	for i in range(len(all_times[0])):
+		t_time = all_times[1][i] #- r.born_time
+		#if t_time != np.Infinity and t_time != 0:
+			
+		
+		current_travel_time.append(t_time)
+		#else :
+		#	current_travel_time.append(0)
+		#	screwed_up.append(i)
+
+	#for item in screwed_up:
+	#	riders_integrated[item] = 0
+
+	
+	print("current = ",current_travel_time)
+	print("integrated = ",integrated_travel_time)
+	df_dict = {"Current system travel time" : current_travel_time,
+				"Integrated system travel time" : integrated_travel_time}
+	df = pd.DataFrame(df_dict)
+
+	sns.scatterplot(data=df, x="Current system travel time", y="Integrated system travel time")
+	plt.show()
+    
+
+
+
+
+
+def frequency2(all_times):
+    integrated_travel_time=[]
+    current_travel_time=[]
+    no_carpooling_time=[]
+    integrated_counter =0
+    cs_counter = 0
+    nc_counter = 0
+    for i in range(len(all_times[0])):
+
+        t_time = all_times[2][i] # 1: current, 2: integrated, 0: no carpooling
+        if t_time != np.Infinity:
+            integrated_counter += 1
+        integrated_travel_time.append(t_time)
+
+    for i in range(len(all_times[0])):
+
+        t_time = all_times[1][i] # 1: current, 2: integrated, 0: no carpooling
+        if t_time != np.Infinity:
+            cs_counter += 1
+        current_travel_time.append(t_time)
+
+    for i in range(len(all_times[0])):
+
+        t_time = all_times[0][i] # 1: current, 2: integrated, 0: no carpooling
+        if t_time != np.Infinity:
+            nc_counter += 1
+        no_carpooling_time.append(t_time)
+
+    freq_i = [0]*150
+    freq_nc = [0]*150
+    freq_cs = [0]*150
+    print(len(integrated_travel_time))
+    print(len(current_travel_time))
+    print(len(no_carpooling_time))
+    for i in range(149):
+        for j in range(len(all_times[0])):
+            if integrated_travel_time[j]<= i:
+                freq_i[i] +=1
+            if no_carpooling_time[j]<= i:
+                freq_nc[i] +=1 
+            if current_travel_time[j]<= i:
+                freq_cs[i] +=1 
+
+    freq_i[149] = len(all_times[0])
+    freq_nc[149] = len(all_times[0])
+    freq_cs[149] = len(all_times[0])
+
+    freq_i = [x/len(all_times[0]) for x in freq_i]
+    freq_nc = [x/len(all_times[0]) for x in freq_nc]
+    freq_cs = [x/len(all_times[0]) for x in freq_cs]
+
+
+    import matplotlib.pyplot as plt
+    print("integrated = ",freq_i)
+    print("no carpooling = ",freq_nc)
+    print("freq cs = ",freq_cs)
+    t = np.linspace(0,150,150)
+    a = freq_i
+    b = freq_nc
+    c = freq_cs
+    plt.title("Cumulative distribution")
+    plt.xlabel("Travel time (min)")
+    plt.ylabel("Frequency")
+
+    plt.plot(t,a, 'r',label = "Integrated") # plotting t, a separately 
+    plt.plot(t, b, 'b', label = 'No Carpooling') # plotting t, b separately 
+    plt.plot(t, c, 'g',label = 'Current System') # plotting t, c separately
+	#data = np.array([freq_i,freq_nc,freq_cs])
+
+    #	[a,b,c] = plt.plot(data)
+    plt.legend(loc='lower right')
+    plt.show()
+
+    return 0
+
+
 def frequency(riders,drivers,G):
 	integrated_travel_time=[]
 	current_travel_time=[]
@@ -189,6 +351,7 @@ def frequency(riders,drivers,G):
 				freq_nc[i] +=1 
 			if current_travel_time[j]<= i:
 				freq_cs[i] +=1 
+    #freq_i[150] = len(riders_CS)
 	freq_i = [x/len(riders_CS) for x in freq_i]
 	freq_nc = [x/len(riders_CS) for x in freq_nc]
 	freq_cs = [x/len(riders_CS) for x in freq_cs]
@@ -206,19 +369,14 @@ def frequency(riders,drivers,G):
 	plt.xlabel("Travel time (min)")
 	plt.ylabel("Frequency")
 
-	plt1 = plt.plot(t,a, 'r') # plotting t, a separately 
-	plt2 = plt.plot(t, b, 'b') # plotting t, b separately 
-	plt3 = plt.plot(t, c, 'g') # plotting t, c separately
+	plt1 = plt.plot(t,a, 'r',label = "Integrated") # plotting t, a separately 
+	plt2 = plt.plot(t, b, 'b', label = 'No Carpooling') # plotting t, b separately 
+	plt3 = plt.plot(t, c, 'g',label = 'Current System') # plotting t, c separately
 	#data = np.array([freq_i,freq_nc,freq_cs])
 
 #	[a,b,c] = plt.plot(data)
-	plt.legend([plt1,plt2,plt3], ["Integrated","no carpooling","current"])
+	plt.legend(loc='lower right')
 	plt.show()
-	'''
-	#plt.plot(t,a, 'r') # plotting t, a separately 
-	plt.plot(t, b, 'b') # plotting t, b separately 
-	#plt.plot(t, c, 'g') # plotting t, c separately 
-	plt.show()
-	'''
-travel_time_integrated_current(riders,drivers,G)
-frequency(riders,drivers,G)
+
+travel_time_integrated_current2(ALL_TIMES)
+frequency2(ALL_TIMES)

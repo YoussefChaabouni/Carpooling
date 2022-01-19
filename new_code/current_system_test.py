@@ -9,12 +9,14 @@ from paper_algorithm_3 import algorithm_3
 
 from paper_algorithm_1 import algorithm_1
 from paper_algorithm_2 import algorithm_2
+from mapGeneration import data_generation
 from graphClasses import MeetingPoint, Station, Graph, Trajectory
 from PersonClasses import Driver, Rider
 from helperFunctions import Drive
 import time
 
 start = time.time()
+'''
 NUMBER_OF_MPS = 50
 NUMBER_OF_STATIONS = 10
 TAILLE_DE_MAP = 10 # en km
@@ -62,35 +64,7 @@ for i in range(len(list_id_stations)):
 #print("liste gauche de S0 = ",G.get_node(list_id_stations[0]).liste_gauche)
 
 print("graph of this many nodes = ",len(G.node_list))
-'''
-# INITIALISATION DU DRIVER
-d = Driver(pos_depart="MP0",
-	pos_arrivee="MP5",
-	ID_user = "D0",
-	born_time = 10,
-	ID_car="C0",
-	Speed=40/60,
-	max_capacity=4,
-	current_capacity=[],
-	riders_list=[],
-	trajectory=Trajectory())
 
-d.trajectory = Trajectory(means_list=[d],arr_time_list=[d.born_time],dep_time_list=[d.born_time],node_list=[d.pos_depart])
-
-d1 = Driver(pos_depart="MP1",
-	pos_arrivee="MP5",
-	ID_user = "D1",
-	born_time = 20,
-	ID_car="C1",
-	Speed=40/60,
-	max_capacity=4,
-	current_capacity=[],
-	riders_list=[], 
-	trajectory=Trajectory())
-
-d1.trajectory = Trajectory(means_list=[d1],arr_time_list=[d1.born_time],dep_time_list=[d1.born_time],node_list=[d1.pos_depart])
-
-'''
 # try out many drivers
 drivers = []
 for i in range(500):
@@ -132,8 +106,10 @@ for j in range(NUMBER_OF_RIDERS):
 	r = Rider(pos_depart = "MP"+str(n_org),pos_arrivee = "MP"+str(n_dest),ID = "R"+str(j),born_time=random_born_time,trajectory=Trajectory())
 	r.trajectory = Trajectory(means_list=[Foot(Speed=5/60,ID="init "+r.get_id())],arr_time_list=[r.born_time],dep_time_list=[r.born_time],node_list=[r.pos_depart])
 	riders_list.append(r)
-
-
+'''
+# GENERATE THE DATA WITH RESPECT TO THE PAPER
+riders_list, drivers, G = data_generation()
+NUMBER_OF_RIDERS = len(riders_list)
 
 #print(new_list)
 print("___________________ALGORITHM 1_________________________________")

@@ -150,8 +150,8 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 					#- prendre la voiture jusqu'à m_prime
 					#- marcher jusqu'à s_r_org
 					
-					arrival_time_mp = t_prime + walk(r_org,graph.get_node(m_d_org),graph,5/60) # arrivée à m_d_org
-					departure_time_mp = arrival_time_mp + w_chap_t #départ de m_r_org
+					arrival_time_mp = t_prime + w_chap_t + walk(r_org,graph.get_node(m_d_org),graph,5/60) # arrivée à m_d_org
+					departure_time_mp = arrival_time_mp  #départ de m_r_org
 					arrival_time_m_prime = t_chap # arrivée à m_prime
 					departure_time_m_prime = t_chap # départ de m_prime
 					arrival_time_station = t_chap + walk(graph.get_node(m_prime),graph.get_node(s_r_org),graph,5/60) + 1 #arrivée à la plateforme de s_r_org
@@ -228,6 +228,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		# le rider ne peut pas atteindre la station s_get_trajectory()
 
 		t_prime = np.Infinity
+		return t_prime
 
 	# --------------- TRAIN --------------- #
 	t_prime = t_first # mettre la durée du first mile dans t_prime

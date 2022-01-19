@@ -12,7 +12,7 @@ def figure_4(T_t,T_d, C_t,C_d, I_t,I_d, T_d_inf,C_d_inf,I_d_inf):
 
 	fig, axs = plt.subplots(nrows=2, ncols=3, sharex=True, sharey=True,gridspec_kw={'height_ratios': [1, 3]}) # 'width_ratios'
 
-	fig.suptitle('Systems comparaison')
+	fig.suptitle('Systems comparison')
 
 	axs[0,0].scatter(T_d_inf, np.random.random(len(T_d_inf))*100,color='green',s=1.75) # blue,green,red,purple
 	axs[1,0].scatter(T_d, T_t,color='green',s=1.75)

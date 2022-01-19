@@ -139,8 +139,8 @@ def integrated_system(rider : Rider,drivers : List[Driver],graph: Graph):
             - prendre une voiture jusqu'à m_r_dest
             - marcher jusqu'à r_dest
             '''
-            arrival_time_m_r_org = rider.born_time + walk(r_org,graph.get_node(m_r_org),graph,5/60) # arrivée à m_r_org
-            departure_time_m_r_org = arrival_time_m_r_org + rider.waiting_time #départ de m_r_org
+            arrival_time_m_r_org = rider.born_time + rider.waiting_time  + walk(r_org,graph.get_node(m_r_org),graph,5/60) # arrivée à m_r_org
+            departure_time_m_r_org = arrival_time_m_r_org #départ de m_r_org
             arrival_time_m_r_dest = departure_time_m_r_org + Drive(graph.get_node(m_r_org),graph.get_node(m_r_dest),graph,40/60) # arrivée à m_r_dest
             departure_time_m_r_dest = arrival_time_m_r_dest # départ de m_r_dest
             arrival_time_r_dest = departure_time_m_r_dest + walk(graph.get_node(m_r_dest),r_dst,graph,5/60) #arrivée à r_dest
