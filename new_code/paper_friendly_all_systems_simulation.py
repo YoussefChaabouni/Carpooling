@@ -11,6 +11,8 @@ from statistics import average_walking_and_waiting_time , camembert_function
 from detour_plot import detour_plot
 from mapGeneration import data_generation
 from figure5_but_better import frequency2, travel_time_integrated_current2
+from statistics import better_camembert
+from statistics import better_waiting_walking_times
 from no_carpooling_system import no_carpooling_system
 from paper_algorithm_4 import algorithm_4
 from paper_algorithm_3 import algorithm_3
@@ -219,15 +221,15 @@ for i in range(len(ALL_RIDERS[0])):
 		I_d.append(distance_I)
 	else:
 		I_d_inf.append(distance_I)
-
+'''
 	for i in range(len(I_t)):
 		if I_t[i] > 5*distance_I[i]:
 			slower_than_foot +=1
-
+'''
 
 # CAMEMBERTS!!!!!
 camembert_function(ALL_SOLUTIONS)
-
+better_camembert(ALL_SOLUTIONS)
 # THE "pattes de mouches"
 figure_4(T_t,T_d, C_t,C_d, I_t,I_d, T_d_inf,C_d_inf,I_d_inf)
 
@@ -236,6 +238,7 @@ frequency2(ALL_TIMES)
 
 # TRAVEL TIMES
 travel_time_integrated_current2(ALL_TIMES)
+better_waiting_walking_times(ALL_RIDERS)
 
 
 #maximum vehicle occupancy

@@ -13,12 +13,12 @@ from tqdm import tqdm
 
 def data_generation():
 
-    NUMBER_OF_MPS = 50
+    #NUMBER_OF_MPS = 50
     NUMBER_OF_STATIONS = 10
-    MAP_LENGTH = 20 # en km
-    MAP_WIDTH = 10
-    NB_Drivers = int(4.8*MAP_LENGTH*MAP_WIDTH*1.5)
-    NB_riders = int(8.3*MAP_LENGTH*MAP_WIDTH)
+    MAP_LENGTH = 15 # en km
+    MAP_WIDTH = 8
+    NB_Drivers = int(4.8*MAP_LENGTH*MAP_WIDTH*2) # 1728
+    NB_riders = int(8.3*MAP_LENGTH*MAP_WIDTH*2)
 
  
     NODES = []
@@ -31,7 +31,7 @@ def data_generation():
         NODES.append(MeetingPoint(ID="MP"+str(i),x_coord=x, y_coord=y))
 
    
-    duration_of_simulation = 180
+    duration_of_simulation = 60*5
     train_frequency = 5
     number_of_trains_per_sim = int(duration_of_simulation/train_frequency)
 
@@ -40,8 +40,8 @@ def data_generation():
     STATIONS = []
     print("generating stations")
     for i in tqdm(range(NUMBER_OF_STATIONS)):
-        x = np.random.random() * MAP_LENGTH
-        y = np.random.random() * MAP_WIDTH
+        x = i*MAP_LENGTH/(NUMBER_OF_STATIONS-1)
+        y = MAP_WIDTH /2
         list_id_stations.append("S"+str(i))
         STATIONS.append(Station(ID="S"+str(i),x_coord=x, y_coord=y))
 
@@ -106,7 +106,7 @@ def data_generation():
 
     G = Graph(node_list = final_graph_list)
 
-    timetable_gauche , timetable_droite = get_timetable(G,80,list_id_stations,number_of_trains_per_sim)
+    timetable_gauche , timetable_droite = get_timetable(G,60,list_id_stations,number_of_trains_per_sim)
 
     # add timetables to stations
     print("adding timetables to stations")
@@ -149,7 +149,7 @@ def data_generation():
 
     for j in tqdm(range(NB_riders)):
 
-        random_born_time = np.random.randint(0,60)
+        random_born_time = np.random.randint(0,180)
         
         
 

@@ -36,7 +36,7 @@ def no_carpooling_system(rider : Rider,graph: Graph):
     solution_encoding = ["foot","transit"]
     print("NO CARPOOLING SYSTEM RESULTS :")
     print("_______ESTIMATIONS_________________")
-    t_foot_prime = walk(graph.get_node(rider.pos_depart),graph.get_node(rider.pos_arrivee),graph,5/60)
+    t_foot_prime = walk(graph.get_node(rider.pos_depart),graph.get_node(rider.pos_arrivee),graph,4.5/60)
     t_transit = transit_only_algorithm(rider,graph)
 
     
@@ -89,7 +89,7 @@ def no_carpooling_system(rider : Rider,graph: Graph):
 
             # update rider information
             rider.update_walking_distance(walking_distance)
-            rider.get_trajectory().update_trajectory(Foot(ID="walk only",Speed=5/60),arrival_time_destination,arrival_time_destination,r_dst.get_id())
+            rider.get_trajectory().update_trajectory(Foot(ID="walk only",Speed=4.5/60),arrival_time_destination,arrival_time_destination,r_dst.get_id())
 
             return t_prime , solution
         if solution == "transit":
@@ -99,12 +99,12 @@ def no_carpooling_system(rider : Rider,graph: Graph):
             s_dst = graph.get_closest_MP_or_Station(r_dst,"Stations")
 
             # computing different arrival, departure and waiting times 
-            arrival_time_origin_station = rider.born_time + walk(r_org,s_org,graph,5/60) + 1
+            arrival_time_origin_station = rider.born_time + walk(r_org,s_org,graph,4.5/60) + 1
             waiting_for_train = next_train_time(s_org,s_dst,arrival_time_origin_station)
             departure_time_origin_station = arrival_time_origin_station + waiting_for_train
             arrival_time_destination_station = board_train(s_org,s_dst,arrival_time_origin_station)
             departure_time_destination_station = arrival_time_destination_station + 1
-            arrival_time_destination = departure_time_destination_station + walk(s_dst,r_dst,graph,5/60)
+            arrival_time_destination = departure_time_destination_station + walk(s_dst,r_dst,graph,4.5/60)
 
             #overall walking distance in this option
             walking_distance = graph.get_distance(r_org,s_org) + graph.get_distance(s_dst,r_dst)
@@ -113,11 +113,11 @@ def no_carpooling_system(rider : Rider,graph: Graph):
             rider.update_waiting_time(waiting_for_train - arrival_time_origin_station)
             rider.update_walking_distance(walking_distance)
             # walk to station
-            rider.get_trajectory().update_trajectory(Foot(ID="walk to first station",Speed=5/60),arrival_time_origin_station,departure_time_origin_station,s_org.get_id())
+            rider.get_trajectory().update_trajectory(Foot(ID="walk to first station",Speed=4.5/60),arrival_time_origin_station,departure_time_origin_station,s_org.get_id())
             # train ride
             rider.get_trajectory().update_trajectory(Foot(ID="train from "+s_org.get_id()+" to "+s_dst.get_id(),Speed=80/60),arrival_time_destination_station,departure_time_destination_station,s_dst.get_id())
             # walk to destination
-            rider.get_trajectory().update_trajectory(Foot(ID="walk to destination "+r_dst.get_id(),Speed=5/60),arrival_time_destination,arrival_time_destination,r_dst.get_id())
+            rider.get_trajectory().update_trajectory(Foot(ID="walk to destination "+r_dst.get_id(),Speed=4.5/60),arrival_time_destination,arrival_time_destination,r_dst.get_id())
      
 
     return t_prime , solution
