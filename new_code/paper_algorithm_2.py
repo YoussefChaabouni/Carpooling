@@ -30,7 +30,7 @@ def algorithm_2(z,z_prime,t, d:Driver, m_board:MeetingPoint, m_out:MeetingPoint,
 	if idx_board < len(d.get_current_capacity()) and idx_out < len(d.get_current_capacity()):
 		for i in range(idx_board,idx_out+1):
 			if d.get_current_capacity()[i] <= 0:
-				print( "there's no place in driver's ",d.get_id()," car")
+				#print( "there's no place in driver's ",d.get_id()," car")
 				
 				return t_prime,t_waiting,walk_distance
 	
@@ -42,7 +42,7 @@ def algorithm_2(z,z_prime,t, d:Driver, m_board:MeetingPoint, m_out:MeetingPoint,
 	time_index = d.get_trajectory().node_id_list.index(m_board)
 	if t_prime > d.get_trajectory().arr_time_list[time_index]:
 		# the rider is gonna be late
-		print("the rider arrives late at ",t_prime," but the driver leaves at : ",d.get_trajectory().dep_time_list[time_index])
+		#print("the rider arrives late at ",t_prime," but the driver leaves at : ",d.get_trajectory().dep_time_list[time_index])
 	else :
 		#print("the rider takes a car with driver ",d.get_id())
 		t_waiting = d.get_trajectory().arr_time_list[time_index] - t_prime

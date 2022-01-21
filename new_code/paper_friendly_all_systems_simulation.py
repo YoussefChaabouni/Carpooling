@@ -16,6 +16,7 @@ from statistics import better_waiting_walking_times
 from no_carpooling_system import no_carpooling_system
 from paper_algorithm_4 import algorithm_4
 from paper_algorithm_3 import algorithm_3
+from tdqm import tdqm
 
 from paper_algorithm_1 import algorithm_1
 from paper_algorithm_2 import algorithm_2
@@ -27,7 +28,7 @@ import time
 from figure_4 import figure_4
 
 start = time.time()
-
+"""
 NUMBER_OF_MPS = 50
 NUMBER_OF_STATIONS = 10
 TAILLE_DE_MAP = 10 # en km
@@ -117,10 +118,10 @@ for j in range(NUMBER_OF_RIDERS):
 	r = Rider(pos_depart = "MP"+str(n_org),pos_arrivee = "MP"+str(n_dest),ID = "R"+str(j),born_time=random_born_time,trajectory=Trajectory())
 	r.trajectory = Trajectory(means_list=[Foot(Speed=5/60,ID="init "+r.get_id())],arr_time_list=[r.born_time],dep_time_list=[r.born_time],node_list=[r.pos_depart])
 	riders_list.append(r)
-
+"""
 # GENERATE THE DATA WITH RESPECT TO THE PAPER
-#riders_list, drivers, G = data_generation()
-#NUMBER_OF_RIDERS = len(riders_list)
+riders_list, drivers, G = data_generation()
+NUMBER_OF_RIDERS = len(riders_list)
 
 DRIVERS = drivers
 RIDERS = riders_list
@@ -162,33 +163,33 @@ I_d_inf = []
 
 
 print("______________________CURRENT SYSTEM_________________________________")
-for r in ALL_RIDERS[1]:
+for r in tdqm(range(len(ALL_RIDERS[1]))):
 	
-	print("___________________FOR RIDER : ",r.get_id(),"_________________________")
-	time, solution = current_system(r,ALL_DRIVERS[1],ALL_GRAPHS[1])
+	#print("___________________FOR RIDER : ",ALL_RIDERS[1][r].get_id(),"_________________________")
+	time, solution = current_system(ALL_RIDERS[1][r],ALL_DRIVERS[1],ALL_GRAPHS[1])
 	ALL_TIMES[1].append(time)
 	ALL_SOLUTIONS[1].append(solution)
 
 
 
 print("______________________INTEGRATED SYSTEM_________________________________")
-for r in ALL_RIDERS[2]:
-	print("___________________FOR RIDER : ",r.get_id(),"_________________________")
-	print("sanity check")
-	for i in range(len(ALL_DRIVERS[2])):
-		print("driver capacity = ",ALL_DRIVERS[2][i].current_capacity)
-	time, solution = integrated_system(r,ALL_DRIVERS[2],ALL_GRAPHS[2])
+for r in tdqm(range(len(ALL_RIDERS[2]))):
+	#print("___________________FOR RIDER : ",ALL_RIDERS[2][r].get_id(),"_________________________")
+	#print("sanity check")
+	#for i in range(len(ALL_DRIVERS[2])):
+		#print("driver capacity = ",ALL_DRIVERS[2][i].current_capacity)
+	time, solution = integrated_system(ALL_RIDERS[2][r],ALL_DRIVERS[2],ALL_GRAPHS[2])
 	ALL_TIMES[2].append(time)
 	ALL_SOLUTIONS[2].append(solution)
 
 print("_________________NO CARPOOLING SYSTEM_________________")
-for r in ALL_RIDERS[0]:
-	print("___________________FOR RIDER : ",r.get_id(),"_________________________")
-	time, solution = no_carpooling_system(r,ALL_GRAPHS[0])
+for r in tdqm(range(len(ALL_RIDERS[0]))):
+	#print("___________________FOR RIDER : ",ALL_RIDERS[0][r].get_id(),"_________________________")
+	time, solution = no_carpooling_system(ALL_RIDERS[0][r],ALL_GRAPHS[0])
 	ALL_TIMES[0].append(time)
 	ALL_SOLUTIONS[0].append(solution)
 
-for i in range(len(ALL_RIDERS[0])):
+for i in tdqm(range(len(ALL_RIDERS[0]))):
 
 	rider_T = ALL_RIDERS[0][i]
 	rider_C = ALL_RIDERS[1][i]

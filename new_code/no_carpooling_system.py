@@ -34,8 +34,8 @@ def no_carpooling_system(rider : Rider,graph: Graph):
     solution = "no solution"
     
     solution_encoding = ["foot","transit"]
-    print("NO CARPOOLING SYSTEM RESULTS :")
-    print("_______ESTIMATIONS_________________")
+    #print("NO CARPOOLING SYSTEM RESULTS :")
+    #print("_______ESTIMATIONS_________________")
     t_foot_prime = walk(graph.get_node(rider.pos_depart),graph.get_node(rider.pos_arrivee),graph,4.5/60)
     t_transit = transit_only_algorithm(rider,graph)
 
@@ -47,15 +47,15 @@ def no_carpooling_system(rider : Rider,graph: Graph):
         t_foot = t_foot_prime
 
     
-    print("FOOT : ")
-    print("    estimated foot time = ",t_foot_prime)
-    print("    estimated walking distance = ",graph.get_distance(graph.get_node(rider.pos_depart),graph.get_node(rider.pos_arrivee)))
+    #print("FOOT : ")
+    #print("    estimated foot time = ",t_foot_prime)
+    #print("    estimated walking distance = ",graph.get_distance(graph.get_node(rider.pos_depart),graph.get_node(rider.pos_arrivee)))
     
-    print("________RIDER DECISION PROCESS___________")
+    #print("________RIDER DECISION PROCESS___________")
     
     #print("     estimated time to carpool = ",t_carpool)
-    print(" time to go on FOOT = ",t_foot)
-    print(" time to TRANSIT = ",t_transit)
+    #print(" time to go on FOOT = ",t_foot)
+    #print(" time to TRANSIT = ",t_transit)
 
 
     solution_times_list = [t_foot,t_transit]
@@ -63,7 +63,7 @@ def no_carpooling_system(rider : Rider,graph: Graph):
 
     # see if all the results are infinite and return the solution with best time
     if t_foot == np.Infinity  and t_transit == np.Infinity:
-        print("the rider has no solution available to him")
+        #print("the rider has no solution available to him")
 
         # we update the waiting time to infinity
         rider.update_waiting_time(np.Infinity)
@@ -83,7 +83,7 @@ def no_carpooling_system(rider : Rider,graph: Graph):
 
 
         if solution == "foot":
-            print("the rider chooses to go on foot")
+            #print("the rider chooses to go on foot")
             arrival_time_destination = rider.born_time + t_foot
             walking_distance = graph.get_distance(graph.get_node(rider.pos_depart),graph.get_node(rider.pos_arrivee))
 
@@ -93,7 +93,7 @@ def no_carpooling_system(rider : Rider,graph: Graph):
 
             return t_prime , solution
         if solution == "transit":
-            print("the rider chooses to go with transit")
+            #print("the rider chooses to go with transit")
             # get stations
             s_org = graph.get_closest_MP_or_Station(r_org,"Stations")
             s_dst = graph.get_closest_MP_or_Station(r_dst,"Stations")
