@@ -9,7 +9,7 @@ def figure_4(T_t,T_d, C_t,C_d, I_t,I_d, T_d_inf,C_d_inf,I_d_inf):
 	# _t : time in minutes
 	# _d : distance in km
 	# _inf : with infinite time (unserved riders)
-
+	T_t,T_d, C_t,C_d, I_t,I_d, T_d_inf,C_d_inf,I_d_inf = np.array(T_t),np.array(T_d), np.array(C_t),np.array(C_d), np.array(I_t),np.array(I_d), np.array(T_d_inf),np.array(C_d_inf),np.array(I_d_inf)
 	def set_share_axes(axs, target=None, sharex=False, sharey=False):
 	    if target is None:
 	        target = axs.flat[0]
