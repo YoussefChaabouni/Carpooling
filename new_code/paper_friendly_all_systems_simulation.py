@@ -25,7 +25,7 @@ import time
 from figure_4 import figure_4
 
 start = time.time()
-'''
+
 NUMBER_OF_MPS = 50
 NUMBER_OF_STATIONS = 10
 TAILLE_DE_MAP = 10 # en km
@@ -115,10 +115,10 @@ for j in range(NUMBER_OF_RIDERS):
 	r = Rider(pos_depart = "MP"+str(n_org),pos_arrivee = "MP"+str(n_dest),ID = "R"+str(j),born_time=random_born_time,trajectory=Trajectory())
 	r.trajectory = Trajectory(means_list=[Foot(Speed=5/60,ID="init "+r.get_id())],arr_time_list=[r.born_time],dep_time_list=[r.born_time],node_list=[r.pos_depart])
 	riders_list.append(r)
-'''
+
 # GENERATE THE DATA WITH RESPECT TO THE PAPER
-riders_list, drivers, G = data_generation()
-NUMBER_OF_RIDERS = len(riders_list)
+#riders_list, drivers, G = data_generation()
+#NUMBER_OF_RIDERS = len(riders_list)
 
 DRIVERS = drivers
 RIDERS = riders_list
@@ -200,6 +200,8 @@ for i in range(len(ALL_RIDERS[0])):
 	time_C = ALL_TIMES[1][i]
 	time_I = ALL_TIMES[2][i]
 
+	faster_than_foot = 0
+	slower_than_foot = 0
 	if time_T != np.inf:
 		T_t.append(time_T)
 		T_d.append(distance_T)
@@ -217,6 +219,11 @@ for i in range(len(ALL_RIDERS[0])):
 		I_d.append(distance_I)
 	else:
 		I_d_inf.append(distance_I)
+
+	for i in range(len(I_t)):
+		if I_t[i] > 5*distance_I[i]:
+			slower_than_foot +=1
+
 
 # CAMEMBERTS!!!!!
 camembert_function(ALL_SOLUTIONS)
