@@ -43,6 +43,7 @@ def algorithm_2(z,z_prime,t, d:Driver, m_board:MeetingPoint, m_out:MeetingPoint,
 	if t_prime > d.get_trajectory().arr_time_list[time_index]:
 		# the rider is gonna be late
 		#print("the rider arrives late at ",t_prime," but the driver leaves at : ",d.get_trajectory().dep_time_list[time_index])
+		pass
 	else :
 		#print("the rider takes a car with driver ",d.get_id())
 		t_waiting = d.get_trajectory().arr_time_list[time_index] - t_prime

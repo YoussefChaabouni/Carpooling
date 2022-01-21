@@ -396,7 +396,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		w_chap_d = graph.get_distance(graph.get_node(s_r_dest),r_dst)
 
 		if w_chap_d < 2.5 :
-			print("le rider va marcher pour le last mile")
+			#print("le rider va marcher pour le last mile")
 
 			t_last = t_prime + walk(graph.get_node(s_r_dest),r_dst,graph,4.5/60)
 			wd 		+= w_chap_d

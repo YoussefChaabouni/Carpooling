@@ -16,7 +16,7 @@ from statistics import better_waiting_walking_times
 from no_carpooling_system import no_carpooling_system
 from paper_algorithm_4 import algorithm_4
 from paper_algorithm_3 import algorithm_3
-from tdqm import tdqm
+from tqdm import tqdm
 
 from paper_algorithm_1 import algorithm_1
 from paper_algorithm_2 import algorithm_2
@@ -130,7 +130,7 @@ RIDERS = riders_list
 print("___________________ALGORITHM 1_________________________________")
 for d in DRIVERS:
 	journey = algorithm_1(d,G)
-	print(journey)
+	#print(journey)
 	d.set_journey(journey)
 
 
@@ -163,7 +163,7 @@ I_d_inf = []
 
 
 print("______________________CURRENT SYSTEM_________________________________")
-for r in tdqm(range(len(ALL_RIDERS[1]))):
+for r in tqdm(range(len(ALL_RIDERS[1]))):
 	
 	#print("___________________FOR RIDER : ",ALL_RIDERS[1][r].get_id(),"_________________________")
 	time, solution = current_system(ALL_RIDERS[1][r],ALL_DRIVERS[1],ALL_GRAPHS[1])
@@ -173,7 +173,7 @@ for r in tdqm(range(len(ALL_RIDERS[1]))):
 
 
 print("______________________INTEGRATED SYSTEM_________________________________")
-for r in tdqm(range(len(ALL_RIDERS[2]))):
+for r in tqdm(range(len(ALL_RIDERS[2]))):
 	#print("___________________FOR RIDER : ",ALL_RIDERS[2][r].get_id(),"_________________________")
 	#print("sanity check")
 	#for i in range(len(ALL_DRIVERS[2])):
@@ -183,13 +183,13 @@ for r in tdqm(range(len(ALL_RIDERS[2]))):
 	ALL_SOLUTIONS[2].append(solution)
 
 print("_________________NO CARPOOLING SYSTEM_________________")
-for r in tdqm(range(len(ALL_RIDERS[0]))):
+for r in tqdm(range(len(ALL_RIDERS[0]))):
 	#print("___________________FOR RIDER : ",ALL_RIDERS[0][r].get_id(),"_________________________")
 	time, solution = no_carpooling_system(ALL_RIDERS[0][r],ALL_GRAPHS[0])
 	ALL_TIMES[0].append(time)
 	ALL_SOLUTIONS[0].append(solution)
 
-for i in tdqm(range(len(ALL_RIDERS[0]))):
+for i in tqdm(range(len(ALL_RIDERS[0]))):
 
 	rider_T = ALL_RIDERS[0][i]
 	rider_C = ALL_RIDERS[1][i]

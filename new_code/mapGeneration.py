@@ -14,11 +14,11 @@ from tqdm import tqdm
 def data_generation():
 
     #NUMBER_OF_MPS = 50
-    NUMBER_OF_STATIONS = 10
+    NUMBER_OF_STATIONS = 5
     MAP_LENGTH = 15 # en km
     MAP_WIDTH = 8
-    NB_Drivers = int(4.8*MAP_LENGTH*MAP_WIDTH*2) # 1728
-    NB_riders = int(8.3*MAP_LENGTH*MAP_WIDTH*2)
+    NB_Drivers = int(4.8*MAP_LENGTH*MAP_WIDTH) # 1728
+    NB_riders = int(8.3*MAP_LENGTH*MAP_WIDTH)
 
  
     NODES = []
@@ -31,9 +31,9 @@ def data_generation():
         NODES.append(MeetingPoint(ID="MP"+str(i),x_coord=x, y_coord=y))
 
    
-    duration_of_simulation = 60*5
+    duration_of_simulation = 60
     train_frequency = 5
-    number_of_trains_per_sim = int(duration_of_simulation/train_frequency)
+    number_of_trains_per_sim = int(duration_of_simulation+1/train_frequency)
 
     list_id_stations = []
     
@@ -52,9 +52,9 @@ def data_generation():
         node = STATIONS[i]
         r = np.random.rand()
         if r == 0:
-            number_of_extra_mps = 4
+            number_of_extra_mps = 2
         else :
-            number_of_extra_mps = 5
+            number_of_extra_mps = 3
 
         R = 0.3 # 300m radius around MP
 

@@ -49,7 +49,7 @@ def figure_4(T_t,T_d, C_t,C_d, I_t,I_d, T_d_inf,C_d_inf,I_d_inf):
 	line_y = np.clip(line_x*60/4.5,0,np.max([np.max(T_t),np.max(C_t),np.max(I_t)]))
 	axs[1,0].plot(line_x, line_y,color='gray',alpha=0.25)
 	axs[1,0].fill_between(line_x, line_y, 0, color='green', alpha=.1)
-	axs[1,0].fill_between(line_x, line_y, np.max(line_y), color='red', alpha=.1)
+	axs[1,0].fill_between(line_x, line_y, np.max([np.max(T_t),np.max(C_t),np.max(I_t)]), color='red', alpha=.1)
 	axs[0,0].set_xticklabels(list(map(lambda x : str(int(x[0]))+"-"+str(int(x[1])),vector_bar)),fontsize=8/int(NUMBER_OF_BARS/5))
 
 	axs[1,0].set_xlabel("Distance between origin and destination (km)")
@@ -68,7 +68,7 @@ def figure_4(T_t,T_d, C_t,C_d, I_t,I_d, T_d_inf,C_d_inf,I_d_inf):
 	line_y = np.clip(line_x*60/4.5,0,np.max([np.max(T_t),np.max(C_t),np.max(I_t)]))
 	axs[1,1].plot(line_x, line_y,color='gray',alpha=0.25)
 	axs[1,1].fill_between(line_x, line_y, 0, color='green', alpha=.1)
-	axs[1,1].fill_between(line_x, line_y, np.max(line_y), color='red', alpha=.1)
+	axs[1,1].fill_between(line_x, line_y, np.max([np.max(T_t),np.max(C_t),np.max(I_t)]), color='red', alpha=.1)
 	axs[0,1].set_xticklabels(list(map(lambda x : str(int(x[0]))+"-"+str(int(x[1])),vector_bar)),fontsize=8/int(NUMBER_OF_BARS/5))
 
 	axs[1,1].grid()
@@ -82,7 +82,7 @@ def figure_4(T_t,T_d, C_t,C_d, I_t,I_d, T_d_inf,C_d_inf,I_d_inf):
 	line_y = np.clip(line_x*60/4.5,0,np.max([np.max(T_t),np.max(C_t),np.max(I_t)]))
 	axs[1,2].plot(line_x, line_y,color='gray',alpha=0.25)
 	axs[1,2].fill_between(line_x, line_y, 0, color='green', alpha=.1)
-	axs[1,2].fill_between(line_x, line_y, np.max(line_y), color='red', alpha=.1)
+	axs[1,2].fill_between(line_x, line_y, np.max([np.max(T_t),np.max(C_t),np.max(I_t)]), color='red', alpha=.1)
 	axs[0,2].set_xticklabels(list(map(lambda x : str(int(x[0]))+"-"+str(int(x[1])),vector_bar)),fontsize=8/int(NUMBER_OF_BARS/5))
 
 	axs[1,2].grid()
