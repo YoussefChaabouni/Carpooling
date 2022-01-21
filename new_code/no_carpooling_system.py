@@ -28,7 +28,7 @@ solution (string): string expressing the solution the rider has adopted
 remarks :
 - this algorithm will update the riders trajectory according to the adopted solution
 '''
-def no_carpooling_system(rider : Rider,drivers : List[Driver],graph: Graph):
+def no_carpooling_system(rider : Rider,graph: Graph):
 
     t_prime = np.Infinity
     solution = "no solution"

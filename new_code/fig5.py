@@ -20,7 +20,7 @@ from typing import List
 import pandas as pd
 import seaborn as sns
 
-
+'''
 NUMBER_OF_MPS = 50
 NUMBER_OF_STATIONS = 10
 TAILLE_DE_MAP = 10 # en km
@@ -98,7 +98,7 @@ for j in range(NUMBER_OF_RIDERS):
 	riders.append(r)
 
 
-
+'''
 def travel_time_integrated_current(riders : List[Rider],drivers : List[Driver],G: Graph) :
 	integrated_travel_time=[]
 	current_travel_time=[]
@@ -220,5 +220,5 @@ def frequency(riders,drivers,G):
 	#plt.plot(t, c, 'g') # plotting t, c separately 
 	plt.show()
 	'''
-travel_time_integrated_current(riders,drivers,G)
-frequency(riders,drivers,G)
+#travel_time_integrated_current(riders,drivers,G)
+#frequency(riders,drivers,G)

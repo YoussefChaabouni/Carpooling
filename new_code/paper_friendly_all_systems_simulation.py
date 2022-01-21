@@ -1,3 +1,4 @@
+import copy
 import pandas as pd
 import numpy as np
 from meansClasses import Foot
@@ -133,8 +134,11 @@ for d in DRIVERS:
 
 
 # TOUTES LES LISTES DES DIFFERENTES SIMULATIONS
-ALL_DRIVERS   = [DRIVERS.copy(),DRIVERS.copy(),DRIVERS.copy()]
-ALL_RIDERS    = [RIDERS.copy(),RIDERS.copy(),RIDERS.copy()]
+drivers_1 = copy.deepcopy(DRIVERS)
+drivers2 = copy.deepcopy(DRIVERS)
+drivers3 = copy.deepcopy(DRIVERS)
+ALL_DRIVERS   = [drivers_1,drivers2,drivers3]
+ALL_RIDERS    = [copy.deepcopy(RIDERS),copy.deepcopy(RIDERS),copy.deepcopy(RIDERS)]
 ALL_GRAPHS    = [G,G,G]
 ALL_SOLUTIONS = [[],[],[]]
 ALL_TIMES     = [[],[],[]]
@@ -168,6 +172,9 @@ for r in ALL_RIDERS[1]:
 print("______________________INTEGRATED SYSTEM_________________________________")
 for r in ALL_RIDERS[2]:
 	print("___________________FOR RIDER : ",r.get_id(),"_________________________")
+	print("sanity check")
+	for i in range(len(ALL_DRIVERS[2])):
+		print("driver capacity = ",ALL_DRIVERS[2][i].current_capacity)
 	time, solution = integrated_system(r,ALL_DRIVERS[2],ALL_GRAPHS[2])
 	ALL_TIMES[2].append(time)
 	ALL_SOLUTIONS[2].append(solution)
@@ -175,7 +182,7 @@ for r in ALL_RIDERS[2]:
 print("_________________NO CARPOOLING SYSTEM_________________")
 for r in ALL_RIDERS[0]:
 	print("___________________FOR RIDER : ",r.get_id(),"_________________________")
-	time, solution = no_carpooling_system(r,ALL_DRIVERS[0],ALL_GRAPHS[0])
+	time, solution = no_carpooling_system(r,ALL_GRAPHS[0])
 	ALL_TIMES[0].append(time)
 	ALL_SOLUTIONS[0].append(solution)
 
@@ -193,6 +200,8 @@ for i in range(len(ALL_RIDERS[0])):
 	time_C = ALL_TIMES[1][i]
 	time_I = ALL_TIMES[2][i]
 
+	faster_than_foot = 0
+	slower_than_foot = 0
 	if time_T != np.inf:
 		T_t.append(time_T)
 		T_d.append(distance_T)
@@ -211,6 +220,11 @@ for i in range(len(ALL_RIDERS[0])):
 	else:
 		I_d_inf.append(distance_I)
 
+	for i in range(len(I_t)):
+		if I_t[i] > 5*distance_I[i]:
+			slower_than_foot +=1
+
+
 # CAMEMBERTS!!!!!
 camembert_function(ALL_SOLUTIONS)
 
@@ -225,12 +239,17 @@ travel_time_integrated_current2(ALL_TIMES)
 
 
 #maximum vehicle occupancy
+
 max_curr = vehicle_maximum_occupancy(ALL_DRIVERS[1],system = "Current")
+
+average_walking_and_waiting_time(ALL_RIDERS[1],system="Current")
+
+
 max_int = vehicle_maximum_occupancy(ALL_DRIVERS[2],system = "Integrated")
 print("current = ",max_curr)
 print("max_int = ",max_int)
 # average walking and waiting times
-average_walking_and_waiting_time(ALL_RIDERS[1],system="Current")
+
 average_walking_and_waiting_time(ALL_RIDERS[2],system="Integrated")
 
 #detours
