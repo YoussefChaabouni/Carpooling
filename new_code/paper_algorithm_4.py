@@ -89,7 +89,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 				# update driver's capacity
 	if best_driver != None:
-		print("le rider monte dans la voiture avec le driver pour le first mile ",best_driver.get_id())
+		#print("le rider monte dans la voiture avec le driver pour le first mile ",best_driver.get_id())
 				
 		best_d_org = graph.get_node(best_driver.pos_depart)
 		best_m_d_org = graph.get_closest_MP_or_Station(best_d_org,"MPs").get_id() # closest MP to d's origin
@@ -98,8 +98,8 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		idx_out = best_driver.get_trajectory().node_id_list.index(s_r_org)
 		for i in range(idx_board,idx_out+1):
 			best_driver.get_current_capacity()[i] +=(-1)
-		print("driver ID = ",best_driver.get_id())
-		print("current capacity of driver = ",best_driver.get_current_capacity())
+		#print("driver ID = ",best_driver.get_id())
+		#print("current capacity of driver = ",best_driver.get_current_capacity())
 
 		##__________UPDATE DRIVER INFORMATION___________________
 		best_driver.first_detour = True
@@ -121,8 +121,8 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 			m_d_dst = Graph.get_closest_MP(d.get_pos_arrivee) #closest meeting point to driver's destination
 			m_prime = Graph.get_closest_MP(s_r_org) ## closest meeting point to the station which is closest to rider origin
 			'''
-			print("destination = ",d_dst.get_id())
-			print("station origine rider = ",s_r_org)
+			#print("destination = ",d_dst.get_id())
+			#print("station origine rider = ",s_r_org)
 			d_org = graph.get_node(d.pos_depart)
 			d_dst = graph.get_node(d.pos_arrivee)
 			m_d_dst = graph.get_closest_MP_or_Station(d_dst,"MPs").get_id() # closest MP to d's destination
@@ -170,7 +170,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 			# update driver's capacity
 				# update driver's capacity
 	if best_driver != None:
-		print("le rider monte dans la voiture avec le driver pour le first mile ",best_driver.get_id())
+		#print("le rider monte dans la voiture avec le driver pour le first mile ",best_driver.get_id())
 				
 		best_d_org = graph.get_node(best_driver.pos_depart)
 		best_m_d_org = graph.get_closest_MP_or_Station(best_d_org,"MPs").get_id() # closest MP to d's origin
@@ -179,8 +179,8 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		idx_out = best_driver.get_trajectory().node_id_list.index(m_prime)
 		for i in range(idx_board,idx_out+1):
 			best_driver.get_current_capacity()[i] +=(-1)
-		print("driver ID = ",best_driver.get_id())
-		print("current capacity of driver = ",best_driver.get_current_capacity())
+		#print("driver ID = ",best_driver.get_id())
+		#print("current capacity of driver = ",best_driver.get_current_capacity())
 
 
 		##__________UPDATE DRIVER INFORMATION___________________
@@ -196,7 +196,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		w_chap_d = graph.get_distance(r_org,graph.get_node(s_r_org))
 
 		if w_chap_d < 2.5 :
-			print("le rider marche jusqu'à la station de départ")
+		#	print("le rider marche jusqu'à la station de départ")
 			t_first = t_prime + walk(r_org,graph.get_node(s_r_org),graph,4.5/60)
 			wd 		= w_chap_d
 
@@ -221,8 +221,8 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 				
 
 
-	print("the walking distance from first mile = ",wd)
-	print("the waiting time from first mile = ",wt)
+	#print("the walking distance from first mile = ",wd)
+	#print("the waiting time from first mile = ",wt)
 
 	if t_first == np.Infinity:
 		# le rider ne peut pas atteindre la station s_get_trajectory()
@@ -267,7 +267,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 			t_chap,w_chap_t,w_chap_d = algorithm_2(z = s_r_dest,z_prime =  r_dst.get_id(),t = t_prime,d=d,m_board = s_r_dest,m_out = m_d_dest,graph=graph)
 			if wd + w_chap_d < 2.5 and wt+ w_chap_t <45 and t_chap<t_last:
-				print("le rider monte dans la voiture avec le driver pour le last mile",d.get_id())
+				#print("le rider monte dans la voiture avec le driver pour le last mile",d.get_id())
 				best_driver = d
 				# mettre à jour t_last wd et wt
 				t_last = t_chap
@@ -297,7 +297,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 	rider.update_walking_distance(wd)
 				# update driver's capacity
 	if best_driver != None:
-		print("le rider monte dans la voiture avec le driver pour le last mile ",best_driver.get_id())
+		#print("le rider monte dans la voiture avec le driver pour le last mile ",best_driver.get_id())
 				
 		best_d_dest = graph.get_node(best_driver.pos_arrivee)
 		best_m_d_dest = graph.get_closest_MP_or_Station(best_d_dest,"MPs").get_id()# closest MP to d's dest
@@ -306,8 +306,8 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		idx_out = best_driver.get_trajectory().node_id_list.index(best_m_d_dest)
 		for i in range(idx_board,idx_out+1):
 			best_driver.get_current_capacity()[i] +=(-1)
-		print("driver ID = ",best_driver.get_id())
-		print("current capacity of driver = ",best_driver.get_current_capacity())
+		#print("driver ID = ",best_driver.get_id())
+		#print("current capacity of driver = ",best_driver.get_current_capacity())
 
 		##__________UPDATE DRIVER INFORMATION___________________
 		best_driver.last_detour = True
@@ -372,7 +372,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 	rider.update_walking_distance(wd)
 
 	if best_driver != None:
-		print("le rider monte dans la voiture avec le driver pour le last mile ",best_driver.get_id())
+		#print("le rider monte dans la voiture avec le driver pour le last mile ",best_driver.get_id())
 				
 		best_d_dest = graph.get_node(best_driver.pos_arrivee)
 		best_m_d_dest = graph.get_closest_MP_or_Station(best_d_dest,"MPs").get_id()# closest MP to d's dest
@@ -381,8 +381,8 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		idx_out = best_driver.get_trajectory().node_id_list.index(best_m_d_dest)
 		for i in range(idx_board,idx_out+1):
 			best_driver.get_current_capacity()[i] +=(-1)
-		print("driver ID = ",best_driver.get_id())
-		print("current capacity of driver = ",best_driver.get_current_capacity())
+		#print("driver ID = ",best_driver.get_id())
+		#print("current capacity of driver = ",best_driver.get_current_capacity())
 
 		##__________UPDATE DRIVER INFORMATION___________________
 		best_driver.last_detour = True
@@ -421,8 +421,8 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 		t_prime = np.Infinity
 
-	print("the walking distance from first mile = ",wd)
-	print("the waiting time from first mile = ",wt)
+	#print("the walking distance from first mile = ",wd)
+	#print("the waiting time from first mile = ",wt)
 
 	return t_prime
 

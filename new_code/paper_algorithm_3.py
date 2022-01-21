@@ -83,7 +83,7 @@ def algorithm_3(drivers : List[Driver],rider : Rider,graph : Graph):
         idx_out = best_driver.get_trajectory().node_id_list.index(best_m_d_dest)
         for i in range(idx_board,idx_out+1):
             best_driver.get_current_capacity()[i] +=(-1)
-        print("driver ID = ",best_driver.get_id())
-        print("current capacity of driver = ",best_driver.get_current_capacity())
+        #print("driver ID = ",best_driver.get_id())
+        #print("current capacity of driver = ",best_driver.get_current_capacity())
 
     return t_prime

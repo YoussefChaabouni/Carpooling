@@ -89,7 +89,7 @@ def integrated_system(rider : Rider,drivers : List[Driver],graph: Graph):
 
 
         if solution == "foot":
-            print("the rider chooses to go on foot")
+           # print("the rider chooses to go on foot")
             arrival_time_destination = rider.born_time + t_foot
             walking_distance = graph.get_distance(graph.get_node(rider.pos_depart),graph.get_node(rider.pos_arrivee))
 
@@ -99,7 +99,7 @@ def integrated_system(rider : Rider,drivers : List[Driver],graph: Graph):
 
             return t_prime , solution
         if solution == "transit":
-            print("the rider chooses to go with transit")
+           # print("the rider chooses to go with transit")
             # get stations
             s_org = graph.get_closest_MP_or_Station(r_org,"Stations")
             s_dst = graph.get_closest_MP_or_Station(r_dst,"Stations")
@@ -126,7 +126,7 @@ def integrated_system(rider : Rider,drivers : List[Driver],graph: Graph):
             rider.get_trajectory().update_trajectory(Foot(ID="walk to destination "+r_dst.get_id(),Speed=4.5/60),arrival_time_destination,arrival_time_destination,r_dst.get_id())
      
         if solution == "carpooling":
-            print("the rider chooses carpooling")
+           # print("the rider chooses carpooling")
             # the updates are already in algorithm 3 
             #algorithm_3(drivers,rider,graph)
             # update rider trajectory
