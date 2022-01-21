@@ -15,7 +15,7 @@ def data_generation():
 
     NUMBER_OF_MPS = 50
     NUMBER_OF_STATIONS = 10
-    MAP_LENGTH = 10 # en km
+    MAP_LENGTH = 20 # en km
     MAP_WIDTH = 10
     NB_Drivers = int(4.8*MAP_LENGTH*MAP_WIDTH*1.5)
     NB_riders = int(8.3*MAP_LENGTH*MAP_WIDTH)
@@ -30,11 +30,26 @@ def data_generation():
         y = np.random.random() * MAP_WIDTH
         NODES.append(MeetingPoint(ID="MP"+str(i),x_coord=x, y_coord=y))
 
+   
+    duration_of_simulation = 180
+    train_frequency = 5
+    number_of_trains_per_sim = int(duration_of_simulation/train_frequency)
+
+    list_id_stations = []
+    
+    STATIONS = []
+    print("generating stations")
+    for i in tqdm(range(NUMBER_OF_STATIONS)):
+        x = np.random.random() * MAP_LENGTH
+        y = np.random.random() * MAP_WIDTH
+        list_id_stations.append("S"+str(i))
+        STATIONS.append(Station(ID="S"+str(i),x_coord=x, y_coord=y))
+
     # GENERATE THE 4 or 5 EXTRA MEETING POINTS
     counter = len(NODES) # counter for MP NAME
     print("Generating the second batch of MPS")
-    for i in tqdm(range(len(NODES))) : 
-        node = NODES[i]
+    for i in tqdm(range(len(STATIONS))) : 
+        node = STATIONS[i]
         r = np.random.rand()
         if r == 0:
             number_of_extra_mps = 4
@@ -55,23 +70,6 @@ def data_generation():
             NODES.append(MeetingPoint(ID="MP"+str(counter),x_coord=x, y_coord=y))
             counter +=1
 
-
-
-
-   
-    duration_of_simulation = 180
-    train_frequency = 5
-    number_of_trains_per_sim = int(duration_of_simulation/train_frequency)
-
-    list_id_stations = []
-    
-    STATIONS = []
-    print("generating stations")
-    for i in tqdm(range(NUMBER_OF_STATIONS)):
-        x = np.random.random() * MAP_LENGTH
-        y = np.random.random() * MAP_WIDTH
-        list_id_stations.append("S"+str(i))
-        STATIONS.append(Station(ID="S"+str(i),x_coord=x, y_coord=y))
 
     ## DRIVERS ORIGIN LIST
     ## The drivers are generated in meeting points

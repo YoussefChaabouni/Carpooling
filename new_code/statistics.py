@@ -33,7 +33,7 @@ def vehicle_maximum_occupancy(DRIVERS : List[Driver],system : str):
 
     explode = (0, 0, 0, 0, 0) 
 
-    fig1, ax1 = plt.subplots(figsize=(10, 7))
+    fig1, ax1 = plt.subplots(figsize=(7, 5))
     ax1.pie(data, explode=explode, labels=labels, autopct='%1.1f%%',
             shadow=True, startangle=0)
     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
@@ -111,15 +111,15 @@ def camembert_function(all_solutions):
     integrated = integrated / NUMBER_OF_RIDERS
 
     ## plot 
-    labels = ['CARPOOLING', 'FOOT',
-        'TRANSIT','INTEGRATED', 'NO SOLUTION']
+    labels = ['NO SOLUTION', 'FOOT',
+        'TRANSIT','CARPOOLING', 'INTEGRATED']
 
-    data = [carpooling*100, foot*100, transit*100,integrated*100,no_solution*100]
+    data = [no_solution*100, foot*100, transit*100,carpooling*100,integrated*100]
 
 
     explode = (0, 0, 0, 0, 0) 
 
-    fig1, ax1 = plt.subplots(figsize=(10, 7))
+    fig1, ax1 = plt.subplots(figsize=(7, 5))
     ax1.pie(data, explode=explode, labels=labels, autopct='%1.1f%%',
         shadow=True, startangle=0)
     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
@@ -155,15 +155,15 @@ def camembert_function(all_solutions):
 
 
     ## plot 
-    labels = ['CARPOOLING', 'FOOT',
-        'TRANSIT', 'NO SOLUTION']
+    labels = ['NO SOLUTION', 'FOOT',
+        'TRANSIT','CARPOOLING']
 
-    data = [carpooling*100, foot*100, transit*100,no_solution*100]
+    data = [no_solution*100, foot*100, transit*100,carpooling*100]
 
 
     explode = (0, 0, 0, 0) 
 
-    fig1, ax1 = plt.subplots(figsize=(10, 7))
+    fig1, ax1 = plt.subplots(figsize=(7, 5))
     ax1.pie(data, explode=explode, labels=labels, autopct='%1.1f%%',
         shadow=True, startangle=0)
     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
@@ -195,15 +195,15 @@ def camembert_function(all_solutions):
 
 
     ## plot 
-    labels = [ 'FOOT',
-        'TRANSIT', 'NO SOLUTION']
+    labels = [ 'NO SOLUTION', 'FOOT',
+        'TRANSIT']
 
-    data = [ foot*100, transit*100,no_solution*100]
+    data = [ no_solution*100, foot*100, transit*100]
 
 
     explode = ( 0, 0, 0) 
 
-    fig1, ax1 = plt.subplots(figsize=(10, 7))
+    fig1, ax1 = plt.subplots(figsize=(7, 5))
     ax1.pie(data, explode=explode, labels=labels, autopct='%1.1f%%',
         shadow=True, startangle=0)
     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
