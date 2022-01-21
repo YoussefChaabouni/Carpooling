@@ -33,10 +33,10 @@ def figure_4(T_t,T_d, C_t,C_d, I_t,I_d, T_d_inf,C_d_inf,I_d_inf):
 	fig, axs = plt.subplots(nrows=2, ncols=3, gridspec_kw={'height_ratios': [1, 2]}) # 'width_ratios'
 
 	set_share_axes(axs[0,:], sharey=True)
-	set_share_axes(axs[1,:], sharex=True)
+	set_share_axes(axs[1,:], sharex=True, sharey=True)
 
 	fig.suptitle('Systems comparison',fontsize = 20)
-	NUMBER_OF_BARS = 7
+	NUMBER_OF_BARS = 9
 	#plt.xlabel("km")
 	#plt.ylabel("minutes")
 
@@ -45,10 +45,11 @@ def figure_4(T_t,T_d, C_t,C_d, I_t,I_d, T_d_inf,C_d_inf,I_d_inf):
 	list_bar = [len(list(filter(lambda x : i<x<=j, T_d_inf))) for i,j in vector_bar]
 	axs[0,0].bar(list(map(lambda x : str(np.round(x,1)),vector_bar)),list_bar,color='green')
 	axs[1,0].scatter(T_d, T_t,color='green',s=1.75)
-	line = np.linspace(0,np.max(T_t))
-	axs[1,0].plot(line*2.5/60, line,color='gray',alpha=0.25)
-	axs[1,0].fill_between(line*2.5/60, line, 0, color='green', alpha=.1)
-	axs[1,0].fill_between(line*2.5/60, line, np.max(line), color='red', alpha=.1)
+	line_x = np.linspace(0,np.max([np.max(T_d),np.max(C_d),np.max(I_d)]))
+	line_y = np.clip(line_x*60/4.5,0,np.max([np.max(T_t),np.max(C_t),np.max(I_t)]))
+	axs[1,0].plot(line_x, line_y,color='gray',alpha=0.25)
+	axs[1,0].fill_between(line_x, line_y, 0, color='green', alpha=.1)
+	axs[1,0].fill_between(line_x, line_y, np.max(line_y), color='red', alpha=.1)
 	axs[0,0].set_xticklabels(list(map(lambda x : str(int(x[0]))+"-"+str(int(x[1])),vector_bar)),fontsize=8/int(NUMBER_OF_BARS/5))
 
 	axs[1,0].set_xlabel("Distance between origin and destination (km)")
@@ -63,10 +64,11 @@ def figure_4(T_t,T_d, C_t,C_d, I_t,I_d, T_d_inf,C_d_inf,I_d_inf):
 	list_bar = [len(list(filter(lambda x : i<x<=j, C_d_inf))) for i,j in vector_bar]
 	axs[0,1].bar(list(map(lambda x : str(np.round(x,1)),vector_bar)),list_bar,color='orange')
 	axs[1,1].scatter(C_d, C_t,color='orange',s=1.75)
-	line = np.linspace(0,np.max(C_t))
-	axs[1,1].plot(line*2.5/60, line,color='gray',alpha=0.25)
-	axs[1,1].fill_between(line*2.5/60, line, 0, color='green', alpha=.1)
-	axs[1,1].fill_between(line*2.5/60, line, np.max(line), color='red', alpha=.1)
+	line_x = np.linspace(0,np.max([np.max(T_d),np.max(C_d),np.max(I_d)]))
+	line_y = np.clip(line_x*60/4.5,0,np.max([np.max(T_t),np.max(C_t),np.max(I_t)]))
+	axs[1,1].plot(line_x, line_y,color='gray',alpha=0.25)
+	axs[1,1].fill_between(line_x, line_y, 0, color='green', alpha=.1)
+	axs[1,1].fill_between(line_x, line_y, np.max(line_y), color='red', alpha=.1)
 	axs[0,1].set_xticklabels(list(map(lambda x : str(int(x[0]))+"-"+str(int(x[1])),vector_bar)),fontsize=8/int(NUMBER_OF_BARS/5))
 
 	axs[1,1].grid()
@@ -76,10 +78,11 @@ def figure_4(T_t,T_d, C_t,C_d, I_t,I_d, T_d_inf,C_d_inf,I_d_inf):
 	list_bar = [len(list(filter(lambda x : i<x<=j, I_d_inf))) for i,j in vector_bar]
 	axs[0,2].bar(list(map(lambda x : str(np.round(x,1)),vector_bar)),list_bar,color='purple')
 	axs[1,2].scatter(I_d, I_t,color='purple',s=1.75)
-	line = np.linspace(0,np.max(I_t))
-	axs[1,2].plot(line*2.5/60, line,color='gray',alpha=0.25)
-	axs[1,2].fill_between(line*2.5/60, line, 0, color='green', alpha=.1)
-	axs[1,2].fill_between(line*2.5/60, line, np.max(line), color='red', alpha=.1)
+	line_x = np.linspace(0,np.max([np.max(T_d),np.max(C_d),np.max(I_d)]))
+	line_y = np.clip(line_x*60/4.5,0,np.max([np.max(T_t),np.max(C_t),np.max(I_t)]))
+	axs[1,2].plot(line_x, line_y,color='gray',alpha=0.25)
+	axs[1,2].fill_between(line_x, line_y, 0, color='green', alpha=.1)
+	axs[1,2].fill_between(line_x, line_y, np.max(line_y), color='red', alpha=.1)
 	axs[0,2].set_xticklabels(list(map(lambda x : str(int(x[0]))+"-"+str(int(x[1])),vector_bar)),fontsize=8/int(NUMBER_OF_BARS/5))
 
 	axs[1,2].grid()
