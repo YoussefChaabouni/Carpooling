@@ -41,7 +41,7 @@ def figure_4(T_t,T_d, C_t,C_d, I_t,I_d, T_d_inf,C_d_inf,I_d_inf):
 	#plt.ylabel("minutes")
 
 	#axs[0,0].scatter(T_d_inf, np.random.random(len(T_d_inf))*100,color='green',s=1.75) # blue,green,red,purple
-	vector_bar = np.linspace(0,int(np.max([T_d,C_d,I_d])),NUMBER_OF_BARS*2).reshape(-1,2)
+	vector_bar = np.linspace(0,int(np.max([np.max(T_d),np.max(C_d),np.max(I_d)])),NUMBER_OF_BARS*2).reshape(-1,2)
 	list_bar = [len(list(filter(lambda x : i<x<=j, T_d_inf))) for i,j in vector_bar]
 	axs[0,0].bar(list(map(lambda x : str(np.round(x,1)),vector_bar)),list_bar,color='green')
 	axs[1,0].scatter(T_d, T_t,color='green',s=1.75)
@@ -59,7 +59,7 @@ def figure_4(T_t,T_d, C_t,C_d, I_t,I_d, T_d_inf,C_d_inf,I_d_inf):
 	axs[1,0].grid()
 	axs[0,0].set_title('No carpooling system',fontsize = 15)
 
-	vector_bar = np.linspace(0,int(np.max([T_d,C_d,I_d])),NUMBER_OF_BARS*2).reshape(-1,2)
+	vector_bar = np.linspace(0,int(np.max([np.max(T_d),np.max(C_d),np.max(I_d)])),NUMBER_OF_BARS*2).reshape(-1,2)
 	list_bar = [len(list(filter(lambda x : i<x<=j, C_d_inf))) for i,j in vector_bar]
 	axs[0,1].bar(list(map(lambda x : str(np.round(x,1)),vector_bar)),list_bar,color='orange')
 	axs[1,1].scatter(C_d, C_t,color='orange',s=1.75)
@@ -72,7 +72,7 @@ def figure_4(T_t,T_d, C_t,C_d, I_t,I_d, T_d_inf,C_d_inf,I_d_inf):
 	axs[1,1].grid()
 	axs[0,1].set_title('Current system',fontsize = 15)
 
-	vector_bar = np.linspace(0,int(np.max([T_d,C_d,I_d])),NUMBER_OF_BARS*2).reshape(-1,2)
+	vector_bar = np.linspace(0,int(np.max([np.max(T_d),np.max(C_d),np.max(I_d)])),NUMBER_OF_BARS*2).reshape(-1,2)
 	list_bar = [len(list(filter(lambda x : i<x<=j, I_d_inf))) for i,j in vector_bar]
 	axs[0,2].bar(list(map(lambda x : str(np.round(x,1)),vector_bar)),list_bar,color='purple')
 	axs[1,2].scatter(I_d, I_t,color='purple',s=1.75)
