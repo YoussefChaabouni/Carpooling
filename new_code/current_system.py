@@ -112,7 +112,7 @@ def current_system(rider : Rider,drivers : List[Driver],graph: Graph):
             walking_distance = graph.get_distance(r_org,s_org) + graph.get_distance(s_dst,r_dst)
 
             # update rider information
-            rider.update_waiting_time(waiting_for_train - arrival_time_origin_station)
+            #rider.update_waiting_time(waiting_for_train - arrival_time_origin_station)
             rider.update_walking_distance(walking_distance)
             # walk to station
             rider.get_trajectory().update_trajectory(Foot(ID="walk to first station",Speed=4.5/60),arrival_time_origin_station,departure_time_origin_station,s_org.get_id())

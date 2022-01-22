@@ -40,7 +40,7 @@ def vehicle_maximum_occupancy(DRIVERS : List[Driver],system : str):
     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
     plt.legend()
     title = "Vehicle Maximum Occupancy in "+system+" System"
-    plt.title(title)
+    plt.title(title,fontsize = 18)
     plt.show()
     return max_list
 
@@ -112,7 +112,7 @@ def camembert_function(all_solutions):
     integrated = integrated / NUMBER_OF_RIDERS
 
     ## plot 
-    labels = ['NO SOLUTION', 'FOOT',
+    labels = ['UNSERVED', 'FOOT',
         'TRANSIT','CARPOOLING', 'INTEGRATED']
 
     data = [no_solution*100, foot*100, transit*100,carpooling*100,integrated*100]
@@ -120,12 +120,12 @@ def camembert_function(all_solutions):
 
     explode = (0, 0, 0, 0, 0) 
 
-    fig1, ax1 = plt.subplots(figsize=(7, 5))
-    ax1.pie(data, explode=explode, labels=labels, autopct='%1.1f%%',
+    fig1, ax1 = plt.subplots(figsize=(9, 6))
+    ax1.pie(data, explode=explode,labels=labels, autopct='%1.1f%%',
         shadow=True, startangle=0)
     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-    plt.legend()
-    plt.title("Integrated system")
+    plt.legend(loc="upper right")
+    plt.title("Integrated system",fontsize = 18)
 
     plt.show()
 
@@ -156,7 +156,7 @@ def camembert_function(all_solutions):
 
 
     ## plot 
-    labels = ['NO SOLUTION', 'FOOT',
+    labels = ['UNSERVED', 'FOOT',
         'TRANSIT','CARPOOLING']
 
     data = [no_solution*100, foot*100, transit*100,carpooling*100]
@@ -164,13 +164,13 @@ def camembert_function(all_solutions):
 
     explode = (0, 0, 0, 0) 
 
-    fig1, ax1 = plt.subplots(figsize=(7, 5))
+    fig1, ax1 = plt.subplots(figsize=(9, 6))
     ax1.pie(data, explode=explode, labels=labels, autopct='%1.1f%%',
         shadow=True, startangle=0)
     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
     plt.legend()
 
-    plt.title("Current system")
+    plt.title("Current system",fontsize = 18)
 
     plt.show()
 
@@ -196,7 +196,7 @@ def camembert_function(all_solutions):
 
 
     ## plot 
-    labels = [ 'NO SOLUTION', 'FOOT',
+    labels = [ 'UNSERVED', 'FOOT',
         'TRANSIT']
 
     data = [ no_solution*100, foot*100, transit*100]
@@ -204,13 +204,13 @@ def camembert_function(all_solutions):
 
     explode = ( 0, 0, 0) 
 
-    fig1, ax1 = plt.subplots(figsize=(7, 5))
+    fig1, ax1 = plt.subplots(figsize=(9, 6))
     ax1.pie(data, explode=explode, labels=labels, autopct='%1.1f%%',
         shadow=True, startangle=0)
     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
     plt.legend()
 
-    plt.title("No Carpooling System")
+    plt.title("No Carpooling System",fontsize = 18)
 
     plt.show()
 
@@ -237,7 +237,7 @@ def better_camembert(all_solutions):
             no_solution_i +=1
         if solution == "integrated":
             integrated +=1
-        carpooling_i = 0
+        
     
     carpooling_cs = 0
     foot_cs = 0
@@ -272,16 +272,18 @@ def better_camembert(all_solutions):
 
     NUMBER_OF_RIDERS = len(all_solutions[0])
     # create DataFrame
-    df = pd.DataFrame({'No Solution': [no_solution_i*100/NUMBER_OF_RIDERS,no_solution_cs*100/NUMBER_OF_RIDERS,no_solution_nc*100/NUMBER_OF_RIDERS,0],
-                    'Foot': [foot_i*100/NUMBER_OF_RIDERS,foot_cs*100/NUMBER_OF_RIDERS,foot_nc*100/NUMBER_OF_RIDERS,0],
-                    'Transit': [transit_i*100/NUMBER_OF_RIDERS,transit_cs*100/NUMBER_OF_RIDERS,transit_nc*100/NUMBER_OF_RIDERS,0],
-                    'Carpooling':[carpooling_i*100/NUMBER_OF_RIDERS,carpooling_cs*100/NUMBER_OF_RIDERS,0,0],
-                    'Integrated' : [integrated*100/NUMBER_OF_RIDERS,0,0,0]},
+    df = pd.DataFrame({'integrated' : [integrated*100/NUMBER_OF_RIDERS,0,0,0],
+                    'foot': [foot_i*100/NUMBER_OF_RIDERS,foot_cs*100/NUMBER_OF_RIDERS,foot_nc*100/NUMBER_OF_RIDERS,0],
+                    'transit': [transit_i*100/NUMBER_OF_RIDERS,transit_cs*100/NUMBER_OF_RIDERS,transit_nc*100/NUMBER_OF_RIDERS,0],
+                    'carpooling':[carpooling_i*100/NUMBER_OF_RIDERS,carpooling_cs*100/NUMBER_OF_RIDERS,0,0],
+                    
+                    'unserved': [no_solution_i*100/NUMBER_OF_RIDERS,no_solution_cs*100/NUMBER_OF_RIDERS,no_solution_nc*100/NUMBER_OF_RIDERS,0]},
                     index=['Integrated', 'Current','No Carpooling',''])
     
     
     # create stacked bar chart for monthly temperatures
-    df.plot(kind='bar', stacked=True, color=['gray', 'blue', 'green','yellow','red'])#.legend(loc="lower_left")
+    
+    df.plot(kind='bar', stacked=True, color=['red', 'blue', 'green','yellow','gray'])#.legend(loc="lower_left")
     
     # labels for x & y axis
     #plt.xlabel('System')

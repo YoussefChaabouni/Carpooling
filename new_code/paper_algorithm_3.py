@@ -54,7 +54,7 @@ def algorithm_3(drivers : List[Driver],rider : Rider,graph : Graph):
 
 
                 # update rider information
-                rider.update_waiting_time(wt)
+                #rider.update_waiting_time(wt)
                 rider.update_walking_distance(wd)
 
     # update rider trajectory
