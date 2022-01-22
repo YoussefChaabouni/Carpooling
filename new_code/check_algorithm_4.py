@@ -58,7 +58,7 @@ def check_algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 			
 			if wd + w_chap_d <= 2.5  and  wt + w_chap_t <= 45  and  t_chap < t_first: # les longueurs en Mètres et le temps en Secondes
 
-				print("le rider monte dans la voiture avec le driver pour le first mile ",d.get_id())
+				#print("le rider monte dans la voiture avec le driver pour le first mile ",d.get_id())
 				best_driver = d
 				t_first = t_chap
 				wd 	= wd + w_chap_d
@@ -200,7 +200,7 @@ def check_algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 			t_chap,w_chap_t,w_chap_d = algorithm_2(z = s_r_dest,z_prime =  r_dst.get_id(),t = t_prime,d=d,m_board = s_r_dest,m_out = m_d_dest,graph=graph)
 			if wd + w_chap_d < 2.5 and wt+ w_chap_t <45 and t_chap<t_last:
-				print("le rider monte dans la voiture avec le driver pour le last mile",d.get_id())
+				#print("le rider monte dans la voiture avec le driver pour le last mile",d.get_id())
 				best_driver = d
 				# mettre à jour t_last wd et wt
 				t_last = t_chap

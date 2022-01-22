@@ -51,12 +51,12 @@ def algorithm_1(d : Driver, graph : Graph):
 		if r == 1:
 			# Try to add a detour close to the origin
 			if  graph.get_distance(m_org_d,s_org_d) + graph.get_distance(s_org_d,m_dst_d) <= MAX_DETOUR_PERCENTAGE * graph.get_distance(m_org_d,m_dst_d):
-				print("detour to s_org_d")
+				#print("detour to s_org_d")
 				# Add a detour through station s_org_d
 				J_d = [org_d, m_org_d, s_org_d, m_dst_d, dst_d]
 				
 				#__________________________
-				print("driver went from m_org_d to s_org_d in : ",Drive(m_org_d,s_org_d,graph,d.speed))
+				#print("driver went from m_org_d to s_org_d in : ",Drive(m_org_d,s_org_d,graph,d.speed))
 
 
 				# ajouter s_org_d à trajectory
