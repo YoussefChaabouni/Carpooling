@@ -34,8 +34,8 @@ def no_carpooling_system(rider : Rider,graph: Graph):
     solution = "no solution"
     
     solution_encoding = ["foot","transit"]
-    print("NO CARPOOLING SYSTEM RESULTS :")
-    print("_______ESTIMATIONS_________________")
+    #print("NO CARPOOLING SYSTEM RESULTS :")
+    #print("_______ESTIMATIONS_________________")
     t_foot_prime = walk(graph.get_node(rider.pos_depart),graph.get_node(rider.pos_arrivee),graph,4.5/60)
     t_transit = transit_only_algorithm(rider,graph)
 
@@ -47,15 +47,15 @@ def no_carpooling_system(rider : Rider,graph: Graph):
         t_foot = t_foot_prime
 
     
-    print("FOOT : ")
-    print("    estimated foot time = ",t_foot_prime)
-    print("    estimated walking distance = ",graph.get_distance(graph.get_node(rider.pos_depart),graph.get_node(rider.pos_arrivee)))
+    #print("FOOT : ")
+    #print("    estimated foot time = ",t_foot_prime)
+    #print("    estimated walking distance = ",graph.get_distance(graph.get_node(rider.pos_depart),graph.get_node(rider.pos_arrivee)))
     
-    print("________RIDER DECISION PROCESS___________")
+    #print("________RIDER DECISION PROCESS___________")
     
     #print("     estimated time to carpool = ",t_carpool)
-    print(" time to go on FOOT = ",t_foot)
-    print(" time to TRANSIT = ",t_transit)
+    #print(" time to go on FOOT = ",t_foot)
+    #print(" time to TRANSIT = ",t_transit)
 
 
     solution_times_list = [t_foot,t_transit]
