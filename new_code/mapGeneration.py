@@ -31,7 +31,7 @@ def data_generation():
         NODES.append(MeetingPoint(ID="MP"+str(i),x_coord=x, y_coord=y))
 
    
-    duration_of_simulation = 60
+    duration_of_simulation = 60*5
     train_frequency = 5
     number_of_trains_per_sim = int(duration_of_simulation+1/train_frequency)
 
@@ -52,9 +52,9 @@ def data_generation():
         node = STATIONS[i]
         r = np.random.rand()
         if r == 0:
-            number_of_extra_mps = 2
+            number_of_extra_mps = 4
         else :
-            number_of_extra_mps = 3
+            number_of_extra_mps = 5
 
         R = 0.3 # 300m radius around MP
 

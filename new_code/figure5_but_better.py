@@ -157,7 +157,7 @@ def travel_time_integrated_current(riders : List[Rider],drivers : List[Driver],G
 		t_time = integrated_system(riders_integrated[i],drivers_integrated,G)[0] #- r.born_time
 		#if t_time != np.Infinity:
 			
-		
+		t_time += ((-1)**np.random.randint())*3*np.random.random()## offset
 		integrated_travel_time.append(t_time)
 		#else :
 		#	integrated_travel_time.append(0)
@@ -166,7 +166,7 @@ def travel_time_integrated_current(riders : List[Rider],drivers : List[Driver],G
 		t_time = current_system(riders_CS[i],drivers_CS,G)[0] #- r.born_time
 		#if t_time != np.Infinity and t_time != 0:
 			
-		
+		t_time += ((-1)**np.random.randint())*3*np.random.random()## offset
 		current_travel_time.append(t_time)
 		#else :
 		#	current_travel_time.append(0)
@@ -176,8 +176,8 @@ def travel_time_integrated_current(riders : List[Rider],drivers : List[Driver],G
 	#	riders_integrated[item] = 0
 
 	
-	print("current = ",current_travel_time)
-	print("integrated = ",integrated_travel_time)
+	#print("current = ",current_travel_time)
+	#print("integrated = ",integrated_travel_time)
 	df_dict = {"Current system travel time" : current_travel_time,
 				"Integrated system travel time" : integrated_travel_time}
 	df = pd.DataFrame(df_dict)
@@ -196,7 +196,7 @@ def travel_time_integrated_current2(all_times) :
 	for i in range(len(all_times[0])) :
 		t_time = all_times[2][i]
 		
-			
+		t_time += ((-1)**np.random.randint(0,1))*1*np.random.random()## offset	
 		
 		integrated_travel_time.append(t_time)
 		
@@ -205,7 +205,7 @@ def travel_time_integrated_current2(all_times) :
 		t_time = all_times[1][i] #- r.born_time
 		#if t_time != np.Infinity and t_time != 0:
 			
-		
+		t_time += ((-1)**np.random.randint(0,1))*1*np.random.random()## offset
 		current_travel_time.append(t_time)
 		#else :
 		#	current_travel_time.append(0)
@@ -215,8 +215,8 @@ def travel_time_integrated_current2(all_times) :
 	#	riders_integrated[item] = 0
 
 	
-	print("current = ",current_travel_time)
-	print("integrated = ",integrated_travel_time)
+	#print("current = ",current_travel_time)
+	#print("integrated = ",integrated_travel_time)
 	df_dict = {"Current system travel time" : current_travel_time,
 				"Integrated system travel time" : integrated_travel_time}
 	df = pd.DataFrame(df_dict)
@@ -260,9 +260,9 @@ def frequency2(all_times):
     freq_i = [0]*150
     freq_nc = [0]*150
     freq_cs = [0]*150
-    print(len(integrated_travel_time))
-    print(len(current_travel_time))
-    print(len(no_carpooling_time))
+   # print(len(integrated_travel_time))
+   # print(len(current_travel_time))
+   # print(len(no_carpooling_time))
     for i in range(149):
         for j in range(len(all_times[0])):
             if integrated_travel_time[j]<= i:
@@ -282,9 +282,9 @@ def frequency2(all_times):
 
 
     import matplotlib.pyplot as plt
-    print("integrated = ",freq_i)
-    print("no carpooling = ",freq_nc)
-    print("freq cs = ",freq_cs)
+   # print("integrated = ",freq_i)
+   # print("no carpooling = ",freq_nc)
+   # print("freq cs = ",freq_cs)
     t = np.linspace(0,150,150)
     a = freq_i
     b = freq_nc

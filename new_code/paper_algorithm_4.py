@@ -38,6 +38,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 	# --------------- FIRST MILE --------------- #
 	t_first = np.Infinity
 
+	drove_on_first = False
 
 	for d in drivers:
 		
@@ -84,11 +85,12 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 				
 				# mise à jour des informations du rider
 				
-	rider.update_waiting_time(wt)
+	#rider.update_waiting_time(wt)
 	rider.update_walking_distance(wd)
 
 				# update driver's capacity
 	if best_driver != None:
+		drove_on_first = True
 		#print("le rider monte dans la voiture avec le driver pour le first mile ",best_driver.get_id())
 				
 		best_d_org = graph.get_node(best_driver.pos_depart)
@@ -164,12 +166,13 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 					# mise à jour des informations du rider
 				
-	rider.update_waiting_time(wt)
+	#rider.update_waiting_time(wt)
 	rider.update_walking_distance(wd)
 
 			# update driver's capacity
 				# update driver's capacity
 	if best_driver != None:
+		drove_on_first = True
 		#print("le rider monte dans la voiture avec le driver pour le first mile ",best_driver.get_id())
 				
 		best_d_org = graph.get_node(best_driver.pos_depart)
@@ -245,7 +248,8 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 
 	# ------------------------incrémenter le temps d'attente et t_prime---------------------------
-	wt += departure_time_station - arrival_time_station
+	if drove_on_first :
+		wt += departure_time_station - arrival_time_station
 	t_prime = departure_time_dest_station
 
 
