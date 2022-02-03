@@ -79,7 +79,7 @@ print("graph of this many nodes = ",len(G.node_list))
 
 # try out many drivers
 drivers = []
-for i in range(100):
+for i in range(300):
 
     # generate random origin, destination and born time
     random_born_time = np.random.randint(0,120)
@@ -106,7 +106,7 @@ for i in range(100):
 
 
 riders_list = []
-NUMBER_OF_RIDERS = 300
+NUMBER_OF_RIDERS = 900
 for j in range(NUMBER_OF_RIDERS):
 
 	random_born_time = np.random.randint(0,120)

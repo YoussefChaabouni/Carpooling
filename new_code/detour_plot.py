@@ -6,6 +6,7 @@ it can also display the none ratio (drivers without detours)
 from typing import List
 from PersonClasses import Driver
 import pandas as pd
+import matplotlib.pyplot as plt
 import seaborn as sns
 
 
@@ -43,4 +44,6 @@ def detour_plot(DRIVERS : List[Driver]):
    
     ax = sns.barplot(x="detour type", y="detour ratio %", data=detours_df)
 
+    plt.show()
+    
     return detours
