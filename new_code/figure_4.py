@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 # regarder les point de départ et d'arriver et executer la fonction du graph
 # regarder la trajectory pour la liste des arrival times [-1] - [0]
 
-def figure_4(T_t,T_d, C_t,C_d, I_t,I_d, T_d_inf,C_d_inf,I_d_inf):
+def figure_4(T_t,T_d, C_t,C_d, I_t,I_d, T_d_inf,C_d_inf,I_d_inf,save_path):
 	# T, C, I : Transit(no carpooling), Carpooling only, Integrated
 	# _t : time in minutes
 	# _d : distance in km
@@ -88,6 +88,8 @@ def figure_4(T_t,T_d, C_t,C_d, I_t,I_d, T_d_inf,C_d_inf,I_d_inf):
 	axs[1,2].grid()
 	axs[0,2].set_title('Integrated system',fontsize = 15)
 
+	if save_path != "":
+		plt.savefig(save_path+"/system comparison.png",format='png')
 
 	plt.show()
 

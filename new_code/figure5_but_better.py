@@ -190,7 +190,7 @@ def travel_time_integrated_current(riders : List[Rider],drivers : List[Driver],G
 	plt.show()
 	'''
 
-def travel_time_integrated_current2(all_times) :
+def travel_time_integrated_current2(all_times,save_path) :
 	integrated_travel_time=[]
 	current_travel_time=[]
 	for i in range(len(all_times[0])) :
@@ -222,6 +222,10 @@ def travel_time_integrated_current2(all_times) :
 	df = pd.DataFrame(df_dict)
 
 	sns.scatterplot(data=df, x="Current system travel time", y="Integrated system travel time")
+
+	if save_path != "":
+		plt.savefig(save_path+"/travel_times_comparison.png",format='png')
+
 	plt.show()
     
 
@@ -229,7 +233,7 @@ def travel_time_integrated_current2(all_times) :
 
 
 
-def frequency2(all_times):
+def frequency2(all_times,save_path):
     integrated_travel_time=[]
     current_travel_time=[]
     no_carpooling_time=[]
@@ -300,9 +304,12 @@ def frequency2(all_times):
 
     #	[a,b,c] = plt.plot(data)
     plt.legend(loc='lower right')
-    plt.show()
 
-    return 0
+	
+
+	#plt.show()
+
+	#return 0
 
 
 def frequency(riders,drivers,G):

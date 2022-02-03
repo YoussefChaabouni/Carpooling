@@ -7,9 +7,10 @@ from typing import List
 from PersonClasses import Driver
 import pandas as pd
 import seaborn as sns
+import matplotlib.pyplot as plt 
 
 
-def detour_plot(DRIVERS : List[Driver]):
+def detour_plot(DRIVERS : List[Driver],save_path):
     detours = [0,0,0,0] # encoded first ,last, both,none
     
     # for loop to check detours
@@ -43,4 +44,10 @@ def detour_plot(DRIVERS : List[Driver]):
    
     ax = sns.barplot(x="detour type", y="detour ratio %", data=detours_df)
 
+    #plt.show()
+
+    if save_path != "":
+        plt.savefig(save_path+"/detour_plot.png",format='png')
+
+    plt.show()
     return detours

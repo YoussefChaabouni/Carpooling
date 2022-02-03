@@ -73,7 +73,7 @@ def check_algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 				#- marcher jusqu'à m_d_org
 				#- prendre la voiture jusqu'à s_r_org
 				
-				arrival_time_mp = t_prime + walk(r_org,graph.get_node(m_d_org),graph,4.5/60) # arrivée à m_r_org
+				arrival_time_mp = t_prime + walk(r_org,graph.get_node(m_d_org),graph,rider.walking_speed/60) # arrivée à m_r_org
 				departure_time_mp = arrival_time_mp + w_chap_t #départ de m_r_org
 				arrival_time_station = t_chap + 1 #arrivée à la plateforme de s_r_org
 				departure_time_station =  next_train_time(graph.get_node(s_r_org),graph.get_node(s_r_dest),arrival_time_station)	
@@ -122,11 +122,11 @@ def check_algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 					#- prendre la voiture jusqu'à m_prime
 					#- marcher jusqu'à s_r_org
 					
-					arrival_time_mp = t_prime + walk(r_org,graph.get_node(m_d_org),graph,4.5/60) # arrivée à m_d_org
+					arrival_time_mp = t_prime + walk(r_org,graph.get_node(m_d_org),graph,rider.walking_speed/60) # arrivée à m_d_org
 					departure_time_mp = arrival_time_mp + w_chap_t #départ de m_r_org
 					arrival_time_m_prime = t_chap # arrivée à m_prime
 					departure_time_m_prime = t_chap # départ de m_prime
-					arrival_time_station = t_chap + walk(graph.get_node(m_prime),graph.get_node(s_r_org),graph,4.5/60) + 1 #arrivée à la plateforme de s_r_org
+					arrival_time_station = t_chap + walk(graph.get_node(m_prime),graph.get_node(s_r_org),graph,rider.walking_speed/60) + 1 #arrivée à la plateforme de s_r_org
 					departure_time_station = next_train_time(graph.get_node(s_r_org),graph.get_node(s_r_dest),arrival_time_station)	# départ de s_r_org
 
 
@@ -138,7 +138,7 @@ def check_algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 		if w_chap_d < 2.5 :
 			#print("le rider marche jusqu'à la station de départ")
-			t_first = t_prime + walk(r_org,graph.get_node(s_r_org),graph,4.5/60)
+			t_first = t_prime + walk(r_org,graph.get_node(s_r_org),graph,rider.walking_speed/60)
 			wd 		= w_chap_d
 
 			## mise à jour de la trajectoire du rider
@@ -149,7 +149,7 @@ def check_algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 			- marcher jusqu'à s_r_org
 			'''
 			
-			arrival_time_station = t_prime + walk(r_org,graph.get_node(s_r_org),graph,4.5/60) + 1 #arrivée à la plateforme de s_r_org
+			arrival_time_station = t_prime + walk(r_org,graph.get_node(s_r_org),graph,rider.walking_speed/60) + 1 #arrivée à la plateforme de s_r_org
 			#departure_time_station = arrival_time_station + next_train_waiting_time	# départ de s_r_org
 			departure_time_station = next_train_time(graph.get_node(s_r_org),graph.get_node(s_r_dest),arrival_time_station)
 			
@@ -247,7 +247,7 @@ def check_algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		if w_chap_d < 2.5 :
 			#print("le rider va marcher pour le last mile")
 
-			t_last = t_prime + walk(graph.get_node(s_r_dest),r_dst,graph,4.5/60)
+			t_last = t_prime + walk(graph.get_node(s_r_dest),r_dst,graph,rider.walking_speed/60)
 			wd 		+= w_chap_d
 
 			## mise à jour de la trajectoire du rider

@@ -36,10 +36,11 @@ class User:
 
 class Rider(User):
 
-    def __init__(self, pos_depart, pos_arrivee, ID, born_time,trajectory,waiting_time = 0,walking_distance = 0):
+    def __init__(self, pos_depart, pos_arrivee, ID, born_time,trajectory,waiting_time = 0,walking_distance = 0,walking_speed = 4.5):
         User.__init__(self,pos_depart, pos_arrivee, ID, born_time,trajectory)
         self.waiting_time = waiting_time
         self.walking_distance = walking_distance
+        self.walking_speed = walking_speed
     
     ###### UPDATE WALKING AND WAITING TIMES ##########
     def update_waiting_time(self, waiting_duration):
@@ -61,7 +62,7 @@ class Rider(User):
 class Driver(User,Car):
     
     #_______________ init ________________
-    def __init__(self,pos_depart,pos_arrivee,ID_user,born_time,ID_car,Speed,max_capacity,current_capacity,riders_list,trajectory):
+    def __init__(self,pos_depart,pos_arrivee,ID_user,born_time,ID_car,Speed,max_capacity,current_capacity,riders_list,trajectory,detour_rate=0.15):
         User.__init__(self,pos_depart, pos_arrivee, ID_user, born_time,trajectory)
         Car.__init__(self,ID_car,Speed,max_capacity,current_capacity)
         self.riders_list = riders_list
@@ -70,6 +71,7 @@ class Driver(User,Car):
         self.last_detour = False
         self.first_riders = 0
         self.last_riders = 0
+        self.detour_rate = detour_rate
 
     # ______________________Getters and setters ________________________________
     def get_riders_list(self):

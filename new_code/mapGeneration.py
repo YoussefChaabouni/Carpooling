@@ -11,14 +11,14 @@ from meansClasses import Foot
 from tqdm import tqdm
 
 
-def data_generation():
+def data_generation(drivers_distribution,riders_distribution,walking_speed,detour_ratio):
 
     #NUMBER_OF_MPS = 50
     NUMBER_OF_STATIONS = 5
-    MAP_LENGTH = 15 # en km
-    MAP_WIDTH = 8
-    NB_Drivers = int(4.8*MAP_LENGTH*MAP_WIDTH) # 1728
-    NB_riders = int(8.3*MAP_LENGTH*MAP_WIDTH)
+    MAP_LENGTH = 10 # en km
+    MAP_WIDTH = 5
+    NB_Drivers = int(drivers_distribution*MAP_LENGTH*MAP_WIDTH) # 1728
+    NB_riders = int(riders_distribution*MAP_LENGTH*MAP_WIDTH)
 
  
     NODES = []
@@ -137,6 +137,7 @@ def data_generation():
         max_capacity=4,
         current_capacity=[],
         riders_list=[],
+        detour_rate = detour_ratio,
         trajectory=Trajectory())
 
         d.trajectory = Trajectory(means_list=[d],arr_time_list=[d.born_time],dep_time_list=[d.born_time],node_list=[d.pos_depart])
@@ -153,8 +154,18 @@ def data_generation():
         
         
 
-        r = Rider(pos_depart = riders_origins[j].id,pos_arrivee = riders_dest[j].id,ID = "R"+str(j),born_time=random_born_time,trajectory=Trajectory())
-        r.trajectory = Trajectory(means_list=[Foot(Speed=5/60,ID="init "+r.get_id())],arr_time_list=[r.born_time],dep_time_list=[r.born_time],node_list=[r.pos_depart])
+        r = Rider(
+        pos_depart = riders_origins[j].id,
+        pos_arrivee = riders_dest[j].id,
+        ID = "R"+str(j),
+        born_time=random_born_time,
+        walking_speed = walking_speed,
+        trajectory=Trajectory())
+        r.trajectory = Trajectory(means_list=[Foot(Speed=5/60,ID="init "+r.get_id())],
+        arr_time_list=[r.born_time],
+        dep_time_list=[r.born_time],
+        
+        node_list=[r.pos_depart])
         riders_list.append(r)
 
     return riders_list, drivers, G

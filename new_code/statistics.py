@@ -12,7 +12,7 @@ import numpy as np
 
 
 # Vehicle max capacity
-def vehicle_maximum_occupancy(DRIVERS : List[Driver],system : str):
+def vehicle_maximum_occupancy(DRIVERS : List[Driver],system : str,save_path):
 
     max_list = [0,0,0,0,0]
     for d in DRIVERS:
@@ -41,8 +41,11 @@ def vehicle_maximum_occupancy(DRIVERS : List[Driver],system : str):
     plt.legend()
     title = "Vehicle Maximum Occupancy in "+system+" System"
     plt.title(title,fontsize = 18)
+    #plt.show()
+    if save_path != "" :
+        plt.savefig(save_path+"/Vehicle Maximum Occupancy in "+system+" System.png")    
     plt.show()
-    return max_list
+    return 0
 
 # average waiting and walking time
 def average_walking_and_waiting_time(RIDERS : List[Rider],system : str):
@@ -211,10 +214,12 @@ def camembert_function(all_solutions):
     plt.legend()
 
     plt.title("No Carpooling System",fontsize = 18)
+	#if save_path != "":
+	#	plt.savefig(save_path+"system comparison.png",format='png')
 
     plt.show()
 
-def better_camembert(all_solutions):
+def better_camembert(all_solutions,save_path):
         # import necessary libraries
     import pandas as pd
     import seaborn as sns
@@ -283,17 +288,23 @@ def better_camembert(all_solutions):
     
     # create stacked bar chart for monthly temperatures
     
-    df.plot(kind='bar', stacked=True, color=['red', 'blue', 'green','yellow','gray'])#.legend(loc="lower_left")
+    plot = df.plot(kind='bar', stacked=True, color=['red', 'blue', 'green','yellow','gray'])
+    plt.ylabel('Percentage of riders')#.legend(loc="lower_left")
     
     # labels for x & y axis
     #plt.xlabel('System')
-    plt.ylabel('Percentage of riders')
+    #plt.ylabel('Percentage of riders')
     
+    if save_path != "":
+        plt.savefig(save_path+"/served and unserved.png",format='png')
+
+
     plt.show()
     # title of plot
     #plt.title('')
+    #return plot
 
-def better_waiting_walking_times(ALL_RIDERS):
+def better_waiting_walking_times(ALL_RIDERS,save_path):
     average_walking_i = 0
     average_waiting_i = 0 
 
@@ -336,7 +347,12 @@ def better_waiting_walking_times(ALL_RIDERS):
     df = pd.DataFrame({"Time":["Walking Time","Waiting Time","Walking Time","Waiting Time","Walking Time","Waiting Time","Walking Time","Waiting Time"],
                         "Time (Minutes)":[average_walking_i,average_waiting_i,average_walking_c,average_waiting_c,average_walking_nc,average_waiting_nc,0,0],
                         "System":["Integrated","Integrated","Current","Current","No Carpooling","No Carpooling","",""]})
-    sns.barplot(x="System",y="Time (Minutes)",hue="Time",data = df)
+    plot = sns.barplot(x="System",y="Time (Minutes)",hue="Time",data = df)
+    
+    if save_path != "":
+        plt.savefig(save_path+"/waiting and walking times.png",format='png')
+
+
     plt.show()
 
-    return average_walking_i, average_waiting_i,average_walking_c, average_waiting_c,average_walking_nc, average_waiting_nc
+    return plot

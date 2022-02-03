@@ -14,7 +14,7 @@ def algorithm_1(d : Driver, graph : Graph):
 		J_d : trajectory
 	"""
 
-	MAX_DETOUR_PERCENTAGE = 1.15
+	MAX_DETOUR_PERCENTAGE = 1 + d.detour_rate
 	
 	t = d.get_born_time()
 	# prendre les nodes d'arrivée et de départ
