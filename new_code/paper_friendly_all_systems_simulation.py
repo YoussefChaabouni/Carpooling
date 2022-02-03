@@ -79,7 +79,7 @@ print("graph of this many nodes = ",len(G.node_list))
 
 # try out many drivers
 drivers = []
-for i in range(100):
+for i in range(300):
 
     # generate random origin, destination and born time
     random_born_time = np.random.randint(0,120)
@@ -127,7 +127,7 @@ DRIVERS = drivers
 RIDERS = riders_list
 
 # empty the folder
-save_path = "H:/Desktop/Carpooling GIT/Carpooling-1/new_code/graphs"
+save_path = "graphs"
 #os.remove(save_path)
 #os.makedirs(save_path)
 
