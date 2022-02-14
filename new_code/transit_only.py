@@ -32,14 +32,14 @@ def transit_only_algorithm(rider : Rider, graph : Graph):
 
     else :
         # walking to first station 
-        t_prime = walk(r_org,s_org,graph,5/60) + 1
+        t_prime = walk(r_org,s_org,graph,rider.walking_speed/60) + 1
         arrival_time_org_station = rider.born_time + t_prime # arrival time to station
 
         # boarding the train
         t_prime += board_train(s_org,s_dst,arrival_time_org_station) - arrival_time_org_station #duration of train trip
 
         # walking to destination
-        t_prime += walk(s_dst,r_dst,graph,5/60) + 1
+        t_prime += walk(s_dst,r_dst,graph,rider.walking_speed/60) + 1
 
         # compute the overall walking distance to check if the rider can consider the trip
         

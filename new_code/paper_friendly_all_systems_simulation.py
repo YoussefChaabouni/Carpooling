@@ -152,19 +152,6 @@ def simulation(DRIVERS,RIDERS,G,save_path):
 	ALL_SOLUTIONS = [[],[],[]]
 	ALL_TIMES     = [[],[],[]]
 
-	# parameters for plot function "figure_4"
-	T_t = []
-	T_d = []
-
-	C_t = []
-	C_d = []
-
-	I_t = []
-	I_d = []
-
-	T_d_inf = []
-	C_d_inf = []
-	I_d_inf = []
 
 	EFFECTIVE_RIDERS = [[],[],[]]
 	EFFECTIVE_TIMES = [[],[],[]]
@@ -226,6 +213,24 @@ def simulation(DRIVERS,RIDERS,G,save_path):
 	for driver in ALL_DRIVERS[0]:
 		if driver.born_time <= 60 :
 			EFFECTIVE_DRIVERS[0].append(driver)	
+
+	return EFFECTIVE_RIDERS, EFFECTIVE_DRIVERS, ALL_GRAPHS, EFFECTIVE_SOLUTIONS, EFFECTIVE_TIMES 
+
+def plot_data(EFFECTIVE_RIDERS, EFFECTIVE_DRIVERS, ALL_GRAPHS, EFFECTIVE_SOLUTIONS, EFFECTIVE_TIMES,save_path):
+
+	# parameters for plot function "figure_4"
+	T_t = []
+	T_d = []
+
+	C_t = []
+	C_d = []
+
+	I_t = []
+	I_d = []
+
+	T_d_inf = []
+	C_d_inf = []
+	I_d_inf = []
 
 	for i in tqdm(range(len(EFFECTIVE_RIDERS[0]))):
 

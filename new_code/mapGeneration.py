@@ -16,8 +16,8 @@ def data_generation(drivers_distribution,riders_distribution,walking_speed,detou
     #NUMBER_OF_MPS = 50
     NUMBER_OF_STATIONS = 5
     MAP_LENGTH = 10 # en km
-    MAP_WIDTH = 5
-    NB_Drivers = int(drivers_distribution*MAP_LENGTH*MAP_WIDTH) # 1728
+    MAP_WIDTH = 8
+    NB_Drivers = int(drivers_distribution*MAP_LENGTH*MAP_WIDTH) 
     NB_riders = int(riders_distribution*MAP_LENGTH*MAP_WIDTH)
 
  
