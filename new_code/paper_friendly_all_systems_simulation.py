@@ -132,6 +132,10 @@ save_path = "graphs"
 #os.makedirs(save_path)
 
 def simulation(DRIVERS,RIDERS,G,save_path):
+
+	print("NUMBER OF DRIVERS = ",len(DRIVERS))
+	print("NUMBER OF RIDERS = ",len(RIDERS))
+
 	# APPLICATION DE L'ALGORITHME 1
 	print("___________________ALGORITHM 1_________________________________")
 	for d in DRIVERS:

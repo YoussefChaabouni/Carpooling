@@ -9,9 +9,18 @@ from graphClasses import Node, Graph, Trajectory
 from PersonClasses import Driver, Rider
 from meansClasses import Foot
 from tqdm import tqdm
+import os
+import pickle
+from random import sample
 
 
-def data_generation(drivers_distribution,riders_distribution,walking_speed,detour_ratio):
+def data_generation():
+
+    #init hyperparameters
+    walking_speed = 5
+    riders_distribution = 10 # generate a lot of data then sample from it in the next function
+    drivers_distribution = 10
+    detour_ratio = 0.15
 
     #NUMBER_OF_MPS = 50
     NUMBER_OF_STATIONS = 5
@@ -20,7 +29,8 @@ def data_generation(drivers_distribution,riders_distribution,walking_speed,detou
     NB_Drivers = int(drivers_distribution*MAP_LENGTH*MAP_WIDTH) 
     NB_riders = int(riders_distribution*MAP_LENGTH*MAP_WIDTH)
 
- 
+    
+
     NODES = []
 
     #print(x,y)
@@ -104,6 +114,8 @@ def data_generation(drivers_distribution,riders_distribution,walking_speed,detou
     # INITIALISATION DU GRAPH
     final_graph_list = NODES + STATIONS + riders_origins + riders_dest
 
+    
+
     G = Graph(node_list = final_graph_list)
 
     timetable_gauche , timetable_droite = get_timetable(G,60,list_id_stations,number_of_trains_per_sim)
@@ -167,5 +179,78 @@ def data_generation(drivers_distribution,riders_distribution,walking_speed,detou
         
         node_list=[r.pos_depart])
         riders_list.append(r)
+    
+
+    # creating data folder
+    newpath = "Generate_Data"
+    if not os.path.exists(newpath):
+        os.makedirs(newpath)
+
+    # Saving the objects:
+    with open(newpath+'/'+'init_riders.pkl', 'wb') as f:  
+        pickle.dump(riders_list, f)
+    
+    with open(newpath+'/'+'init_drivers.pkl', 'wb') as f:  
+        pickle.dump(drivers, f)
+
+    with open(newpath+'/'+'init_graph.pkl', 'wb') as f:  
+        pickle.dump(G, f)
+
 
     return riders_list, drivers, G
+
+def load_simulation_data(drivers_distributions,riders_distributions,walking_speeds,detour_ratios):
+
+    # read the data files
+    with open('Generate_Data/init_riders.pkl', 'rb') as f:  # Python 3: open(..., 'rb')
+        riders_list = pickle.load(f)
+
+    with open('Generate_Data/init_drivers.pkl', 'rb') as f:  # Python 3: open(..., 'rb')
+        drivers = pickle.load(f)
+
+    with open('Generate_Data/init_graph.pkl', 'rb') as f:  # Python 3: open(..., 'rb')
+        G = pickle.load(f)
+
+    simulations_list =  []
+
+    simulations_number = len(drivers_distributions)*len(riders_distributions)*len(walking_speeds)*len(detour_ratios)
+
+    drivers_distributions.sort(reverse=True)
+    riders_distributions.sort(reverse=True)
+    
+    #for i in range(simulations_number):
+
+    data_index=[]
+
+    for j in range(len(drivers_distributions)):
+
+        # sample riders from bigger sample
+        num = int(len(drivers) * drivers_distributions[j] // 10)
+        indicies = sample(range(len(drivers)), num)
+        drivers = [drivers[i] for i in indicies]
+
+        riders_copy_list = riders_list
+
+        for k in range(len(riders_distributions)):
+
+            # sample riders from bigger sample
+            num = int(len(riders_list) * riders_distributions[k] // 10)
+            indicies = sample(range(len(riders_copy_list)), num)
+            riders_copy_list = [riders_copy_list[i] for i in indicies]
+
+            print("THIS METHOD OF PROGRESSIVE SAMPLING GIVES = ",set(riders_copy_list) <= set(riders_list))
+                #print("")
+
+            for ws in walking_speeds:
+                for dr in detour_ratios:
+                    
+                    for d in drivers:
+                        d.detour_ratio = dr
+                    
+                    for r in riders_copy_list:
+                        r.walking_speeds = ws
+
+                    # append this configuration to the simulations list
+                    simulations_list.append([riders_copy_list,drivers,G]) 
+                    data_index.append([drivers_distributions[j],riders_distributions[k],ws,dr])
+    return simulations_list, data_index

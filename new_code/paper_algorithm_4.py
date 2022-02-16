@@ -98,7 +98,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 		idx_board = best_driver.get_trajectory().node_id_list.index(best_m_d_org)
 		idx_out = best_driver.get_trajectory().node_id_list.index(s_r_org)
-		for i in range(idx_board,idx_out+1):
+		for i in range(idx_board,idx_out ):
 			best_driver.get_current_capacity()[i] +=(-1)
 		#print("driver ID = ",best_driver.get_id())
 		#print("current capacity of driver = ",best_driver.get_current_capacity())
@@ -180,7 +180,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 		idx_board = best_driver.get_trajectory().node_id_list.index(best_m_d_org)
 		idx_out = best_driver.get_trajectory().node_id_list.index(m_prime)
-		for i in range(idx_board,idx_out+1):
+		for i in range(idx_board,idx_out ):
 			best_driver.get_current_capacity()[i] +=(-1)
 		#print("driver ID = ",best_driver.get_id())
 		#print("current capacity of driver = ",best_driver.get_current_capacity())
@@ -308,7 +308,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 		idx_board = best_driver.get_trajectory().node_id_list.index(s_r_dest)
 		idx_out = best_driver.get_trajectory().node_id_list.index(best_m_d_dest)
-		for i in range(idx_board,idx_out+1):
+		for i in range(idx_board,idx_out ):
 			best_driver.get_current_capacity()[i] +=(-1)
 		#print("driver ID = ",best_driver.get_id())
 		#print("current capacity of driver = ",best_driver.get_current_capacity())
@@ -383,7 +383,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 		idx_board = best_driver.get_trajectory().node_id_list.index(m_seconde)
 		idx_out = best_driver.get_trajectory().node_id_list.index(best_m_d_dest)
-		for i in range(idx_board,idx_out+1):
+		for i in range(idx_board,idx_out ):
 			best_driver.get_current_capacity()[i] +=(-1)
 		#print("driver ID = ",best_driver.get_id())
 		#print("current capacity of driver = ",best_driver.get_current_capacity())
