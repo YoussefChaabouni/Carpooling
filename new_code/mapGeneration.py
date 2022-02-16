@@ -12,6 +12,7 @@ from tqdm import tqdm
 import os
 import pickle
 from random import sample
+import copy
 
 
 def data_generation():
@@ -251,6 +252,6 @@ def load_simulation_data(drivers_distributions,riders_distributions,walking_spee
                         r.walking_speeds = ws
 
                     # append this configuration to the simulations list
-                    simulations_list.append([riders_copy_list,drivers,G]) 
+                    simulations_list.append([copy.deepcopy(riders_copy_list),copy.deepcopy(drivers),G]) 
                     data_index.append([drivers_distributions[j],riders_distributions[k],ws,dr])
     return simulations_list, data_index

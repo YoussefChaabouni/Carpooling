@@ -98,10 +98,12 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 		idx_board = best_driver.get_trajectory().node_id_list.index(best_m_d_org)
 		idx_out = best_driver.get_trajectory().node_id_list.index(s_r_org)
-		for i in range(idx_board,idx_out ):
+		for i in range(idx_board,idx_out):
 			best_driver.get_current_capacity()[i] +=(-1)
 		#print("driver ID = ",best_driver.get_id())
-		#print("current capacity of driver = ",best_driver.get_current_capacity())
+		print("idx board = ",idx_board)
+		print("idx out = ",idx_out)
+		print("current capacity of driver = ",best_driver.get_current_capacity())
 
 		##__________UPDATE DRIVER INFORMATION___________________
 		best_driver.first_detour = True

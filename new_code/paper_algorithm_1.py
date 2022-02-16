@@ -107,6 +107,6 @@ def algorithm_1(d : Driver, graph : Graph):
 		departure_time = arrival_time 
 		d.get_trajectory().update_trajectory(d,arrival_time,departure_time,dst_d.get_id())
 
-	d.set_current_capacity([4]*len(J_d))
+	d.set_current_capacity([4]*len(d.get_trajectory().node_id_list))
 	return J_d
 
