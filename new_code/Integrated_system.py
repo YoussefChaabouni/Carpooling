@@ -94,6 +94,7 @@ def integrated_system(rider : Rider,drivers : List[Driver],graph: Graph):
             walking_distance = graph.get_distance(graph.get_node(rider.pos_depart),graph.get_node(rider.pos_arrivee))
 
             # update rider information
+            
             rider.update_walking_distance(walking_distance)
             rider.get_trajectory().update_trajectory(Foot(ID="walk only",Speed=rider.walking_speed/60),arrival_time_destination,arrival_time_destination,r_dst.get_id())
 
@@ -164,5 +165,8 @@ def integrated_system(rider : Rider,drivers : List[Driver],graph: Graph):
             '''
         if solution == "integrated":
             algorithm_4(drivers,rider,graph)
-        
+
+
+    rider.solution = solution
+    # print("the solution for ",rider.id," is ",rider.solution," " )    
     return t_prime , solution

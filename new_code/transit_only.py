@@ -23,7 +23,7 @@ def transit_only_algorithm(rider : Rider, graph : Graph):
     r_dst = graph.get_node(rider.pos_arrivee)
     s_org = graph.get_closest_MP_or_Station(r_org,"Stations")
     s_dst = graph.get_closest_MP_or_Station(r_dst,"Stations")
-    #print("TRANSIT :")
+    #print("_____________________TRANSIT FOR RIDER = ",rider.id,"___________________________________")
     #print("    the transit options wants the rider to go from ",s_org.get_id()," to ",s_dst.get_id())
     if s_org.get_id() == s_dst.get_id():
         #this case the rider shouldn't consider the train option
@@ -48,5 +48,5 @@ def transit_only_algorithm(rider : Rider, graph : Graph):
         if walking_distance > 2.5 :
             #print("    the estimated walking distance in transit option = ",walking_distance)
             t_prime = np.Infinity
-        
+    
         return t_prime

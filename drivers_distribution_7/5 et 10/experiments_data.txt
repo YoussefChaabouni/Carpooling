@@ -1,0 +1,30 @@
+______________experiment number 1-_______________
+Drivers distribution = 7
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.15
+______________experiment number 2-_______________
+Drivers distribution = 7
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.5
+______________experiment number 3-_______________
+Drivers distribution = 7
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.75
+______________experiment number 4-_______________
+Drivers distribution = 7
+Riders distribution = 8.3
+Walking speed = 10
+Detour ratio = 0.15
+______________experiment number 5-_______________
+Drivers distribution = 7
+Riders distribution = 8.3
+Walking speed = 10
+Detour ratio = 0.5
+______________experiment number 6-_______________
+Drivers distribution = 7
+Riders distribution = 8.3
+Walking speed = 10
+Detour ratio = 0.75

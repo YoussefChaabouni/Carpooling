@@ -36,7 +36,7 @@ def algorithm_1(d : Driver, graph : Graph):
 	# mettre à jour la trajectoire du driver
 	# on assume que le driver ne perd pas de temps entre les nodes ?? on peut ajouter un délai
 	delai = 1 # on suppose un délai d'une minute
-	arrival_time = t + Drive(org_d,m_org_d,graph,d.speed) ## arrivée à m_org_d
+	arrival_time = t + Drive(org_d,m_org_d,graph,d.speed/60) ## arrivée à m_org_d
 	departure_time = arrival_time+ delai # départ de m_org_d	
 	d.get_trajectory().update_trajectory(d,arrival_time,departure_time,m_org_d.get_id())
 	
@@ -60,7 +60,7 @@ def algorithm_1(d : Driver, graph : Graph):
 
 
 				# ajouter s_org_d à trajectory
-				arrival_time = departure_time + Drive(m_org_d,s_org_d,graph,d.speed) ## arrivée à s_org_d
+				arrival_time = departure_time + Drive(m_org_d,s_org_d,graph,d.speed/60) ## arrivée à s_org_d
 				departure_time = arrival_time + delai # départ de s_org_d	
 				d.get_trajectory().update_trajectory(d,arrival_time,departure_time,s_org_d.get_id())	
 
@@ -70,7 +70,7 @@ def algorithm_1(d : Driver, graph : Graph):
 					J_d = [org_d, m_org_d, s_org_d, s_dst_d, m_dst_d, dst_d]
 
 					# ajouter s_dst_d à trajectory
-					arrival_time = departure_time + Drive(s_org_d,s_dst_d,graph,d.speed) ## arrivée à s_dst_d
+					arrival_time = departure_time + Drive(s_org_d,s_dst_d,graph,d.speed/60) ## arrivée à s_dst_d
 					departure_time = arrival_time + delai # départ de s_dst_d	
 					d.get_trajectory().update_trajectory(d,arrival_time,departure_time,s_dst_d.get_id())
 		
@@ -81,7 +81,7 @@ def algorithm_1(d : Driver, graph : Graph):
 				J_d = [org_d, m_org_d, s_dst_d, m_dst_d, dst_d]
 
 				# ajouter s_dst_d à trajectory
-				arrival_time= departure_time + Drive(m_org_d,s_dst_d,graph,d.speed) ## arrivée à s_dst_d
+				arrival_time= departure_time + Drive(m_org_d,s_dst_d,graph,d.speed/60) ## arrivée à s_dst_d
 				departure_time = arrival_time + delai # départ de s_dst_d	
 				d.get_trajectory().update_trajectory(d,arrival_time,departure_time,s_dst_d.get_id())
 
@@ -91,22 +91,31 @@ def algorithm_1(d : Driver, graph : Graph):
 					J_d = [org_d, m_org_d, s_org_d, s_dst_d, m_dst_d, dst_d]
 
 					# ajouter m_dst_d à trajectory
-					arrival_time= departure_time + Drive(s_dst_d,s_org_d,graph,d.speed) ## arrivée à m_dst_d
+					arrival_time= departure_time + Drive(s_dst_d,s_org_d,graph,d.speed/60) ## arrivée à m_dst_d
 					departure_time = arrival_time + delai # départ de m_dst_d	
 					d.get_trajectory().update_trajectory(d,arrival_time,departure_time,s_org_d.get_id())
 
 		#------------------------
 		if m_dst_d != m_org_d :
 			# ajout du meeting point le plus proche de la destination
-			arrival_time = departure_time + Drive(J_d[len(J_d)-3],m_dst_d,graph,d.speed)
+			arrival_time = departure_time + Drive(J_d[len(J_d)-3],m_dst_d,graph,d.speed/60)
 			departure_time = arrival_time
 			d.get_trajectory().update_trajectory(d,arrival_time,departure_time,m_dst_d.get_id())
 
 		# ajout de la destination
-		arrival_time = departure_time + Drive(J_d[len(J_d)-2],dst_d,graph,d.speed)
+		arrival_time = departure_time + Drive(J_d[len(J_d)-2],dst_d,graph,d.speed/60)
 		departure_time = arrival_time 
 		d.get_trajectory().update_trajectory(d,arrival_time,departure_time,dst_d.get_id())
 
 	d.set_current_capacity([4]*len(d.get_trajectory().node_id_list))
+	
+	# print("______________DRIVER ",d.id,"trajectory_____________")
+	# trajectory = d.get_trajectory()
+	# print("node list of R206 = ",d.id," ",trajectory.node_id_list)
+	# print("arrival times of R206 = ",d.id," ",trajectory.arr_time_list)
+	# print("departure times of R206 = ",d.id," ",trajectory.dep_time_list)
+	# print("means of R206 = ",d.id," ",[x.id for x in trajectory.means_list])
+
+
 	return J_d
 

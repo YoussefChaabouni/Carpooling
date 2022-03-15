@@ -15,7 +15,7 @@ import random
 def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 	
-	
+	#print("__________________rider : ",rider.id," is in integrated_________________________________")
 	t_prime = rider.get_trajectory().dep_time_list[0] ## departure time from origin
 
 	##---------------------------NEXT TRAIN----------------------------------------------
@@ -73,6 +73,14 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 				#le rider va :
 				#- marcher jusqu'à m_d_org
 				#- prendre la voiture jusqu'à s_r_org
+
+				# print("he finds a driver in first mile and case 1 but walks = ",wd)
+				# print("his waiting time is = ",wt)
+
+				# this code expresses that the rider stays home until he has to get out
+				# t_prime = wt
+				# rider.get_trajectory().arr_time_list[0] = wt
+				# rider.get_trajectory().dep_time_list[0] = wt
 				
 				arrival_time_mp = t_prime + walk(r_org,graph.get_node(m_d_org),graph,rider.walking_speed/60) # arrivée à m_r_org
 				departure_time_mp = arrival_time_mp + w_chap_t #départ de m_r_org
@@ -83,6 +91,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 				rider.get_trajectory().update_trajectory(Foot(ID=m_d_org,Speed=rider.walking_speed/60),arrival_time_mp,departure_time_mp,m_d_org) # ajouter m_d_org node à trajectory
 				rider.get_trajectory().update_trajectory(d,arrival_time_station,departure_time_station,s_r_org) # ajouter s_r_org à trajectory
 				
+				break
 				# mise à jour des informations du rider
 				
 	#rider.update_waiting_time(wt)
@@ -101,9 +110,9 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		for i in range(idx_board,idx_out):
 			best_driver.get_current_capacity()[i] +=(-1)
 		#print("driver ID = ",best_driver.get_id())
-		print("idx board = ",idx_board)
-		print("idx out = ",idx_out)
-		print("current capacity of driver = ",best_driver.get_current_capacity())
+		#print("idx board = ",idx_board)
+		#print("idx out = ",idx_out)
+		#print("current capacity of driver = ",best_driver.get_current_capacity())
 
 		##__________UPDATE DRIVER INFORMATION___________________
 		best_driver.first_detour = True
@@ -153,7 +162,17 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 					#- marcher jusqu'à m_d_org
 					#- prendre la voiture jusqu'à m_prime
 					#- marcher jusqu'à s_r_org
-					
+					# print("he finds a driver in first mile and case 2 but walks = ",wd)
+					# print("his waiting time is = ",wt)
+
+					# this code expresses that the rider stays home until he has to get out of his home
+					# this code expresses that the rider stays home until he has to get out
+					# t_prime = wt
+					# rider.get_trajectory().arr_time_list[0] = wt
+					# rider.get_trajectory().dep_time_list[0] = wt
+
+
+
 					arrival_time_mp = t_prime + w_chap_t + walk(r_org,graph.get_node(m_d_org),graph,rider.walking_speed/60) # arrivée à m_d_org
 					departure_time_mp = arrival_time_mp  #départ de m_r_org
 					arrival_time_m_prime = t_chap # arrivée à m_prime
@@ -161,11 +180,12 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 					arrival_time_station = t_chap + walk(graph.get_node(m_prime),graph.get_node(s_r_org),graph,rider.walking_speed/60) + 1 #arrivée à la plateforme de s_r_org
 					departure_time_station = next_train_time(graph.get_node(s_r_org),graph.get_node(s_r_dest),arrival_time_station)	# départ de s_r_org
 
-
+					
 					rider.get_trajectory().update_trajectory(Foot(ID=m_d_org,Speed=rider.walking_speed/60),arrival_time_mp,departure_time_mp,m_d_org) # ajouter m_d_org node à trajectory de r
 					rider.get_trajectory().update_trajectory(d,arrival_time_m_prime,departure_time_m_prime,m_prime) # ajouter m_prime à trajectory de r
 					rider.get_trajectory().update_trajectory(Foot(ID=s_r_org,Speed=rider.walking_speed/60),arrival_time_station,departure_time_station,s_r_org) # ajouter s_r_org à trajectory de r
 
+					break
 					# mise à jour des informations du rider
 				
 	#rider.update_waiting_time(wt)
@@ -212,7 +232,13 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 			le rider va :
 			- marcher jusqu'à s_r_org
 			'''
-			
+			# print("he finds a driver in first mile and case 3 but walks = ",wd)
+			# print("his waiting time is = ",wt)
+			# this code expresses that the rider stays home until he has to get out
+			# t_prime = wt
+			# rider.get_trajectory().arr_time_list[0] = wt
+			# rider.get_trajectory().dep_time_list[0] = wt
+
 			arrival_time_station = t_prime + walk(r_org,graph.get_node(s_r_org),graph,rider.walking_speed/60) + 1 #arrivée à la plateforme de s_r_org
 			#departure_time_station = arrival_time_station + next_train_waiting_time	# départ de s_r_org
 			departure_time_station = next_train_time(graph.get_node(s_r_org),graph.get_node(s_r_dest),arrival_time_station)
@@ -223,6 +249,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 				
 			
 			rider.update_walking_distance(wd)
+			
 				
 
 
@@ -241,7 +268,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 	# --------------------------- ajouter le train à trajectory de r -----------------------
 	
-
+	best_driver = None
 	
 
 	arrival_time_dest_station = board_train(graph.get_node(s_r_org),graph.get_node(s_r_dest),temps_darrivee = departure_time_station ) # temps d'arrivée à s_r_dest
@@ -296,7 +323,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 				rider.get_trajectory().update_trajectory(d,arrival_time_m_r_dest,departure_time_m_r_dest,m_d_dest) # ajouter m_r_dest à trajectory
 				rider.get_trajectory().update_trajectory(Foot(ID=r_dst.get_id(),Speed=rider.walking_speed),arrival_time_dst,departure_time_dst,r_dst.get_id()) # ajouter r_dst à trajectory de r
-
+				break
 				# mise à jour des informations du rider
 				
 	rider.update_waiting_time(wt)
@@ -371,7 +398,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 						rider.get_trajectory().update_trajectory(Foot(ID=m_seconde,Speed=rider.walking_speed/60),arrival_time_m_seconde,departure_time_m_seconde,m_seconde) # ajouter m_seconde à trajectory de r
 						rider.get_trajectory().update_trajectory(d,arrival_time_m_r_dest,departure_time_m_r_dest,m_r_dest) # ajouter m_r_dst à trajectory de r
 						rider.get_trajectory().update_trajectory(Foot(ID=r_dst.get_id(),Speed=rider.walking_speed/60),arrival_time_r_dst,departure_time_r_dst,r_dst.get_id())  # ajouter m_dst à trajectory de r
-
+						break
 					# mise à jour des informations du rider
 				
 	rider.update_waiting_time(wt)
@@ -429,6 +456,11 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 
 	#print("the walking distance from first mile = ",wd)
 	#print("the waiting time from first mile = ",wt)
+	# trajectory = rider.get_trajectory()
+	# print("node list of ",rider.id," = ",trajectory.node_id_list)
+	# print("arrival times of ",rider.id," = ",trajectory.arr_time_list)
+	# print("departure times of ",rider.id," = ",trajectory.dep_time_list)
+	# print("means of ",rider.id," = ",trajectory.means_list)
 
 	return t_prime
 

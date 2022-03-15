@@ -1,0 +1,5 @@
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.15

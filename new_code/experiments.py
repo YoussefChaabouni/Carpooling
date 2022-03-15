@@ -12,12 +12,13 @@ from mapGeneration import load_simulation_data
 from paper_friendly_all_systems_simulation import simulation, plot_data
 import os
 import pickle
+import numpy as np
 
 number_of_simulations = 10 #this number allows to run a single simulation multiple times
 riders_distribution = [8.3]
-drivers_distribution = [5]
-walking_speed = [3,5,10]
-detour_ratio = [0.15,0.5,0.75]
+drivers_distribution = [4.8]
+walking_speed = [5]
+detour_ratio = [0.01,0.02,0.04]
 
 
 def run_simulations(drivers_distribution,riders_distribution,walking_speed,detour_ratio):
@@ -36,12 +37,14 @@ def run_simulations(drivers_distribution,riders_distribution,walking_speed,detou
     # empty experiments data file
     open('experiments/experiments_data.txt', 'w').close()
     
-    data_generation()
+
+    #data_generation()
 
     simulations_list, data_index = load_simulation_data(drivers_distribution,riders_distribution,walking_speed,detour_ratio)
 
     for i in range(len(simulations_list)):
                     
+                    np.random.seed(123)
                     experiment_number = i+1
                     drivers = simulations_list[i][1]
                     riders_list = simulations_list[i][0]

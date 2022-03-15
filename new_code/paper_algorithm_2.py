@@ -39,6 +39,7 @@ def algorithm_2(z,z_prime,t, d:Driver, m_board:MeetingPoint, m_out:MeetingPoint,
 	
 	
 	
+	
 	time_index = d.get_trajectory().node_id_list.index(m_board)
 	if t_prime > d.get_trajectory().arr_time_list[time_index]:
 		# the rider is gonna be late

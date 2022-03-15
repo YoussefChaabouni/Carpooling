@@ -101,7 +101,7 @@ def no_carpooling_system(rider : Rider,graph: Graph):
             # computing different arrival, departure and waiting times 
             arrival_time_origin_station = rider.born_time + walk(r_org,s_org,graph,rider.walking_speed/60) + 1
             waiting_for_train = next_train_time(s_org,s_dst,arrival_time_origin_station)
-            departure_time_origin_station = arrival_time_origin_station + waiting_for_train
+            departure_time_origin_station = waiting_for_train
             arrival_time_destination_station = board_train(s_org,s_dst,arrival_time_origin_station)
             departure_time_destination_station = arrival_time_destination_station + 1
             arrival_time_destination = departure_time_destination_station + walk(s_dst,r_dst,graph,rider.walking_speed/60)
