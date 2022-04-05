@@ -218,6 +218,60 @@ def camembert_function(all_solutions):
 	#	plt.savefig(save_path+"system comparison.png",format='png')
 
     plt.show()
+def boarding_alighting_statistics(all_riders,save_path):
+    total_relative_mounts = [0,0,0,0,0,0,0,0]
+    total_relative_dismounts = [0,0,0,0,0,0,0,0]
+    total = 0
+    for r in all_riders[2]:
+        if r.solution == "integrated":
+            total +=1
+        for i in range(len(r.relative_boarding)):
+            total_relative_mounts[i] += r.relative_boarding[i]
+            total_relative_dismounts[i] += r.relative_alighting[i]
+    
+    percentage_mounts = np.array(total_relative_mounts) * 100/np.sum(total_relative_mounts)
+    percentage_dismounts = np.array(total_relative_dismounts) * 100/np.sum(total_relative_dismounts)
+
+    
+    ## plot 
+    labels = ["org","MPorg","Mprime","Sorg","Sdst","Mseconde","MPdst","dst"]
+
+    data_mount = percentage_mounts 
+
+    data_dismount = percentage_dismounts
+
+
+    explode = ( 0, 0, 0, 0,0,0,0,0) 
+
+    fig1, ax1 = plt.subplots(figsize=(9, 6))
+    ax1.pie(data_mount, explode=explode, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=0)
+    ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+    plt.legend()
+
+    plt.title("Relative boarding frequency percentage",fontsize = 18)
+
+    if save_path != "":
+        plt.savefig(save_path+"/mounting.png",format='png')
+	#if save_path != "":
+	#	plt.savefig(save_path+"system comparison.png",format='png')
+
+    plt.show()
+
+    fig1, ax1 = plt.subplots(figsize=(9, 6))
+    ax1.pie(data_dismount, explode=explode, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=0)
+    ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+    plt.legend()
+
+    plt.title("Relative alighting frequency percentage",fontsize = 18)
+	#if save_path != "":
+	#	plt.savefig(save_path+"system comparison.png",format='png')
+
+    if save_path != "":
+        plt.savefig(save_path+"/dismounting.png",format='png')
+
+    plt.show()
 
 def better_camembert(all_solutions,save_path):
         # import necessary libraries

@@ -18,7 +18,7 @@ number_of_simulations = 10 #this number allows to run a single simulation multip
 riders_distribution = [8.3]
 drivers_distribution = [4.8]
 walking_speed = [5]
-detour_ratio = [0.01,0.02,0.04]
+detour_ratio = [0.15]
 
 
 def run_simulations(drivers_distribution,riders_distribution,walking_speed,detour_ratio):
@@ -38,13 +38,13 @@ def run_simulations(drivers_distribution,riders_distribution,walking_speed,detou
     open('experiments/experiments_data.txt', 'w').close()
     
 
-    #data_generation()
+    data_generation()
 
     simulations_list, data_index = load_simulation_data(drivers_distribution,riders_distribution,walking_speed,detour_ratio)
 
     for i in range(len(simulations_list)):
                     
-                    np.random.seed(123)
+                    #np.random.seed(123)
                     experiment_number = i+1
                     drivers = simulations_list[i][1]
                     riders_list = simulations_list[i][0]
@@ -95,7 +95,7 @@ def run_simulations(drivers_distribution,riders_distribution,walking_speed,detou
 
                     #experiment_number +=1
             
-    return 0
+    return EFFECTIVE_RIDERS, EFFECTIVE_DRIVERS, EFFECTIVE_SOLUTIONS,EFFECTIVE_TIMES
 
 
 def save_results_data(path,EFFECTIVE_RIDERS, EFFECTIVE_DRIVERS, ALL_GRAPHS, EFFECTIVE_SOLUTIONS, EFFECTIVE_TIMES):
@@ -152,4 +152,4 @@ def make_average(global_riders,global_drivers,global_solutions,global_times):
 
     return riders,drivers,solutions,times
 '''
-run_simulations(drivers_distribution,riders_distribution,walking_speed,detour_ratio)
+EFFECTIVE_RIDERS, EFFECTIVE_DRIVERS, EFFECTIVE_SOLUTIONS,EFFECTIVE_TIMES = run_simulations(drivers_distribution,riders_distribution,walking_speed,detour_ratio)

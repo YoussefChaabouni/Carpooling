@@ -118,6 +118,11 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		best_driver.first_detour = True
 		best_driver.first_riders += 1
 
+		#_______________UPDATE RIDER MOUNT DISMOUNT STATISTICS____________________
+		rider.update_relative_boarding("MPorg")
+		rider.update_relative_alighting("Sorg")
+		print("the failure happened here for MPorg and Sorg for : ",rider.get_id)
+
 	best_driver = None
 
 
@@ -211,6 +216,11 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		##__________UPDATE DRIVER INFORMATION___________________
 		best_driver.first_detour = True
 		best_driver.first_riders += 1
+
+		#_______________UPDATE RIDER MOUNT DISMOUNT STATISTICS____________________
+		rider.update_relative_boarding("MPorg")
+		rider.update_relative_alighting("Mprime")
+		print("the failure happened here for MPorg and Mprime for : ",rider.get_id)
 
 	best_driver = None		
 
@@ -346,6 +356,11 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		best_driver.last_detour = True
 		best_driver.last_riders += 1
 
+		#_______________UPDATE RIDER MOUNT DISMOUNT STATISTICS____________________
+		rider.update_relative_boarding("Sdst")
+		rider.update_relative_alighting("MPdst")
+		print("the failure happened here for Sdst and MPdst for : ",rider.get_id)
+
 	best_driver = None
 
 
@@ -420,6 +435,11 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		##__________UPDATE DRIVER INFORMATION___________________
 		best_driver.last_detour = True
 		best_driver.last_riders += 1
+
+		#_______________UPDATE RIDER MOUNT DISMOUNT STATISTICS____________________
+		rider.update_relative_boarding("Mseconde")
+		rider.update_relative_alighting("MPdst")
+		print("the failure happened here for Mseconde and MPdst for : ",rider.get_id)
 
 	best_driver = None
 

@@ -13,6 +13,7 @@ class User:
         self.pos_depart = pos_depart # ID de node d'origine
         self.pos_arrivee = pos_arrivee # ID de node d'arrivée
         self.trajectory = trajectory
+        
     
 
     ########## GETTERS AND SETTERS #########################
@@ -42,6 +43,39 @@ class Rider(User):
         self.walking_distance = walking_distance
         self.walking_speed = walking_speed
         self.solution = solution
+        self.relative_boarding = [0,0,0,0,0,0,0,0]
+        self.relative_alighting = [0,0,0,0,0,0,0,0]
+    
+    ### FUNCTION TO UPDATE RELATIVE putdown LOCATION ###
+    def update_relative_boarding(self,node_type):
+
+        '''
+        node_type : is a string that mentions the type of meeting point relative to the driver
+        '''
+        node_types = ["org","MPorg","Mprime","Sorg","Sdst","Mseconde","MPdst","dst"]
+
+        try :
+            index = node_types.index(node_type)
+            self.relative_boarding[index] += 1
+        except :
+            print("Problem with logging the node type")
+        
+
+    def update_relative_alighting(self,node_type):
+
+        '''
+        node_type : is a string that mentions the type of meeting point relative to the driver
+        '''
+        node_types = ["org","MPorg","Mprime","Sorg","Sdst","Mseconde","MPdst","dst"]
+
+        try:
+            index = node_types.index(node_type)
+            self.relative_alighting[index] += 1
+        except:
+            print("Problem with logging the node type")
+        
+        
+        
     
     ###### UPDATE WALKING AND WAITING TIMES ##########
     def update_waiting_time(self, waiting_duration):
@@ -73,6 +107,8 @@ class Driver(User,Car):
         self.first_riders = 0
         self.last_riders = 0
         self.detour_rate = detour_rate
+        
+        
 
     # ______________________Getters and setters ________________________________
     def get_riders_list(self):

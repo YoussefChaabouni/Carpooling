@@ -6,7 +6,7 @@ from helperFunctions import get_timetable
 from current_system import current_system
 from CSV_creation import DUREE_DE_SIM
 from CSV_creation import NUMBER_OF_RIDERS
-from statistics import vehicle_maximum_occupancy
+from statistics import boarding_alighting_statistics, vehicle_maximum_occupancy
 from statistics import average_walking_and_waiting_time , camembert_function
 from detour_plot import detour_plot
 from mapGeneration import data_generation
@@ -278,6 +278,8 @@ def plot_data(EFFECTIVE_RIDERS, EFFECTIVE_DRIVERS, ALL_GRAPHS, EFFECTIVE_SOLUTIO
 	# CAMEMBERTS!!!!!
 	camembert_function(EFFECTIVE_SOLUTIONS)
 	better_camembert(EFFECTIVE_SOLUTIONS,save_path)
+
+	boarding_alighting_statistics(EFFECTIVE_RIDERS,save_path)
 	
 	# THE "pattes de mouches"
 	figure_4(T_t,T_d, C_t,C_d, I_t,I_d, T_d_inf,C_d_inf,I_d_inf,save_path)
