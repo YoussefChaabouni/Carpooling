@@ -12,14 +12,14 @@ from meansClasses import Foot, Train
 # read the pickle variables
 # read the data files
 
-with open('experiments/0.08/data/riders.pkl', 'rb') as f:  # Python 3: open(..., 'rb')
+with open('experiments/exp_dd=4.8_rd=8.3_ws=5_dr=0.15/data/riders.pkl', 'rb') as f:  # Python 3: open(..., 'rb')
     riders_list = pickle.load(f)
 
 # read the data files
-with open('experiments/0.08/data/drivers.pkl', 'rb') as f:  # Python 3: open(..., 'rb')
+with open('experiments/exp_dd=4.8_rd=8.3_ws=5_dr=0.15/data/drivers.pkl', 'rb') as f:  # Python 3: open(..., 'rb')
     drivers_list = pickle.load(f)
     
-with open('experiments/0.08/data/graphs.pkl', 'rb') as f:  # Python 3: open(..., 'rb')
+with open('experiments/exp_dd=4.8_rd=8.3_ws=5_dr=0.15/data/graphs.pkl', 'rb') as f:  # Python 3: open(..., 'rb')
     graphs_list = pickle.load(f)
 
 # will contain columns with name, type, x_coord, y_coord, time, means

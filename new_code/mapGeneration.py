@@ -2,6 +2,7 @@
 
 from math import sqrt
 import math
+import random
 import numpy as np
 from graphClasses import MeetingPoint, Station
 from helperFunctions import get_timetable
@@ -225,18 +226,20 @@ def load_simulation_data(drivers_distributions,riders_distributions,walking_spee
 
     for j in range(len(drivers_distributions)):
 
+        random.seed(1234)
+
         # sample riders from bigger sample
         num = int(len(drivers) * drivers_distributions[j] // 10)
-        indicies = sample(range(len(drivers)), num)
+        indicies = random.sample(range(len(drivers)), num)
         drivers = [drivers[i] for i in indicies]
 
         riders_copy_list = riders_list
 
         for k in range(len(riders_distributions)):
-
+            random.seed(1234)
             # sample riders from bigger sample
             num = int(len(riders_list) * riders_distributions[k] // 10)
-            indicies = sample(range(len(riders_copy_list)), num)
+            indicies = random.sample(range(len(riders_copy_list)), num)
             riders_copy_list = [riders_copy_list[i] for i in indicies]
 
             print("THIS METHOD OF PROGRESSIVE SAMPLING GIVES = ",set(riders_copy_list) <= set(riders_list))
@@ -246,10 +249,11 @@ def load_simulation_data(drivers_distributions,riders_distributions,walking_spee
                 for dr in detour_ratios:
                     
                     for d in drivers:
-                        d.detour_ratio = dr
+                        d.detour_rate = dr
+                        #print("_________this is the detour rate inside load simulation data : ",d.detour_rate,"____________")
                     
                     for r in riders_copy_list:
-                        r.walking_speeds = ws
+                        r.walking_speed = ws
 
                     # append this configuration to the simulations list
                     simulations_list.append([copy.deepcopy(riders_copy_list),copy.deepcopy(drivers),G]) 

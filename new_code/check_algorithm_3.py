@@ -33,8 +33,8 @@ def check_algorithm_3(drivers : List[Driver],rider : Rider,graph : Graph):
         d_org = graph.get_node(d.pos_depart)
         d_dest = graph.get_node(d.pos_arrivee)
 
-        m_d_org = graph.get_closest_MP_or_Station(d_org,"MPs").get_id()
-        m_d_dest = graph.get_closest_MP_or_Station(d_dest,"MPs").get_id()
+        m_d_org = d_org.get_id()#graph.get_closest_MP_or_Station(d_org,"MPs").get_id()
+        m_d_dest = d_dest.get_id()#graph.get_closest_MP_or_Station(d_dest,"MPs").get_id()
 
         #print(type(m_d_org))
         '''

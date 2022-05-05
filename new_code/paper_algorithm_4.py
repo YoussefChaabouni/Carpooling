@@ -122,13 +122,13 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		#_______________UPDATE RIDER MOUNT DISMOUNT STATISTICS____________________
 		rider.update_relative_boarding("org")
 		rider.update_relative_alighting("Sorg")
-		print("we have a carpooling between org and Sorg for : ",rider.get_id()," ",best_driver.get_id())
+		#print("we have a carpooling between org and Sorg for : ",rider.get_id()," ",best_driver.get_id())
 
 	best_driver = None
 
 
 	## DRIVER TAKES RIDER FROM m_d_org to s_org
-
+	'''
 	if t_first == np.Infinity:
 		for d in drivers:
 			
@@ -211,10 +211,10 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 			#_______________UPDATE RIDER MOUNT DISMOUNT STATISTICS____________________
 			rider.update_relative_boarding("MPorg")
 			rider.update_relative_alighting("Sorg")
-			print("we have a carpooling between MPorg and Sorg for : ",rider.get_id()," ",best_driver.get_id())
+			#print("we have a carpooling between MPorg and Sorg for : ",rider.get_id()," ",best_driver.get_id())
 
 		best_driver = None
-
+	'''
 # DRIVER TAKES RIDER FROM d_org to m_prime
 
 	if t_first == np.Infinity:
@@ -313,24 +313,24 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		#_______________UPDATE RIDER MOUNT DISMOUNT STATISTICS____________________
 		rider.update_relative_boarding("org")
 		rider.update_relative_alighting("Mprime")
-		print("there was a carpooling between org and Mprime for : ",rider.get_id()," ",best_driver.get_id())
+		#print("there was a carpooling between org and Mprime for : ",rider.get_id()," ",best_driver.get_id())
 
 	best_driver = None		
 
 
 
 	# DRIVER TAKES RIDER FROM m_d_org to m_prime
-
+	'''
 	if t_first == np.Infinity:
 		# si ce n'est pas possible d'amener le rider directement à la station, alors cherchons le meeting-point m_prime le plus proche de la station s_r_org qui sera desservit par une voiture 
 
 		for d in drivers:
 			wd = 0
 			wt = 0
-			'''
+			
 			m_d_dst = Graph.get_closest_MP(d.get_pos_arrivee) #closest meeting point to driver's destination
 			m_prime = Graph.get_closest_MP(s_r_org) ## closest meeting point to the station which is closest to rider origin
-			'''
+			
 			#print("destination = ",d_dst.get_id())
 			#print("station origine rider = ",s_r_org)
 			d_org = graph.get_node(d.pos_depart)
@@ -412,8 +412,8 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		#_______________UPDATE RIDER MOUNT DISMOUNT STATISTICS____________________
 		rider.update_relative_boarding("MPorg")
 		rider.update_relative_alighting("Mprime")
-		print("we have a carpooling between MPorg and Mprime for : ",rider.get_id()," ",best_driver.get_id())
-
+		#print("we have a carpooling between MPorg and Mprime for : ",rider.get_id()," ",best_driver.get_id())
+	'''
 	best_driver = None		
 
 
@@ -558,12 +558,12 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		#_______________UPDATE RIDER MOUNT DISMOUNT STATISTICS____________________
 		rider.update_relative_boarding("Sdst")
 		rider.update_relative_alighting("dst")
-		print("we have a carpooling between Sdst and dst for : ",rider.get_id()," ",best_driver.get_id())
+		#print("we have a carpooling between Sdst and dst for : ",rider.get_id()," ",best_driver.get_id())
 
 	best_driver = None
 
 	# LE RIDER VA ETRE PRIS DE s_dst à m_d_dst
-
+	'''
 	##----------------- RIDER GETS PICKED UP DIRECTLY FROM THE STATION -------------------------------------------
 	if t_last == np.Infinity:
 		for d in drivers:
@@ -625,10 +625,10 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 			#_______________UPDATE RIDER MOUNT DISMOUNT STATISTICS____________________
 			rider.update_relative_boarding("Sdst")
 			rider.update_relative_alighting("MPdst")
-			print("we have a carpooling between Sdst and MPdst for : ",rider.get_id)
+			#print("we have a carpooling between Sdst and MPdst for : ",rider.get_id)
 
 		best_driver = None
-
+	'''
 
 #	LE RIDER FERA UN CARPOOLING DE m_seconde à d_dest
 
@@ -653,7 +653,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 					t_chap,w_chap_t,w_chap_d = algorithm_2(z = s_r_dest,z_prime = m_r_dest,t = t_prime,d=d,m_board = m_seconde,m_out = m_d_dest,graph = graph) # APPLIQUER L'ALGORITHME 2
 
 					if wd + w_chap_d <= 2.5  and  wt + w_chap_t <= 45  and  t_chap < t_last: # les longueurs en Mètres et le temps en Secondes
-						print("le rider monte dans la voiture avec le driver pour le last mile",d.get_id())
+						#print("le rider monte dans la voiture avec le driver pour le last mile",d.get_id())
 						best_driver = d
 
 						t_last = t_chap
@@ -708,7 +708,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		#_______________UPDATE RIDER MOUNT DISMOUNT STATISTICS____________________
 		rider.update_relative_boarding("Mseconde")
 		rider.update_relative_alighting("dst")
-		print("there was a carpooling between Mseconde and dst for : ",rider.get_id()," ",best_driver.get_id())
+		#print("there was a carpooling between Mseconde and dst for : ",rider.get_id()," ",best_driver.get_id())
 
 	best_driver = None
 
@@ -716,16 +716,17 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 #	LE RIDER FERA UN CARPOOLING DE m_seconde à m_d_dest
 
 ##--------------- RIDER HAS TO WALK TO A MEETING POINT IN LAST MILE-----------------------------------------
+	'''
 	if t_last == np.Infinity:
 
 		m_seconde = graph.get_closest_MP_or_Station(graph.get_node(s_r_dest),"MPs").get_id() # meeting point le plus proche de s_r_dest
 		for d in drivers:
-			'''
+			
 			m_dst_d = d.m_dst
 			d_trajectory = d.trajectory
 			m_dst_r = rider.m_dst
 			s_dst_r = rider.s_dst
-			'''
+
 			
 			d_dst = graph.get_node(d.pos_arrivee)
 			m_d_dest = graph.get_closest_MP_or_Station(d_dst,"MPs").get_id() # closest meeting point to d_dest
@@ -735,7 +736,7 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 					t_chap,w_chap_t,w_chap_d = algorithm_2(z = s_r_dest,z_prime = m_r_dest,t = t_prime,d=d,m_board = m_seconde,m_out = m_d_dest,graph = graph) # APPLIQUER L'ALGORITHME 2
 
 					if wd + w_chap_d <= 2.5  and  wt + w_chap_t <= 45  and  t_chap < t_last: # les longueurs en Mètres et le temps en Secondes
-						print("le rider monte dans la voiture avec le driver pour le last mile",d.get_id())
+						#print("le rider monte dans la voiture avec le driver pour le last mile",d.get_id())
 						best_driver = d
 
 						t_last = t_chap
@@ -746,13 +747,13 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 						## mise à jour de la trajectoire du rider
 						## new_mean : Mean_of_transportation,new_arr_time,new_dep_time,new_node_id : int
 						## on ajoute les temps d'arrivée et de départ de chaque node parcourue
-						'''
+						
 						le rider va :
 						- marcher de s_r_dest jusqu'à m_seconde
 						- prendre une voiture de m_seconde à m_r_dest
 						- marcher jusqu'à r_dst
 						
-						'''
+						
 						
 						arrival_time_m_seconde = t_prime + walk(graph.get_node(s_r_dest),graph.get_node(m_seconde),graph,rider.walking_speed/60) # arrivée en m_seconde
 						departure_time_m_seconde = arrival_time_m_seconde + wt	# départ de m_seconde
@@ -790,7 +791,9 @@ def algorithm_4(drivers: List[Driver],rider : Rider,graph : Graph):
 		#_______________UPDATE RIDER MOUNT DISMOUNT STATISTICS____________________
 		rider.update_relative_boarding("Mseconde")
 		rider.update_relative_alighting("MPdst")
-		print("there was a carpooling between Mseconde and MPdst for : ",rider.get_id)
+		#print("there was a carpooling between Mseconde and MPdst for : ",rider.get_id)
+	
+	'''
 
 	best_driver = None
 

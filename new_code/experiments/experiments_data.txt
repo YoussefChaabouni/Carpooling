@@ -2,4 +2,234 @@ ______________experiment number 1-_______________
 Drivers distribution = 4.8
 Riders distribution = 8.3
 Walking speed = 5
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.001
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.05
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
 Detour ratio = 0.15
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.001
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.05
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.15
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.5
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.15
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.5
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.15
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.15
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.15
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.05
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.15
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.5
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.05
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.15
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 4.8
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.5
+______________experiment number 1-_______________
+Drivers distribution = 8.3
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 8.3
+Riders distribution = 8.3
+Walking speed = 5
+Detour ratio = 0.01

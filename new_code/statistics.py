@@ -7,6 +7,8 @@ from PersonClasses import Driver, Rider
 import matplotlib.pyplot as plt
 import numpy as np
 
+from graphClasses import Graph
+
 
 #from new_code.CSV_creation import NUMBER_OF_RIDERS
 
@@ -229,13 +231,21 @@ def boarding_alighting_statistics(all_riders,save_path):
             total_relative_mounts[i] += r.relative_boarding[i]
             total_relative_dismounts[i] += r.relative_alighting[i]
     
-    percentage_mounts = np.array(total_relative_mounts) * 100/np.sum(total_relative_mounts)
-    percentage_dismounts = np.array(total_relative_dismounts) * 100/np.sum(total_relative_dismounts)
+    if total_relative_mounts != [0,0,0,0,0,0,0,0] :
+        percentage_mounts = np.array(total_relative_mounts) * 100/np.sum(total_relative_mounts)
+    else:
+        percentage_mounts = np.array([0,0,0,0,0,0,0,0])
 
+    if total_relative_dismounts != [0,0,0,0,0,0,0,0] :
+
+        percentage_dismounts = np.array(total_relative_dismounts) * 100/np.sum(total_relative_dismounts)
+    else:
+        percentage_dismounts = np.array([0,0,0,0,0,0,0,0])
     
     ## plot 
     labels = ["org","MPorg","Mprime","Sorg","Sdst","Mseconde","MPdst","dst"]
 
+    print("percentage mounts = ",percentage_mounts)
     data_mount = percentage_mounts 
 
     data_dismount = percentage_dismounts
@@ -243,35 +253,40 @@ def boarding_alighting_statistics(all_riders,save_path):
 
     explode = ( 0, 0, 0, 0,0,0,0,0) 
 
-    fig1, ax1 = plt.subplots(figsize=(9, 6))
-    ax1.pie(data_mount, explode=explode, labels=labels, autopct='%1.1f%%',
-        shadow=True, startangle=0)
-    ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-    plt.legend()
+    print("data_mount = ",data_mount)
 
-    plt.title("Relative boarding frequency percentage",fontsize = 18)
+    if (data_mount != np.array([0,0,0,0,0,0,0,0])).any():
+        fig1, ax1 = plt.subplots(figsize=(9, 6))
+        ax1.pie(data_mount, explode=explode, labels=labels, autopct='%1.1f%%',
+            shadow=True, startangle=0)
+        ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+        plt.legend()
 
-    if save_path != "":
-        plt.savefig(save_path+"/mounting.png",format='png')
-	#if save_path != "":
-	#	plt.savefig(save_path+"system comparison.png",format='png')
+        plt.title("Relative boarding frequency percentage",fontsize = 18)
 
-    plt.show()
+        if save_path != "":
+            plt.savefig(save_path+"/boarding.png",format='png')
+        #if save_path != "":
+        #	plt.savefig(save_path+"system comparison.png",format='png')
 
-    fig1, ax1 = plt.subplots(figsize=(9, 6))
-    ax1.pie(data_dismount, explode=explode, labels=labels, autopct='%1.1f%%',
-        shadow=True, startangle=0)
-    ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-    plt.legend()
+        plt.show()
 
-    plt.title("Relative alighting frequency percentage",fontsize = 18)
-	#if save_path != "":
-	#	plt.savefig(save_path+"system comparison.png",format='png')
+    print("data_dismount = ",data_dismount)
+    if (data_dismount != np.array([0,0,0,0,0,0,0,0])).any() :
+        fig1, ax1 = plt.subplots(figsize=(9, 6))
+        ax1.pie(data_dismount, explode=explode, labels=labels, autopct='%1.1f%%',
+            shadow=True, startangle=0)
+        ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+        plt.legend()
 
-    if save_path != "":
-        plt.savefig(save_path+"/dismounting.png",format='png')
+        plt.title("Relative alighting frequency percentage",fontsize = 18)
+        #if save_path != "":
+        #	plt.savefig(save_path+"system comparison.png",format='png')
 
-    plt.show()
+        if save_path != "":
+            plt.savefig(save_path+"/alighting.png",format='png')
+
+        plt.show()
 
 def better_camembert(all_solutions,save_path):
         # import necessary libraries
@@ -410,3 +425,158 @@ def better_waiting_walking_times(ALL_RIDERS,save_path):
     plt.show()
 
     return plot
+
+# function to calculate the distance between (MPorg - org) and (MPdst - dst) for all drivers
+# the output is a histogram giving the percentage of points within 100m, 200m....1km
+def distances_of_meeting_points(drivers_list: List[Driver],G: Graph,save_path):
+
+
+    # origins
+    distances_list = [0.3*int(x) for x in range(10)]
+    distances_from_origin = [0]*10
+    distances_from_destination = [0]*10
+
+
+    for d in drivers_list:  
+        
+        org = G.get_node(d.pos_depart)
+        dst = G.get_node(d.pos_arrivee)
+
+        MPdst = G.get_closest_MP_or_Station(dst,"MPs")
+        MPorg = G.get_closest_MP_or_Station(org,"MPs")
+        
+        distance_org = G.get_distance(org,MPorg)
+        distance_dst = G.get_distance(dst,MPdst)
+        for i in range(len(distances_list)):
+            if distance_org <= distances_list[i]:
+                distances_from_origin[i] += 1
+                break
+        
+        for i in range(len(distances_list)):
+            if distance_dst <= distances_list[i]:
+                distances_from_destination[i] += 1
+                break
+
+
+            
+    
+    new_distances_org = [x*100/len(drivers_list) for x in distances_from_origin]
+    new_distances_dst = [x*100/len(drivers_list) for x in distances_from_destination]
+    import pandas as pd
+    import seaborn as sns
+
+    df = pd.DataFrame({"distance(per m)" :[int(x*1000) for x in distances_list],
+    "percentage(%)" : new_distances_org})
+    plot = sns.barplot(x="distance(per m)",y="percentage(%)",data = df)
+    plt.title("Distances of closest meeting points from origins")
+
+    if save_path != "":
+        plt.savefig(save_path+"/Distance of closest MP from origin.png",format='png')
+
+    plt.show()
+
+    df = pd.DataFrame({"distance(per m)" :[int(x*1000) for x in distances_list],
+    "percentage(%)" : new_distances_dst})
+    plot = sns.barplot(x="distance(per m)",y="percentage(%)",data = df)
+    plt.title("Distances of closest meeting points from destinations")
+
+    if save_path != "":
+        plt.savefig(save_path+"/Distance of closest MP from destination.png",format='png')
+
+
+    plt.show()
+    return distances_from_origin, distances_from_destination
+
+def detour_percentage_per_driver(drivers_list: List[Driver],G: Graph,save_path):
+
+    detours = []
+    
+    for d in drivers_list :
+
+        trajectory = d.get_trajectory()
+        nodes_list = trajectory.node_id_list
+        detour_distance = 0
+
+        org_d = G.get_node(d.pos_depart)	
+        dst_d = G.get_node(d.pos_arrivee)
+        m_org_d = G.get_closest_MP_or_Station(org_d,"MPs")
+        m_dst_d = G.get_closest_MP_or_Station(dst_d,"MPs")
+        no_detour_distance = G.get_distance(org_d,dst_d)
+
+        weird_drivers = []
+        if len(nodes_list)>2:
+            for i in range(len(nodes_list)-1) :
+                detour_distance += G.get_distance(G.get_node(nodes_list[i]),G.get_node(nodes_list[i+1]))
+
+            if detour_distance != 0:
+                detours.append(abs(int((detour_distance - no_detour_distance)*100/detour_distance)))
+            else:
+                weird_drivers.append(d)
+                detours.append(0)
+        else :
+            detours.append(0)
+        #print("_________________",d.id,"__________________")
+        #print("no_detour_distance = ",no_detour_distance)
+        #print("detour_distance = ",detour_distance)
+        #print("trajectory = ",d.get_trajectory().node_id_list)
+        if detour_distance != 0 :
+            print((int((detour_distance - no_detour_distance)*100/detour_distance)))
+    
+    #print(detours)
+    #print("number of drivers = ",len(drivers_list))
+    max_detour = int(drivers_list[0].detour_rate*100)
+    detours_counter = [0]*(max_detour+1)
+
+    for item in detours :
+        for i in range(len(detours_counter)):
+            if item == i :
+                detours_counter[i] += 1
+                
+
+    import pandas as pd
+    import seaborn as sns
+
+    df = pd.DataFrame({"detour(%)" :range(max_detour+1),
+    "count" : detours_counter})
+    plot = sns.barplot(x="detour(%)",y="count",data = df)
+    plt.title("Number of detours taken by percentage of detour")
+
+    if save_path != "":
+        plt.savefig(save_path+"/Number of detours per percentage of detours.png",format='png')
+
+    plt.show()
+
+    return detours, detours_counter, weird_drivers 
+
+def station_coverage_per_driver(drivers_list: List[Driver],G : Graph,save_path):
+
+    resulting_list = []
+    count_percentage = [0,0,0]
+    for d in drivers_list:
+        
+        stations_counter = 0
+        nodes = d.get_trajectory().node_id_list
+        
+        for node in nodes:
+            if node[0] == "S":
+                stations_counter += 1
+        
+        resulting_list.append(stations_counter)
+        count_percentage[stations_counter] +=1
+
+    count_percentage = [x*100/len(drivers_list) for x in count_percentage]
+
+    import pandas as pd
+    import seaborn as sns
+
+    df = pd.DataFrame({"Number of stations visited" :range(3),
+    "percentage of drivers" : count_percentage})
+    plot = sns.barplot(x="Number of stations visited",y="percentage of drivers",data = df)
+    plt.title("Percentage of drivers by number of stations visited")
+    if save_path != "":
+        plt.savefig(save_path+"/Percentage of drivers by number of stations visited.png",format='png')
+
+    plt.show()
+    return resulting_list, count_percentage
+
+

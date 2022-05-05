@@ -13,6 +13,7 @@ from mapGeneration import data_generation
 from figure5_but_better import frequency2, travel_time_integrated_current2
 from statistics import better_camembert
 from statistics import better_waiting_walking_times
+from statistics import detour_percentage_per_driver, distances_of_meeting_points, station_coverage_per_driver
 from no_carpooling_system import no_carpooling_system
 from paper_algorithm_4 import algorithm_4
 from paper_algorithm_3 import algorithm_3
@@ -28,7 +29,7 @@ import time
 from figure_4 import figure_4
 
 start = time.time()
-
+'''
 NUMBER_OF_MPS = 50
 NUMBER_OF_STATIONS = 10
 TAILLE_DE_MAP = 10 # en km
@@ -125,7 +126,7 @@ NUMBER_OF_RIDERS = len(riders_list)
 
 DRIVERS = drivers
 RIDERS = riders_list
-
+'''
 # empty the folder
 save_path = "graphs"
 #os.remove(save_path)
@@ -300,14 +301,20 @@ def plot_data(EFFECTIVE_RIDERS, EFFECTIVE_DRIVERS, ALL_GRAPHS, EFFECTIVE_SOLUTIO
 
 
 	max_int = vehicle_maximum_occupancy(EFFECTIVE_DRIVERS[2],system = "Integrated",save_path=save_path)
-	print("current = ",max_curr)
-	print("max_int = ",max_int)
+	#print("current = ",max_curr)
+	#print("max_int = ",max_int)
 	# average walking and waiting times
 
 	#average_walking_and_waiting_time(EFFECTIVE_RIDERS[2],system="Integrated",save_path=save_path)
 
 	#detours
 	detour_plot(EFFECTIVE_DRIVERS[2],save_path=save_path)
+
+	distances_of_meeting_points(EFFECTIVE_DRIVERS[2],ALL_GRAPHS[2],save_path)
+	detour_percentage_per_driver(EFFECTIVE_DRIVERS[2],ALL_GRAPHS[2],save_path)
+	station_coverage_per_driver(EFFECTIVE_DRIVERS[2],ALL_GRAPHS[2],save_path)
+	
+
 
 	return 0
 

@@ -23,8 +23,8 @@ def algorithm_1(d : Driver, graph : Graph):
 	dst_d = graph.get_node(d.pos_arrivee)
 
 	# prendre les meeting points les plus proches
-	m_org_d = graph.get_closest_MP_or_Station(org_d,"MPs")
-	m_dst_d = graph.get_closest_MP_or_Station(dst_d,"MPs")
+	m_org_d = org_d#graph.get_closest_MP_or_Station(org_d,"MPs") 
+	m_dst_d = dst_d#graph.get_closest_MP_or_Station(dst_d,"MPs")
 	# prendre les stations les plus proches
 	s_org_d = graph.get_closest_MP_or_Station(org_d,"Stations")
 	s_dst_d = graph.get_closest_MP_or_Station(dst_d,"Stations")
@@ -39,14 +39,22 @@ def algorithm_1(d : Driver, graph : Graph):
 	arrival_time = t + Drive(org_d,m_org_d,graph,d.speed/60) ## arrivée à m_org_d
 	departure_time = arrival_time+ delai # départ de m_org_d	
 	d.get_trajectory().update_trajectory(d,arrival_time,departure_time,m_org_d.get_id())
-	
+
+	print("_____________driver id for alg 1 : ",d.id,"________________")
+	print("detour rate = ",d.detour_rate)
+	print("MAX DETOUR RATE = ",MAX_DETOUR_PERCENTAGE)	
+
 	r = np.random.randint(2)
 
 	# vérifier si la destination n'est pas le mp_org le plus proche
 	if m_org_d == dst_d :
 		J_d = [org_d,dst_d]
 		d.set_current_capacity([4]*len(J_d))
-		
+		#d.get_trajectory().update_trajectory(d,d.born_time,d.born_time,org_d.get_id())
+		#d.get_trajectory().update_trajectory(d,arrival_time,departure_time,s_org_d.get_id())
+
+
+
 	else:
 		if r == 1:
 			# Try to add a detour close to the origin
