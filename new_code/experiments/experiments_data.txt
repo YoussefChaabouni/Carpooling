@@ -293,3 +293,2948 @@ Drivers distribution = 9.8
 Riders distribution = 8.3
 Walking speed = 5
 Detour ratio = 0.5
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 1
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 1
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 2
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 2
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 2
+Walking speed = 1
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 2
+Walking speed = 1
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 2
+Walking speed = 2
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 2
+Walking speed = 2
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 2
+Walking speed = 3
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 2
+Walking speed = 3
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 1
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 1
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 2
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 2
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 3
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 3
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 1
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 1
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 2
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 2
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 1
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 1
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 2
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 2
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 3
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 3
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 1
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 1
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 2
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 2
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 3
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 3
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 1
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 1
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 2
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 2
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 1
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 1
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 2
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 2
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 3
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 3
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 1
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 1
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 2
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 2
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 3
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 3
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 4
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 4
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 4
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 4
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 4
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 4
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 5
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 5
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 5
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 5
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 5
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 6
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 6
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 6
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 6
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 6
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 1
+Walking speed = 6
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 3
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 3
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 3
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 3
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 3
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 3
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 4
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 4
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 4
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 4
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 4
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 4
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 5
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 5
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 5
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 5
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 5
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 6
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 6
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 6
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 6
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 6
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 2
+Walking speed = 6
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 3
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 3
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 3
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 3
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 3
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 3
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 4
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 4
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 4
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 4
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 4
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 4
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 5
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 5
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 5
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 5
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 5
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 6
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 6
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 6
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 6
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 6
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 3
+Walking speed = 6
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 3
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 3
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 3
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 3
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 3
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 3
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 4
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 4
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 4
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 4
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 4
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 4
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 5
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 5
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 5
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 5
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 5
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 6
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 6
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 6
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 6
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 6
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 4
+Walking speed = 6
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 3
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 3
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 3
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 3
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 3
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 3
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 4
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 4
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 4
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 4
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 4
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 4
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 5
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 5
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 5
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 5
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 5
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 6
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 6
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 6
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 6
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 6
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 5
+Walking speed = 6
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 3
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 3
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 3
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 3
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 3
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 3
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 4
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 4
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 4
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 4
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 4
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 4
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 5
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 5
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 5
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 5
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 5
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 6
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 6
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 6
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 6
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 6
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 6
+Walking speed = 6
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 3
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 3
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 3
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 3
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 3
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 3
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 4
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 4
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 4
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 4
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 4
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 4
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 5
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 5
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 5
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 5
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 5
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 6
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 6
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 6
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 6
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 6
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 7
+Walking speed = 6
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 3
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 3
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 3
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 3
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 3
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 3
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 4
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 4
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 4
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 4
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 4
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 4
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 5
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 5
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 5
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 5
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 5
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 6
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 6
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 6
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 6
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 6
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 8
+Walking speed = 6
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 3
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 3
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 3
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 3
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 3
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 3
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 4
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 4
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 4
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 4
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 4
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 4
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 5
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 5
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 5
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 5
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 5
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 6
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 6
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 6
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 6
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 6
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 2
+Riders distribution = 9
+Walking speed = 6
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 4
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 4
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 4
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 4
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 4
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 4
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 5
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 5
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 5
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 5
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 5
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 6
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 6
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 6
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 6
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 6
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 1
+Walking speed = 6
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 3
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 3
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 3
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 3
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 3
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 3
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 4
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 4
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 4
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 4
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 4
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 4
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 5
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 5
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 5
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 5
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 5
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 6
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 6
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 6
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 6
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 6
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 2
+Walking speed = 6
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 3
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 3
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 3
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 3
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 3
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 3
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 4
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 4
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 4
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 4
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 4
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 4
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 5
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 5
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 5
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 5
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 5
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 6
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 6
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 6
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 6
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 6
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 3
+Walking speed = 6
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 3
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 3
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 3
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 3
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 3
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 3
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 4
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 4
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 4
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 4
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 4
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 4
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 5
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 5
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 5
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 5
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 5
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 6
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 6
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 6
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 6
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 6
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 4
+Walking speed = 6
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 3
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 3
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 3
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 3
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 3
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 3
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 4
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 4
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 4
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 4
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 4
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 4
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 5
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 5
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 5
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 5
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 5
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 6
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 6
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 6
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 6
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 6
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 5
+Walking speed = 6
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 3
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 3
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 3
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 3
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 3
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 3
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 4
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 4
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 4
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 4
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 4
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 4
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 5
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 5
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 5
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 5
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 5
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 6
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 6
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 6
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 6
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 6
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 6
+Walking speed = 6
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 3
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 3
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 3
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 3
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 3
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 3
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 4
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 4
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 4
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 4
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 4
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 4
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 5
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 5
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 5
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 5
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 5
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 6
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 6
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 6
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 6
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 6
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 7
+Walking speed = 6
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 3
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 3
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 3
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 3
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 3
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 3
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 4
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 4
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 4
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 4
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 4
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 4
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 5
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 5
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 5
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 5
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 5
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 6
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 6
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 6
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 6
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 6
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 8
+Walking speed = 6
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 3
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 3
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 3
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 3
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 3
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 3
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 4
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 4
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 4
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 4
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 4
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 4
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 5
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 5
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 5
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 5
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 5
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 5
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 6
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 6
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 6
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 6
+Detour ratio = 0.16000000000000003
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 6
+Detour ratio = 0.21000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 3
+Riders distribution = 9
+Walking speed = 6
+Detour ratio = 0.26
+______________experiment number 1-_______________
+Drivers distribution = 4
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.01
+______________experiment number 1-_______________
+Drivers distribution = 4
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.060000000000000005
+______________experiment number 1-_______________
+Drivers distribution = 4
+Riders distribution = 1
+Walking speed = 3
+Detour ratio = 0.11000000000000001
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 4
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 4
+Detour ratio = 0.05
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 4
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 4
+Detour ratio = 0.15000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 4
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 4
+Detour ratio = 0.25
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 4
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 5
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 5
+Detour ratio = 0.05
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 5
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 5
+Detour ratio = 0.15000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 5
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 5
+Detour ratio = 0.25
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 5
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 6
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 6
+Detour ratio = 0.05
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 6
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 6
+Detour ratio = 0.15000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 6
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 6
+Detour ratio = 0.25
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 1
+Walking speed = 6
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 4
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 4
+Detour ratio = 0.05
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 4
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 4
+Detour ratio = 0.15000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 4
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 4
+Detour ratio = 0.25
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 4
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 5
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 5
+Detour ratio = 0.05
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 5
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 5
+Detour ratio = 0.15000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 5
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 5
+Detour ratio = 0.25
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 5
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 6
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 6
+Detour ratio = 0.05
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 6
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 6
+Detour ratio = 0.15000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 6
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 6
+Detour ratio = 0.25
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 3
+Walking speed = 6
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 4
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 4
+Detour ratio = 0.05
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 4
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 4
+Detour ratio = 0.15000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 4
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 4
+Detour ratio = 0.25
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 4
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 5
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 5
+Detour ratio = 0.05
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 5
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 5
+Detour ratio = 0.15000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 5
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 5
+Detour ratio = 0.25
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 5
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 6
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 6
+Detour ratio = 0.05
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 6
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 6
+Detour ratio = 0.15000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 6
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 6
+Detour ratio = 0.25
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 5
+Walking speed = 6
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 4
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 4
+Detour ratio = 0.05
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 4
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 4
+Detour ratio = 0.15000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 4
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 4
+Detour ratio = 0.25
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 4
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 5
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 5
+Detour ratio = 0.05
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 5
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 5
+Detour ratio = 0.15000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 5
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 5
+Detour ratio = 0.25
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 5
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 6
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 6
+Detour ratio = 0.05
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 6
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 6
+Detour ratio = 0.15000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 6
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 6
+Detour ratio = 0.25
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 7
+Walking speed = 6
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 9
+Walking speed = 4
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 9
+Walking speed = 4
+Detour ratio = 0.05
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 9
+Walking speed = 4
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 9
+Walking speed = 4
+Detour ratio = 0.15000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 9
+Walking speed = 4
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 9
+Walking speed = 4
+Detour ratio = 0.25
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 9
+Walking speed = 4
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 9
+Walking speed = 5
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 9
+Walking speed = 5
+Detour ratio = 0.05
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 9
+Walking speed = 5
+Detour ratio = 0.1
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 9
+Walking speed = 5
+Detour ratio = 0.15000000000000002
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 9
+Walking speed = 5
+Detour ratio = 0.2
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 9
+Walking speed = 5
+Detour ratio = 0.25
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 9
+Walking speed = 5
+Detour ratio = 0.3
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 9
+Walking speed = 6
+Detour ratio = 0
+______________experiment number 1-_______________
+Drivers distribution = 1
+Riders distribution = 9
+Walking speed = 6
+Detour ratio = 0.05

@@ -24,11 +24,11 @@ riders_distribution = [[8.3]]
 drivers_distribution = [[2],[4.8],[8.3],[9.8]]
 walking_speed = [[5]]
 detour_ratio = [[0],[0.01],[0.05],[0.10],[0.15],[0.30],[0.50]]
-seed = 1234
+#seed = 1234
 
 
 
-def run_simulations(drivers_distribution,riders_distribution,walking_speed,detour_ratio):
+def run_simulations(drivers_distribution,riders_distribution,walking_speed,detour_ratio,seed=1234):
     
     ## CHARGER LE DATAFRAME
     df_path = 'dataframe/simulation_history_df.pkl'
@@ -106,7 +106,7 @@ def run_simulations(drivers_distribution,riders_distribution,walking_speed,detou
 
                     EFFECTIVE_RIDERS, EFFECTIVE_DRIVERS, ALL_GRAPHS, EFFECTIVE_SOLUTIONS, EFFECTIVE_TIMES  = simulation(drivers,riders_list,G=G,save_path=newpath)
                     
-                    plot_data(EFFECTIVE_RIDERS, EFFECTIVE_DRIVERS, ALL_GRAPHS, EFFECTIVE_SOLUTIONS, EFFECTIVE_TIMES,newpath)
+                    #plot_data(EFFECTIVE_RIDERS, EFFECTIVE_DRIVERS, ALL_GRAPHS, EFFECTIVE_SOLUTIONS, EFFECTIVE_TIMES,newpath)
                     save_results_data(newpath,EFFECTIVE_RIDERS, EFFECTIVE_DRIVERS, ALL_GRAPHS, EFFECTIVE_SOLUTIONS, EFFECTIVE_TIMES)
 
                     global_riders.append(EFFECTIVE_RIDERS)
@@ -195,22 +195,26 @@ def make_average(global_riders,global_drivers,global_solutions,global_times):
 
     return riders,drivers,solutions,times
 '''
-global_drivers = []
-for dd in drivers_distribution:
-    for rd in riders_distribution:
-        for ws in walking_speed:
-            for dr in detour_ratio:
-                # set a certain seed
-                #np.random.seed(1234)
-                
-                print('executing simulation with :\n')
-                print("dd = ",dd[0],"\n")
-                print("rd = ",rd[0],"\n")
-                print("ws = ",ws[0],"\n")
-                print("dr = ",dr[0],"\n")
 
-                init_drivers, EFFECTIVE_RIDERS, EFFECTIVE_DRIVERS,ALL_GRAPHS, EFFECTIVE_SOLUTIONS,EFFECTIVE_TIMES = run_simulations(dd,rd,ws,dr)
-                global_drivers.append([str(x.id) for x in init_drivers])
+def hyperparameter_tuning(drivers_distribution,riders_distribution,walking_speed,detour_ratio):
+    global_drivers = []
+    for dd in drivers_distribution:
+        for rd in riders_distribution:
+            for ws in walking_speed:
+                for dr in detour_ratio:
+                    # set a certain seed
+                    #np.random.seed(1234)
+                    
+                    print('executing simulation with :\n')
+                    print("dd = ",dd[0],"\n")
+                    print("rd = ",rd[0],"\n")
+                    print("ws = ",ws[0],"\n")
+                    print("dr = ",dr[0],"\n")
+
+                    init_drivers, EFFECTIVE_RIDERS, EFFECTIVE_DRIVERS,ALL_GRAPHS, EFFECTIVE_SOLUTIONS,EFFECTIVE_TIMES = run_simulations(dd,rd,ws,dr)
+                    global_drivers.append([str(x.id) for x in init_drivers])
+
+                
 #print("are the drivers of the smaller set included in the drivers of the bigger set? ",set(global_drivers[0]).issubset(set(global_drivers[1])) )
 
 #for item in global_drivers[0]:
